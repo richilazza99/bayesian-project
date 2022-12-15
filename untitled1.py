@@ -77,7 +77,7 @@ parameters
     real<lower=0> rho;
     
     vector<lower=0,upper=1>[I] xi_vec;
-    matrix[I,T]                ws;
+    matrix[T,I]                ws;
     matrix[P+1,H]              betas; 
     
     vector<lower=0,upper=1>[H-1] vs;
@@ -110,10 +110,10 @@ model
     matrix[I,I] inv_Q;
     inv_Q = inverse_spd(rho*W + (1-rho)*eye_I);
     
-    ws[1:I,1] ~ multi_normal(mu_w_1, tau2*inv_Q);
+    ws[1,1:I] ~ multi_normal(mu_w_1, tau2*inv_Q);
     
     for (t in 2:T)
-        ws[1:I,t] ~ multi_normal(diag_matrix(xis)*ws[1:I,t-1], tau2*inv_Q);
+        ws[t,1:I] ~ multi_normal(ws[t-1,1:I]*diag_matrix(xis), tau2*inv_Q);
     
     for (h in 1:H)
         betas[1:P+1,h] ~ multi_normal(mu_0, Sigma_0);
@@ -123,7 +123,7 @@ model
         vector[H] log_probs;
         
         for (h in 1:H) 
-            log_probs[h] = log(omegas[h] + multi_normal_lpdf(y[T*(i-1)+1:i*T] | X[T*(i-1)+1:i*T, 1:P+1]*betas[1:P+1,h] + ws[i,1:T], sigma2*eye_T));
+            log_probs[h] = log(omegas[h] + multi_normal_lpdf(y[T*(i-1)+1:i*T] | X[T*(i-1)+1:i*T, 1:P+1]*betas[1:P+1,h] + ws[1:T,i], sigma2*eye_T));
         
         target += log_sum_exp(log_probs);
     }
@@ -138,7 +138,7 @@ generated quantities
         vector[H] log_probs;
         
         for (h in 1:H) 
-            log_probs[h] = log(omegas[h] + multi_normal_lpdf(y[T*(i-1)+1:i*T] | X[T*(i-1)+1:i*T, 1:P+1]*betas[1:P+1,h] + w[i,1:T], sigma2*eye_T));
+            log_probs[h] = log(omegas[h] + multi_normal_lpdf(y[T*(i-1)+1:i*T] | X[T*(i-1)+1:i*T, 1:P+1]*betas[1:P+1,h] + ws[1:T,i], sigma2*eye_T));
         
         s[i] = categorical_rng(softmax(log_probs));
     }
