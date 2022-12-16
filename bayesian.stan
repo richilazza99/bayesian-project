@@ -10,10 +10,10 @@ data
     matrix[I*T,P+1] X; // covariate matrix
     // syntax: y(i,t) = y[T*(i-1) + t]
     
-    matrix[I,I] W_raw;
+    matrix[I,I] W_raw; # proximity matrix
       
-    // beta
-    vector[P+1]     mu_0;
+    // hyperpar vector of regressors
+    vector[P+1]     mu_0; 
     matrix[P+1,P+1] Sigma_0;
     
     // w_1
@@ -63,18 +63,25 @@ parameters
     real<lower=0> tau2;
     real<lower=0> rho;
     
-
-    vector[I] xis;
+    
+    // autoregressive coefficients
+    vector[I]                  xis;
+    
+    // random effects
     matrix[T,I]                ws;
+    
+    // betas for the mixture of the dirichlet process
     matrix[P+1,H]              betas; 
     
+    // for the construction of the dirichlet process
     vector<lower=0,upper=1>[H-1] vs;
 }
 
 transformed parameters
-{
+{   // weights stick breaking construction
     simplex[H] omegas; 
     
+    // sbc stuff
     vector<lower=0, upper=1>[H-1] cumprod_one_mv;    
     cumprod_one_mv = exp(cumulative_sum(log1m(vs)));
     
@@ -90,7 +97,7 @@ model
     sigma2 ~ inv_gamma(a_sigma2,b_sigma2);
     tau2   ~ inv_gamma(a_tau2,b_tau2);
     rho    ~ beta(alpha_rho,beta_rho);
-    xis    ~ uniform(0,1);
+    xis    ~ uniform(0,1); //switch between beta in (-1,1) to uniform(0,1)
     vs     ~ beta(1,alpha);
 
     matrix[I,I] inv_Q;
@@ -116,7 +123,8 @@ model
 }
 
 generated quantities 
-{
+{   
+    // vector of cluster allocations
     vector[I] s;
     
     for (i in 1:I) 
