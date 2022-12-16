@@ -10,7 +10,7 @@ data
     matrix[I*T,P+1] X; // covariate matrix
     // syntax: y(i,t) = y[T*(i-1) + t]
     
-    matrix[I,I] W_raw; # proximity matrix
+    matrix[I,I] W_raw; // proximity matrix
       
     // hyperpar vector of regressors
     vector[P+1]     mu_0; 
@@ -34,6 +34,10 @@ data
     // rho
     real<lower=0> alpha_rho;
     real<lower=0> beta_rho;
+    
+    //xis
+    real<lower=0> a_xi;
+    real<lower=0> b_xi;
 }
 
 transformed data
@@ -58,14 +62,14 @@ transformed data
 
 parameters
 {
-    real<lower=0> alpha;
+    real<lower=1e-8> alpha;
     real<lower=0> sigma2;
     real<lower=0> tau2;
-    real<lower=0> rho;
+    real<lower=0,upper=1> rho;
     
     
-    // autoregressive coefficients
-    vector[I]                  xis;
+    // autoregressive coefficients still to reparametrize
+    vector<lower=0,upper=1>[I]    xis_constructors;
     
     // random effects
     matrix[T,I]                ws;
@@ -97,9 +101,13 @@ model
     sigma2 ~ inv_gamma(a_sigma2,b_sigma2);
     tau2   ~ inv_gamma(a_tau2,b_tau2);
     rho    ~ beta(alpha_rho,beta_rho);
-    xis    ~ uniform(0,1); //switch between beta in (-1,1) to uniform(0,1)
     vs     ~ beta(1,alpha);
-
+    vector[I] xis;
+    for (i in 1:I){
+        xis_constructors[i] ~ beta(a_xi,b_xi);
+        xis[i]=2*xis_constructors[i]-1;
+     }   
+     
     matrix[I,I] inv_Q;
     inv_Q = inverse_spd(rho*W + (1-rho)*eye_I);
     
@@ -111,14 +119,20 @@ model
     for (h in 1:H)
         betas[1:P+1,h] ~ multi_normal(mu_0, Sigma_0);
         
-    for (i in 1:I) 
-    {
+    for (i in 1:I) {
         vector[H] log_probs;
         
         for (h in 1:H) 
-            log_probs[h] = log(omegas[h] + multi_normal_lpdf(y[T*(i-1)+1:i*T] | X[T*(i-1)+1:i*T, 1:P+1]*betas[1:P+1,h] + ws[1:T,i], sigma2*eye_T));
+            log_probs[h] = log(omegas[h]) + multi_normal_lpdf(y[T*(i-1)+1:i*T] | X[T*(i-1)+1:i*T, 1:P+1]*betas[1:P+1,h] + ws[1:T,i], sigma2*eye_T);
         
         target += log_sum_exp(log_probs);
+    }
+    matrix[I,H] log_probs;
+    for (i in 1:I) 
+    {
+        for (h in 1:H) 
+            log_probs[i,h] = log(omegas[h]) + multi_normal_lpdf(y[T*(i-1)+1:i*T] | X[T*(i-1)+1:i*T, 1:P+1]*betas[1:P+1,h]  + ws[1:T,i]  , sigma2*eye_T);
+    
     }
 }
 
@@ -127,13 +141,15 @@ generated quantities
     // vector of cluster allocations
     vector[I] s;
     
+    matrix[I,H] log_probs;
     for (i in 1:I) 
     {
-        vector[H] log_probs;
-        
         for (h in 1:H) 
-            log_probs[h] = log(omegas[h] + multi_normal_lpdf(y[T*(i-1)+1:i*T] | X[T*(i-1)+1:i*T, 1:P+1]*betas[1:P+1,h]  + ws[1:T,i]  , sigma2*eye_T));
-        
-        s[i] = categorical_rng(softmax(log_probs));
+            log_probs[i,h] = log(omegas[h]) + multi_normal_lpdf(y[T*(i-1)+1:i*T] | X[T*(i-1)+1:i*T, 1:P+1]*betas[1:P+1,h]  + ws[1:T,i]  , sigma2*eye_T);
+    
     }
+    for (i in 1:I)
+        s[i] = categorical_rng(softmax(log_probs[i,1:H]'));
+
+    
 }
