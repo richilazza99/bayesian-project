@@ -64,7 +64,7 @@ transformed data
 
 parameters
 {
-    real<lower=1e-8> alpha;
+    real<lower=0> alpha;
     real<lower=0> sigma2;
     real<lower=0> tau2;
     real<lower=0,upper=1> rho;
@@ -118,8 +118,11 @@ model
     for (t in 2:T)
         ws[t,1:I] ~ multi_normal(ws[t-1,1:I]*diag_matrix(xis), tau2*inv_Q);
     
-    for (h in 1:H)
-        betas[1:P+1,h] ~ multi_normal(mu_0, Sigma_0);
+    for(i in 1:I)
+    {
+        for (h in 1:H)
+            betas[1:P+1,h] ~ multi_normal(mu_0, Sigma_0);
+    }
         
     for (i in 1:I) {
         vector[H] log_probs;
