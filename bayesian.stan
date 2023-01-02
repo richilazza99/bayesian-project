@@ -1,10 +1,10 @@
 
 data
 {
-    int<lower=1> I; // number of areal locations
-    int<lower=1> T; // number of time steps
-    int<lower=1> P; // number of covariates
-    int<lower=1> H; // truncation of stick breaking construction dp
+    int I; // number of areal locations
+    int T; // number of time steps
+    int P; // number of covariates
+    int H; // truncation of stick breaking construction dp
     
     vector[I*T]     y; // output values
     matrix[I*T,P+1] X; // covariate matrix
@@ -20,24 +20,24 @@ data
     vector[I] mu_w_1;
     
     // alpha
-    real<lower=0> a_alpha;
-    real<lower=0> b_alpha;
+    real a_alpha;
+    real b_alpha;
     
     // tau^2
-    real<lower=0> a_tau2;
-    real<lower=0> b_tau2;
+    real a_tau2;
+    real b_tau2;
     
     // sigma^2
-    real<lower=0> a_sigma2;
-    real<lower=0> b_sigma2;
+    real a_sigma2;
+    real b_sigma2;
     
     // rho
-    real<lower=0> alpha_rho;
-    real<lower=0> beta_rho;
+    real alpha_rho;
+    real beta_rho;
     
     //xis
-    real<lower=0> a_xi;
-    real<lower=0> b_xi;
+    real a_xi;
+    real b_xi;
 }
 
 transformed data
@@ -58,8 +58,6 @@ transformed data
         
     matrix[I,I] W;
     W = diag_matrix(W_raw*ones_I) - W_raw;
-    
-    
 }
 
 parameters
@@ -88,15 +86,12 @@ transformed parameters
     simplex[H] omegas; 
     
     // sbc stuff
-    vector<lower=0, upper=1>[H-1] cumprod_one_mv;    
+    vector[H-1] cumprod_one_mv;    
     cumprod_one_mv = exp(cumulative_sum(log1m(vs)));
     
     omegas[1] = vs[1];
     omegas[2:(H-1)] = vs[2:(H-1)] .* cumprod_one_mv[1:(H-2)];
     omegas[H] = cumprod_one_mv[H-1];
-    
-    vector<lower=-1,upper=1>[I] xis;
-    xis = 2 * xis_constructors - 1;
 
 }
 
@@ -107,8 +102,11 @@ model
     tau2   ~ inv_gamma(a_tau2,b_tau2);
     rho    ~ beta(alpha_rho,beta_rho);
     vs     ~ beta(1,alpha);
-    
-    xis_constructors ~ beta(a_xi,b_xi);
+    vector[I] xis;
+    for (i in 1:I){
+        xis_constructors[i] ~ beta(a_xi,b_xi);
+        xis[i]=2*xis_constructors[i]-1;
+     }   
      
     matrix[I,I] inv_Q;
     inv_Q = inverse_spd(rho*W + (1-rho)*eye_I);
@@ -118,19 +116,23 @@ model
     for (t in 2:T)
         ws[t,1:I] ~ multi_normal(ws[t-1,1:I]*diag_matrix(xis), tau2*inv_Q);
     
-    for(i in 1:I)
-    {
-        for (h in 1:H)
-            betas[1:P+1,h] ~ multi_normal(mu_0, Sigma_0);
-    }
+    for (h in 1:H)
+        betas[1:P+1,h] ~ multi_normal(mu_0, Sigma_0);
         
-    
+    for (i in 1:I) {
+        vector[H] log_probs;
+        
+        for (h in 1:H) 
+            log_probs[h] = log(omegas[h]) + multi_normal_lpdf(y[T*(i-1)+1:i*T] | X[T*(i-1)+1:i*T, 1:P+1]*betas[1:P+1,h] + ws[1:T,i], sigma2*eye_T);
+        
+        target += log_sum_exp(log_probs);
+    }
     matrix[I,H] log_probs;
     for (i in 1:I) 
     {
         for (h in 1:H) 
             log_probs[i,h] = log(omegas[h]) + multi_normal_lpdf(y[T*(i-1)+1:i*T] | X[T*(i-1)+1:i*T, 1:P+1]*betas[1:P+1,h]  + ws[1:T,i]  , sigma2*eye_T);
-            target += log_sum_exp(log_probs[i]);
+    
     }
 }
 
@@ -138,9 +140,6 @@ generated quantities
 {   
     // vector of cluster allocations
     vector[I] s;
-    
-    //matrix[I,I] inv_Q;
-    //inv_Q = inverse_spd(rho*W + (1-rho)*eye_I);
     
     matrix[I,H] log_probs;
     for (i in 1:I) 
