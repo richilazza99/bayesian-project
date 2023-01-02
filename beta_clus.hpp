@@ -33,7 +33,7 @@ static constexpr std::array<const char*, 84> locations_array__ =
  " (in '/home/anna-ubuntu/bayesian-project/beta_clus.stan', line 108, column 8 to column 58)",
  " (in '/home/anna-ubuntu/bayesian-project/beta_clus.stan', line 107, column 4 to line 109, column 5)",
  " (in '/home/anna-ubuntu/bayesian-project/beta_clus.stan', line 106, column 4 to line 109, column 5)",
- " (in '/home/anna-ubuntu/bayesian-project/beta_clus.stan', line 111, column 8 to column 24)",
+ " (in '/home/anna-ubuntu/bayesian-project/beta_clus.stan', line 111, column 8 to column 26)",
  " (in '/home/anna-ubuntu/bayesian-project/beta_clus.stan', line 113, column 8 to column 116)",
  " (in '/home/anna-ubuntu/bayesian-project/beta_clus.stan', line 110, column 18 to line 114, column 5)",
  " (in '/home/anna-ubuntu/bayesian-project/beta_clus.stan', line 110, column 4 to line 114, column 5)",
@@ -704,7 +704,8 @@ class beta_clus_model final : public model_base_crtp<beta_clus_model> {
         for (int i = 1; i <= I; ++i) {
           int clus_i = std::numeric_limits<int>::min();
           current_statement__ = 24;
-          clus_i = stan::model::rvalue(s, "s", stan::model::index_uni(i));
+          clus_i = (stan::model::rvalue(s, "s", stan::model::index_uni(i)) +
+                     1);
           current_statement__ = 25;
           lp_accum__.add(
             stan::math::multi_normal_lpdf<propto__>(

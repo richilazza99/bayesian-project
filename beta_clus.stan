@@ -108,7 +108,7 @@ model
         betas_clus[1:P+1,h] ~ multi_normal(mu_0, Sigma_0);
     }
     for (i in 1:I){
-        int clus_i=s[i];
+        int clus_i=s[i]+1;
         
         y[T*(i-1)+1:i*T] ~ multi_normal(X[T*(i-1)+1:i*T, 1:P+1]*betas_clus[1:P+1,clus_i] + ws[1:T,i], sigma2*eye_T);
     }    

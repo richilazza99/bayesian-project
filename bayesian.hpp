@@ -8,7 +8,7 @@ using namespace stan::math;
 
 
 stan::math::profile_map profiles__;
-static constexpr std::array<const char*, 121> locations_array__ = 
+static constexpr std::array<const char*, 111> locations_array__ = 
 {" (found before start of program)",
  " (in '/home/anna-ubuntu/bayesian-project/bayesian.stan', line 67, column 4 to column 24)",
  " (in '/home/anna-ubuntu/bayesian-project/bayesian.stan', line 68, column 4 to column 25)",
@@ -26,16 +26,14 @@ static constexpr std::array<const char*, 121> locations_array__ =
  " (in '/home/anna-ubuntu/bayesian-project/bayesian.stan', line 95, column 4 to column 61)",
  " (in '/home/anna-ubuntu/bayesian-project/bayesian.stan', line 96, column 4 to column 36)",
  " (in '/home/anna-ubuntu/bayesian-project/bayesian.stan', line 99, column 4 to column 35)",
- " (in '/home/anna-ubuntu/bayesian-project/bayesian.stan', line 148, column 4 to column 16)",
- " (in '/home/anna-ubuntu/bayesian-project/bayesian.stan', line 150, column 4 to column 22)",
- " (in '/home/anna-ubuntu/bayesian-project/bayesian.stan', line 151, column 4 to column 47)",
- " (in '/home/anna-ubuntu/bayesian-project/bayesian.stan', line 153, column 4 to column 26)",
- " (in '/home/anna-ubuntu/bayesian-project/bayesian.stan', line 157, column 12 to column 152)",
- " (in '/home/anna-ubuntu/bayesian-project/bayesian.stan', line 156, column 8 to line 157, column 152)",
- " (in '/home/anna-ubuntu/bayesian-project/bayesian.stan', line 155, column 4 to line 159, column 5)",
- " (in '/home/anna-ubuntu/bayesian-project/bayesian.stan', line 154, column 4 to line 159, column 5)",
- " (in '/home/anna-ubuntu/bayesian-project/bayesian.stan', line 161, column 8 to column 59)",
- " (in '/home/anna-ubuntu/bayesian-project/bayesian.stan', line 160, column 4 to line 161, column 59)",
+ " (in '/home/anna-ubuntu/bayesian-project/bayesian.stan', line 140, column 4 to column 16)",
+ " (in '/home/anna-ubuntu/bayesian-project/bayesian.stan', line 145, column 4 to column 26)",
+ " (in '/home/anna-ubuntu/bayesian-project/bayesian.stan', line 149, column 12 to column 152)",
+ " (in '/home/anna-ubuntu/bayesian-project/bayesian.stan', line 148, column 8 to line 149, column 152)",
+ " (in '/home/anna-ubuntu/bayesian-project/bayesian.stan', line 147, column 4 to line 151, column 5)",
+ " (in '/home/anna-ubuntu/bayesian-project/bayesian.stan', line 146, column 4 to line 151, column 5)",
+ " (in '/home/anna-ubuntu/bayesian-project/bayesian.stan', line 153, column 8 to column 59)",
+ " (in '/home/anna-ubuntu/bayesian-project/bayesian.stan', line 152, column 4 to line 153, column 59)",
  " (in '/home/anna-ubuntu/bayesian-project/bayesian.stan', line 105, column 4 to column 36)",
  " (in '/home/anna-ubuntu/bayesian-project/bayesian.stan', line 106, column 4 to column 42)",
  " (in '/home/anna-ubuntu/bayesian-project/bayesian.stan', line 107, column 4 to column 38)",
@@ -53,20 +51,14 @@ static constexpr std::array<const char*, 121> locations_array__ =
  " (in '/home/anna-ubuntu/bayesian-project/bayesian.stan', line 123, column 8 to line 124, column 57)",
  " (in '/home/anna-ubuntu/bayesian-project/bayesian.stan', line 122, column 4 to line 125, column 5)",
  " (in '/home/anna-ubuntu/bayesian-project/bayesian.stan', line 121, column 4 to line 125, column 5)",
- " (in '/home/anna-ubuntu/bayesian-project/bayesian.stan', line 128, column 15 to column 16)",
- " (in '/home/anna-ubuntu/bayesian-project/bayesian.stan', line 128, column 8 to column 28)",
- " (in '/home/anna-ubuntu/bayesian-project/bayesian.stan', line 131, column 12 to line 132, column 101)",
- " (in '/home/anna-ubuntu/bayesian-project/bayesian.stan', line 130, column 8 to line 132, column 101)",
- " (in '/home/anna-ubuntu/bayesian-project/bayesian.stan', line 134, column 8 to column 41)",
- " (in '/home/anna-ubuntu/bayesian-project/bayesian.stan', line 127, column 19 to line 135, column 5)",
- " (in '/home/anna-ubuntu/bayesian-project/bayesian.stan', line 127, column 4 to line 135, column 5)",
- " (in '/home/anna-ubuntu/bayesian-project/bayesian.stan', line 136, column 11 to column 12)",
- " (in '/home/anna-ubuntu/bayesian-project/bayesian.stan', line 136, column 13 to column 14)",
- " (in '/home/anna-ubuntu/bayesian-project/bayesian.stan', line 136, column 4 to column 26)",
- " (in '/home/anna-ubuntu/bayesian-project/bayesian.stan', line 140, column 12 to column 152)",
- " (in '/home/anna-ubuntu/bayesian-project/bayesian.stan', line 139, column 8 to line 140, column 152)",
- " (in '/home/anna-ubuntu/bayesian-project/bayesian.stan', line 138, column 4 to line 142, column 5)",
- " (in '/home/anna-ubuntu/bayesian-project/bayesian.stan', line 137, column 4 to line 142, column 5)",
+ " (in '/home/anna-ubuntu/bayesian-project/bayesian.stan', line 128, column 11 to column 12)",
+ " (in '/home/anna-ubuntu/bayesian-project/bayesian.stan', line 128, column 13 to column 14)",
+ " (in '/home/anna-ubuntu/bayesian-project/bayesian.stan', line 128, column 4 to column 26)",
+ " (in '/home/anna-ubuntu/bayesian-project/bayesian.stan', line 132, column 12 to column 152)",
+ " (in '/home/anna-ubuntu/bayesian-project/bayesian.stan', line 131, column 8 to line 132, column 152)",
+ " (in '/home/anna-ubuntu/bayesian-project/bayesian.stan', line 133, column 12 to column 48)",
+ " (in '/home/anna-ubuntu/bayesian-project/bayesian.stan', line 130, column 4 to line 134, column 5)",
+ " (in '/home/anna-ubuntu/bayesian-project/bayesian.stan', line 129, column 4 to line 134, column 5)",
  " (in '/home/anna-ubuntu/bayesian-project/bayesian.stan', line 4, column 4 to column 19)",
  " (in '/home/anna-ubuntu/bayesian-project/bayesian.stan', line 5, column 4 to column 19)",
  " (in '/home/anna-ubuntu/bayesian-project/bayesian.stan', line 6, column 4 to column 19)",
@@ -125,11 +117,9 @@ static constexpr std::array<const char*, 121> locations_array__ =
  " (in '/home/anna-ubuntu/bayesian-project/bayesian.stan', line 88, column 12 to column 13)",
  " (in '/home/anna-ubuntu/bayesian-project/bayesian.stan', line 91, column 29 to column 32)",
  " (in '/home/anna-ubuntu/bayesian-project/bayesian.stan', line 98, column 29 to column 30)",
- " (in '/home/anna-ubuntu/bayesian-project/bayesian.stan', line 148, column 11 to column 12)",
- " (in '/home/anna-ubuntu/bayesian-project/bayesian.stan', line 150, column 11 to column 12)",
- " (in '/home/anna-ubuntu/bayesian-project/bayesian.stan', line 150, column 13 to column 14)",
- " (in '/home/anna-ubuntu/bayesian-project/bayesian.stan', line 153, column 11 to column 12)",
- " (in '/home/anna-ubuntu/bayesian-project/bayesian.stan', line 153, column 13 to column 14)"};
+ " (in '/home/anna-ubuntu/bayesian-project/bayesian.stan', line 140, column 11 to column 12)",
+ " (in '/home/anna-ubuntu/bayesian-project/bayesian.stan', line 145, column 11 to column 12)",
+ " (in '/home/anna-ubuntu/bayesian-project/bayesian.stan', line 145, column 13 to column 14)"};
 
 
 
@@ -202,49 +192,49 @@ class bayesian_model final : public model_base_crtp<bayesian_model> {
     try {
       int pos__ = std::numeric_limits<int>::min();
       pos__ = 1;
-      current_statement__ = 58;
+      current_statement__ = 50;
       context__.validate_dims("data initialization","I","int",
            std::vector<size_t>{});
       I = std::numeric_limits<int>::min();
       
       
-      current_statement__ = 58;
+      current_statement__ = 50;
       I = context__.vals_i("I")[(1 - 1)];
-      current_statement__ = 58;
+      current_statement__ = 50;
       stan::math::check_greater_or_equal(function__, "I", I, 1);
-      current_statement__ = 59;
+      current_statement__ = 51;
       context__.validate_dims("data initialization","T","int",
            std::vector<size_t>{});
       T = std::numeric_limits<int>::min();
       
       
-      current_statement__ = 59;
+      current_statement__ = 51;
       T = context__.vals_i("T")[(1 - 1)];
-      current_statement__ = 59;
+      current_statement__ = 51;
       stan::math::check_greater_or_equal(function__, "T", T, 1);
-      current_statement__ = 60;
+      current_statement__ = 52;
       context__.validate_dims("data initialization","P","int",
            std::vector<size_t>{});
       P = std::numeric_limits<int>::min();
       
       
-      current_statement__ = 60;
+      current_statement__ = 52;
       P = context__.vals_i("P")[(1 - 1)];
-      current_statement__ = 60;
+      current_statement__ = 52;
       stan::math::check_greater_or_equal(function__, "P", P, 1);
-      current_statement__ = 61;
+      current_statement__ = 53;
       context__.validate_dims("data initialization","H","int",
            std::vector<size_t>{});
       H = std::numeric_limits<int>::min();
       
       
-      current_statement__ = 61;
+      current_statement__ = 53;
       H = context__.vals_i("H")[(1 - 1)];
-      current_statement__ = 61;
+      current_statement__ = 53;
       stan::math::check_greater_or_equal(function__, "H", H, 1);
-      current_statement__ = 62;
+      current_statement__ = 54;
       stan::math::validate_non_negative_index("y", "I * T", (I * T));
-      current_statement__ = 63;
+      current_statement__ = 55;
       context__.validate_dims("data initialization","y","double",
            std::vector<size_t>{static_cast<size_t>((I * T))});
       y_data__ = 
@@ -255,24 +245,24 @@ class bayesian_model final : public model_base_crtp<bayesian_model> {
       
       {
         std::vector<local_scalar_t__> y_flat__;
-        current_statement__ = 63;
+        current_statement__ = 55;
         y_flat__ = context__.vals_r("y");
-        current_statement__ = 63;
+        current_statement__ = 55;
         pos__ = 1;
-        current_statement__ = 63;
+        current_statement__ = 55;
         for (int sym1__ = 1; sym1__ <= (I * T); ++sym1__) {
-          current_statement__ = 63;
+          current_statement__ = 55;
           stan::model::assign(y, y_flat__[(pos__ - 1)],
             "assigning variable y", stan::model::index_uni(sym1__));
-          current_statement__ = 63;
+          current_statement__ = 55;
           pos__ = (pos__ + 1);
         }
       }
-      current_statement__ = 64;
+      current_statement__ = 56;
       stan::math::validate_non_negative_index("X", "I * T", (I * T));
-      current_statement__ = 65;
+      current_statement__ = 57;
       stan::math::validate_non_negative_index("X", "P + 1", (P + 1));
-      current_statement__ = 66;
+      current_statement__ = 58;
       context__.validate_dims("data initialization","X","double",
            std::vector<size_t>{static_cast<size_t>((I * T)),
             static_cast<size_t>((P + 1))});
@@ -284,28 +274,28 @@ class bayesian_model final : public model_base_crtp<bayesian_model> {
       
       {
         std::vector<local_scalar_t__> X_flat__;
-        current_statement__ = 66;
+        current_statement__ = 58;
         X_flat__ = context__.vals_r("X");
-        current_statement__ = 66;
+        current_statement__ = 58;
         pos__ = 1;
-        current_statement__ = 66;
+        current_statement__ = 58;
         for (int sym1__ = 1; sym1__ <= (P + 1); ++sym1__) {
-          current_statement__ = 66;
+          current_statement__ = 58;
           for (int sym2__ = 1; sym2__ <= (I * T); ++sym2__) {
-            current_statement__ = 66;
+            current_statement__ = 58;
             stan::model::assign(X, X_flat__[(pos__ - 1)],
               "assigning variable X", stan::model::index_uni(sym2__),
                                         stan::model::index_uni(sym1__));
-            current_statement__ = 66;
+            current_statement__ = 58;
             pos__ = (pos__ + 1);
           }
         }
       }
-      current_statement__ = 67;
+      current_statement__ = 59;
       stan::math::validate_non_negative_index("W_raw", "I", I);
-      current_statement__ = 68;
+      current_statement__ = 60;
       stan::math::validate_non_negative_index("W_raw", "I", I);
-      current_statement__ = 69;
+      current_statement__ = 61;
       context__.validate_dims("data initialization","W_raw","double",
            std::vector<size_t>{static_cast<size_t>(I),
             static_cast<size_t>(I)});
@@ -317,26 +307,26 @@ class bayesian_model final : public model_base_crtp<bayesian_model> {
       
       {
         std::vector<local_scalar_t__> W_raw_flat__;
-        current_statement__ = 69;
+        current_statement__ = 61;
         W_raw_flat__ = context__.vals_r("W_raw");
-        current_statement__ = 69;
+        current_statement__ = 61;
         pos__ = 1;
-        current_statement__ = 69;
+        current_statement__ = 61;
         for (int sym1__ = 1; sym1__ <= I; ++sym1__) {
-          current_statement__ = 69;
+          current_statement__ = 61;
           for (int sym2__ = 1; sym2__ <= I; ++sym2__) {
-            current_statement__ = 69;
+            current_statement__ = 61;
             stan::model::assign(W_raw, W_raw_flat__[(pos__ - 1)],
               "assigning variable W_raw", stan::model::index_uni(sym2__),
                                             stan::model::index_uni(sym1__));
-            current_statement__ = 69;
+            current_statement__ = 61;
             pos__ = (pos__ + 1);
           }
         }
       }
-      current_statement__ = 70;
+      current_statement__ = 62;
       stan::math::validate_non_negative_index("mu_0", "P + 1", (P + 1));
-      current_statement__ = 71;
+      current_statement__ = 63;
       context__.validate_dims("data initialization","mu_0","double",
            std::vector<size_t>{static_cast<size_t>((P + 1))});
       mu_0_data__ = 
@@ -347,24 +337,24 @@ class bayesian_model final : public model_base_crtp<bayesian_model> {
       
       {
         std::vector<local_scalar_t__> mu_0_flat__;
-        current_statement__ = 71;
+        current_statement__ = 63;
         mu_0_flat__ = context__.vals_r("mu_0");
-        current_statement__ = 71;
+        current_statement__ = 63;
         pos__ = 1;
-        current_statement__ = 71;
+        current_statement__ = 63;
         for (int sym1__ = 1; sym1__ <= (P + 1); ++sym1__) {
-          current_statement__ = 71;
+          current_statement__ = 63;
           stan::model::assign(mu_0, mu_0_flat__[(pos__ - 1)],
             "assigning variable mu_0", stan::model::index_uni(sym1__));
-          current_statement__ = 71;
+          current_statement__ = 63;
           pos__ = (pos__ + 1);
         }
       }
-      current_statement__ = 72;
+      current_statement__ = 64;
       stan::math::validate_non_negative_index("Sigma_0", "P + 1", (P + 1));
-      current_statement__ = 73;
+      current_statement__ = 65;
       stan::math::validate_non_negative_index("Sigma_0", "P + 1", (P + 1));
-      current_statement__ = 74;
+      current_statement__ = 66;
       context__.validate_dims("data initialization","Sigma_0","double",
            std::vector<size_t>{static_cast<size_t>((P + 1)),
             static_cast<size_t>((P + 1))});
@@ -376,26 +366,26 @@ class bayesian_model final : public model_base_crtp<bayesian_model> {
       
       {
         std::vector<local_scalar_t__> Sigma_0_flat__;
-        current_statement__ = 74;
+        current_statement__ = 66;
         Sigma_0_flat__ = context__.vals_r("Sigma_0");
-        current_statement__ = 74;
+        current_statement__ = 66;
         pos__ = 1;
-        current_statement__ = 74;
+        current_statement__ = 66;
         for (int sym1__ = 1; sym1__ <= (P + 1); ++sym1__) {
-          current_statement__ = 74;
+          current_statement__ = 66;
           for (int sym2__ = 1; sym2__ <= (P + 1); ++sym2__) {
-            current_statement__ = 74;
+            current_statement__ = 66;
             stan::model::assign(Sigma_0, Sigma_0_flat__[(pos__ - 1)],
               "assigning variable Sigma_0", stan::model::index_uni(sym2__),
                                               stan::model::index_uni(sym1__));
-            current_statement__ = 74;
+            current_statement__ = 66;
             pos__ = (pos__ + 1);
           }
         }
       }
-      current_statement__ = 75;
+      current_statement__ = 67;
       stan::math::validate_non_negative_index("mu_w_1", "I", I);
-      current_statement__ = 76;
+      current_statement__ = 68;
       context__.validate_dims("data initialization","mu_w_1","double",
            std::vector<size_t>{static_cast<size_t>(I)});
       mu_w_1_data__ = 
@@ -406,240 +396,236 @@ class bayesian_model final : public model_base_crtp<bayesian_model> {
       
       {
         std::vector<local_scalar_t__> mu_w_1_flat__;
-        current_statement__ = 76;
+        current_statement__ = 68;
         mu_w_1_flat__ = context__.vals_r("mu_w_1");
-        current_statement__ = 76;
+        current_statement__ = 68;
         pos__ = 1;
-        current_statement__ = 76;
+        current_statement__ = 68;
         for (int sym1__ = 1; sym1__ <= I; ++sym1__) {
-          current_statement__ = 76;
+          current_statement__ = 68;
           stan::model::assign(mu_w_1, mu_w_1_flat__[(pos__ - 1)],
             "assigning variable mu_w_1", stan::model::index_uni(sym1__));
-          current_statement__ = 76;
+          current_statement__ = 68;
           pos__ = (pos__ + 1);
         }
       }
-      current_statement__ = 77;
+      current_statement__ = 69;
       context__.validate_dims("data initialization","a_alpha","double",
            std::vector<size_t>{});
       a_alpha = std::numeric_limits<double>::quiet_NaN();
       
       
-      current_statement__ = 77;
+      current_statement__ = 69;
       a_alpha = context__.vals_r("a_alpha")[(1 - 1)];
-      current_statement__ = 77;
+      current_statement__ = 69;
       stan::math::check_greater_or_equal(function__, "a_alpha", a_alpha, 0);
-      current_statement__ = 78;
+      current_statement__ = 70;
       context__.validate_dims("data initialization","b_alpha","double",
            std::vector<size_t>{});
       b_alpha = std::numeric_limits<double>::quiet_NaN();
       
       
-      current_statement__ = 78;
+      current_statement__ = 70;
       b_alpha = context__.vals_r("b_alpha")[(1 - 1)];
-      current_statement__ = 78;
+      current_statement__ = 70;
       stan::math::check_greater_or_equal(function__, "b_alpha", b_alpha, 0);
-      current_statement__ = 79;
+      current_statement__ = 71;
       context__.validate_dims("data initialization","a_tau2","double",
            std::vector<size_t>{});
       a_tau2 = std::numeric_limits<double>::quiet_NaN();
       
       
-      current_statement__ = 79;
+      current_statement__ = 71;
       a_tau2 = context__.vals_r("a_tau2")[(1 - 1)];
-      current_statement__ = 79;
+      current_statement__ = 71;
       stan::math::check_greater_or_equal(function__, "a_tau2", a_tau2, 0);
-      current_statement__ = 80;
+      current_statement__ = 72;
       context__.validate_dims("data initialization","b_tau2","double",
            std::vector<size_t>{});
       b_tau2 = std::numeric_limits<double>::quiet_NaN();
       
       
-      current_statement__ = 80;
+      current_statement__ = 72;
       b_tau2 = context__.vals_r("b_tau2")[(1 - 1)];
-      current_statement__ = 80;
+      current_statement__ = 72;
       stan::math::check_greater_or_equal(function__, "b_tau2", b_tau2, 0);
-      current_statement__ = 81;
+      current_statement__ = 73;
       context__.validate_dims("data initialization","a_sigma2","double",
            std::vector<size_t>{});
       a_sigma2 = std::numeric_limits<double>::quiet_NaN();
       
       
-      current_statement__ = 81;
+      current_statement__ = 73;
       a_sigma2 = context__.vals_r("a_sigma2")[(1 - 1)];
-      current_statement__ = 81;
+      current_statement__ = 73;
       stan::math::check_greater_or_equal(function__, "a_sigma2", a_sigma2, 0);
-      current_statement__ = 82;
+      current_statement__ = 74;
       context__.validate_dims("data initialization","b_sigma2","double",
            std::vector<size_t>{});
       b_sigma2 = std::numeric_limits<double>::quiet_NaN();
       
       
-      current_statement__ = 82;
+      current_statement__ = 74;
       b_sigma2 = context__.vals_r("b_sigma2")[(1 - 1)];
-      current_statement__ = 82;
+      current_statement__ = 74;
       stan::math::check_greater_or_equal(function__, "b_sigma2", b_sigma2, 0);
-      current_statement__ = 83;
+      current_statement__ = 75;
       context__.validate_dims("data initialization","alpha_rho","double",
            std::vector<size_t>{});
       alpha_rho = std::numeric_limits<double>::quiet_NaN();
       
       
-      current_statement__ = 83;
+      current_statement__ = 75;
       alpha_rho = context__.vals_r("alpha_rho")[(1 - 1)];
-      current_statement__ = 83;
+      current_statement__ = 75;
       stan::math::check_greater_or_equal(function__, "alpha_rho", alpha_rho,
                                             0);
-      current_statement__ = 84;
+      current_statement__ = 76;
       context__.validate_dims("data initialization","beta_rho","double",
            std::vector<size_t>{});
       beta_rho = std::numeric_limits<double>::quiet_NaN();
       
       
-      current_statement__ = 84;
+      current_statement__ = 76;
       beta_rho = context__.vals_r("beta_rho")[(1 - 1)];
-      current_statement__ = 84;
+      current_statement__ = 76;
       stan::math::check_greater_or_equal(function__, "beta_rho", beta_rho, 0);
-      current_statement__ = 85;
+      current_statement__ = 77;
       context__.validate_dims("data initialization","a_xi","double",
            std::vector<size_t>{});
       a_xi = std::numeric_limits<double>::quiet_NaN();
       
       
-      current_statement__ = 85;
+      current_statement__ = 77;
       a_xi = context__.vals_r("a_xi")[(1 - 1)];
-      current_statement__ = 85;
+      current_statement__ = 77;
       stan::math::check_greater_or_equal(function__, "a_xi", a_xi, 0);
-      current_statement__ = 86;
+      current_statement__ = 78;
       context__.validate_dims("data initialization","b_xi","double",
            std::vector<size_t>{});
       b_xi = std::numeric_limits<double>::quiet_NaN();
       
       
-      current_statement__ = 86;
+      current_statement__ = 78;
       b_xi = context__.vals_r("b_xi")[(1 - 1)];
-      current_statement__ = 86;
+      current_statement__ = 78;
       stan::math::check_greater_or_equal(function__, "b_xi", b_xi, 0);
-      current_statement__ = 87;
+      current_statement__ = 79;
       stan::math::validate_non_negative_index("ones_T", "T", T);
-      current_statement__ = 88;
+      current_statement__ = 80;
       ones_T_data__ = 
         Eigen::Matrix<double, -1, 1>::Constant(T,
           std::numeric_limits<double>::quiet_NaN());
       new (&ones_T) Eigen::Map<Eigen::Matrix<double, -1, 1>>(ones_T_data__.data(), T);
         
       
-      current_statement__ = 90;
+      current_statement__ = 82;
       for (int t = 1; t <= T; ++t) {
-        current_statement__ = 89;
+        current_statement__ = 81;
         stan::model::assign(ones_T, 1,
           "assigning variable ones_T", stan::model::index_uni(t));
       }
-      current_statement__ = 91;
+      current_statement__ = 83;
       stan::math::validate_non_negative_index("eye_T", "T", T);
-      current_statement__ = 92;
+      current_statement__ = 84;
       stan::math::validate_non_negative_index("eye_T", "T", T);
-      current_statement__ = 93;
+      current_statement__ = 85;
       eye_T_data__ = 
         Eigen::Matrix<double, -1, -1>::Constant(T, T,
           std::numeric_limits<double>::quiet_NaN());
       new (&eye_T) Eigen::Map<Eigen::Matrix<double, -1, -1>>(eye_T_data__.data(), T, T);
         
       
-      current_statement__ = 94;
+      current_statement__ = 86;
       stan::model::assign(eye_T, stan::math::diag_matrix(ones_T),
         "assigning variable eye_T");
-      current_statement__ = 95;
+      current_statement__ = 87;
       stan::math::validate_non_negative_index("ones_I", "I", I);
-      current_statement__ = 96;
+      current_statement__ = 88;
       ones_I_data__ = 
         Eigen::Matrix<double, -1, 1>::Constant(I,
           std::numeric_limits<double>::quiet_NaN());
       new (&ones_I) Eigen::Map<Eigen::Matrix<double, -1, 1>>(ones_I_data__.data(), I);
         
       
-      current_statement__ = 98;
+      current_statement__ = 90;
       for (int i = 1; i <= I; ++i) {
-        current_statement__ = 97;
+        current_statement__ = 89;
         stan::model::assign(ones_I, 1,
           "assigning variable ones_I", stan::model::index_uni(i));
       }
-      current_statement__ = 99;
+      current_statement__ = 91;
       stan::math::validate_non_negative_index("eye_I", "I", I);
-      current_statement__ = 100;
+      current_statement__ = 92;
       stan::math::validate_non_negative_index("eye_I", "I", I);
-      current_statement__ = 101;
+      current_statement__ = 93;
       eye_I_data__ = 
         Eigen::Matrix<double, -1, -1>::Constant(I, I,
           std::numeric_limits<double>::quiet_NaN());
       new (&eye_I) Eigen::Map<Eigen::Matrix<double, -1, -1>>(eye_I_data__.data(), I, I);
         
       
-      current_statement__ = 102;
+      current_statement__ = 94;
       stan::model::assign(eye_I, stan::math::diag_matrix(ones_I),
         "assigning variable eye_I");
-      current_statement__ = 103;
+      current_statement__ = 95;
       stan::math::validate_non_negative_index("W", "I", I);
-      current_statement__ = 104;
+      current_statement__ = 96;
       stan::math::validate_non_negative_index("W", "I", I);
-      current_statement__ = 105;
+      current_statement__ = 97;
       W_data__ = 
         Eigen::Matrix<double, -1, -1>::Constant(I, I,
           std::numeric_limits<double>::quiet_NaN());
       new (&W) Eigen::Map<Eigen::Matrix<double, -1, -1>>(W_data__.data(), I, I);
         
       
-      current_statement__ = 106;
+      current_statement__ = 98;
       stan::model::assign(W,
         stan::math::subtract(
           stan::math::diag_matrix(stan::math::multiply(W_raw, ones_I)),
           W_raw), "assigning variable W");
-      current_statement__ = 107;
+      current_statement__ = 99;
       stan::math::validate_non_negative_index("xis_constructors", "I", I);
-      current_statement__ = 108;
+      current_statement__ = 100;
       stan::math::validate_non_negative_index("ws", "T", T);
-      current_statement__ = 109;
+      current_statement__ = 101;
       stan::math::validate_non_negative_index("ws", "I", I);
-      current_statement__ = 110;
+      current_statement__ = 102;
       betas_1dim__ = std::numeric_limits<int>::min();
       
       
-      current_statement__ = 110;
+      current_statement__ = 102;
       betas_1dim__ = (P + 1);
-      current_statement__ = 110;
+      current_statement__ = 102;
       stan::math::validate_non_negative_index("betas", "P + 1", betas_1dim__);
-      current_statement__ = 111;
+      current_statement__ = 103;
       stan::math::validate_non_negative_index("betas", "H", H);
-      current_statement__ = 112;
+      current_statement__ = 104;
       vs_1dim__ = std::numeric_limits<int>::min();
       
       
-      current_statement__ = 112;
+      current_statement__ = 104;
       vs_1dim__ = (H - 1);
-      current_statement__ = 112;
+      current_statement__ = 104;
       stan::math::validate_non_negative_index("vs", "H - 1", vs_1dim__);
-      current_statement__ = 113;
+      current_statement__ = 105;
       stan::math::validate_non_negative_index("omegas", "H", H);
-      current_statement__ = 114;
+      current_statement__ = 106;
       cumprod_one_mv_1dim__ = std::numeric_limits<int>::min();
       
       
-      current_statement__ = 114;
+      current_statement__ = 106;
       cumprod_one_mv_1dim__ = (H - 1);
-      current_statement__ = 114;
+      current_statement__ = 106;
       stan::math::validate_non_negative_index("cumprod_one_mv", "H - 1",
                                               cumprod_one_mv_1dim__);
-      current_statement__ = 115;
+      current_statement__ = 107;
       stan::math::validate_non_negative_index("xis", "I", I);
-      current_statement__ = 116;
+      current_statement__ = 108;
       stan::math::validate_non_negative_index("s", "I", I);
-      current_statement__ = 117;
-      stan::math::validate_non_negative_index("inv_Q", "I", I);
-      current_statement__ = 118;
-      stan::math::validate_non_negative_index("inv_Q", "I", I);
-      current_statement__ = 119;
+      current_statement__ = 109;
       stan::math::validate_non_negative_index("log_probs", "I", I);
-      current_statement__ = 120;
+      current_statement__ = 110;
       stan::math::validate_non_negative_index("log_probs", "H", H);
     } catch (const std::exception& e) {
       stan::lang::rethrow_located(e, locations_array__[current_statement__]);
@@ -751,45 +737,45 @@ class bayesian_model final : public model_base_crtp<bayesian_model> {
       current_statement__ = 11;
       stan::math::check_less_or_equal(function__, "xis", xis, 1);
       {
-        current_statement__ = 27;
+        current_statement__ = 25;
         lp_accum__.add(
           stan::math::gamma_lpdf<propto__>(alpha, a_alpha, b_alpha));
-        current_statement__ = 28;
+        current_statement__ = 26;
         lp_accum__.add(
           stan::math::inv_gamma_lpdf<propto__>(sigma2, a_sigma2, b_sigma2));
-        current_statement__ = 29;
+        current_statement__ = 27;
         lp_accum__.add(
           stan::math::inv_gamma_lpdf<propto__>(tau2, a_tau2, b_tau2));
-        current_statement__ = 30;
+        current_statement__ = 28;
         lp_accum__.add(
           stan::math::beta_lpdf<propto__>(rho, alpha_rho, beta_rho));
-        current_statement__ = 31;
+        current_statement__ = 29;
         lp_accum__.add(stan::math::beta_lpdf<propto__>(vs, 1, alpha));
-        current_statement__ = 32;
+        current_statement__ = 30;
         lp_accum__.add(
           stan::math::beta_lpdf<propto__>(xis_constructors, a_xi, b_xi));
-        current_statement__ = 33;
+        current_statement__ = 31;
         stan::math::validate_non_negative_index("inv_Q", "I", I);
-        current_statement__ = 34;
+        current_statement__ = 32;
         stan::math::validate_non_negative_index("inv_Q", "I", I);
         Eigen::Matrix<local_scalar_t__, -1, -1> inv_Q =
            Eigen::Matrix<local_scalar_t__, -1, -1>::Constant(I, I,
              DUMMY_VAR__);
-        current_statement__ = 36;
+        current_statement__ = 34;
         stan::model::assign(inv_Q,
           stan::math::inverse_spd(
             stan::math::add(stan::math::multiply(rho, W),
               stan::math::multiply((1 - rho), eye_I))),
           "assigning variable inv_Q");
-        current_statement__ = 37;
+        current_statement__ = 35;
         lp_accum__.add(
           stan::math::multi_normal_lpdf<propto__>(
             stan::model::rvalue(ws, "ws",
               stan::model::index_uni(1), stan::model::index_min_max(1, I)),
             mu_w_1, stan::math::multiply(tau2, inv_Q)));
-        current_statement__ = 39;
+        current_statement__ = 37;
         for (int t = 2; t <= T; ++t) {
-          current_statement__ = 38;
+          current_statement__ = 36;
           lp_accum__.add(
             stan::math::multi_normal_lpdf<propto__>(
               stan::model::rvalue(ws, "ws",
@@ -801,11 +787,11 @@ class bayesian_model final : public model_base_crtp<bayesian_model> {
                 stan::math::diag_matrix(xis)),
               stan::math::multiply(tau2, inv_Q)));
         }
-        current_statement__ = 43;
+        current_statement__ = 41;
         for (int i = 1; i <= I; ++i) {
-          current_statement__ = 41;
+          current_statement__ = 39;
           for (int h = 1; h <= H; ++h) {
-            current_statement__ = 40;
+            current_statement__ = 38;
             lp_accum__.add(
               stan::math::multi_normal_lpdf<propto__>(
                 stan::model::rvalue(betas, "betas",
@@ -813,51 +799,18 @@ class bayesian_model final : public model_base_crtp<bayesian_model> {
                     stan::model::index_uni(h)), mu_0, Sigma_0));
           }
         }
-        current_statement__ = 50;
-        for (int i = 1; i <= I; ++i) {
-          current_statement__ = 44;
-          stan::math::validate_non_negative_index("log_probs", "H", H);
-          Eigen::Matrix<local_scalar_t__, -1, 1> log_probs =
-             Eigen::Matrix<local_scalar_t__, -1, 1>::Constant(H, DUMMY_VAR__);
-          current_statement__ = 47;
-          for (int h = 1; h <= H; ++h) {
-            current_statement__ = 46;
-            stan::model::assign(log_probs,
-              (stan::math::log(
-                 stan::model::rvalue(omegas, "omegas",
-                   stan::model::index_uni(h))) +
-                stan::math::multi_normal_lpdf<false>(
-                  stan::model::rvalue(y, "y",
-                    stan::model::index_min_max(((T * (i - 1)) + 1), (i * T))),
-                  stan::math::add(
-                    stan::math::multiply(
-                      stan::model::rvalue(X, "X",
-                        stan::model::index_min_max(((T * (i - 1)) + 1), 
-                          (i * T)), stan::model::index_min_max(1, (P + 1))),
-                      stan::model::rvalue(betas, "betas",
-                        stan::model::index_min_max(1, (P + 1)),
-                          stan::model::index_uni(h))),
-                    stan::model::rvalue(ws, "ws",
-                      stan::model::index_min_max(1, T),
-                        stan::model::index_uni(i))),
-                  stan::math::multiply(sigma2, eye_T))),
-              "assigning variable log_probs", stan::model::index_uni(h));
-          }
-          current_statement__ = 48;
-          lp_accum__.add(stan::math::log_sum_exp(log_probs));
-        }
-        current_statement__ = 51;
+        current_statement__ = 42;
         stan::math::validate_non_negative_index("log_probs", "I", I);
-        current_statement__ = 52;
+        current_statement__ = 43;
         stan::math::validate_non_negative_index("log_probs", "H", H);
         Eigen::Matrix<local_scalar_t__, -1, -1> log_probs =
            Eigen::Matrix<local_scalar_t__, -1, -1>::Constant(I, H,
              DUMMY_VAR__);
-        current_statement__ = 57;
+        current_statement__ = 49;
         for (int i = 1; i <= I; ++i) {
-          current_statement__ = 55;
+          current_statement__ = 46;
           for (int h = 1; h <= H; ++h) {
-            current_statement__ = 54;
+            current_statement__ = 45;
             stan::model::assign(log_probs,
               (stan::math::log(
                  stan::model::rvalue(omegas, "omegas",
@@ -880,6 +833,11 @@ class bayesian_model final : public model_base_crtp<bayesian_model> {
               "assigning variable log_probs", stan::model::index_uni(i),
                                                 stan::model::index_uni(h));
           }
+          current_statement__ = 47;
+          lp_accum__.add(
+            stan::math::log_sum_exp(
+              stan::model::rvalue(log_probs, "log_probs",
+                stan::model::index_uni(i))));
         }
       }
     } catch (const std::exception& e) {
@@ -1025,23 +983,14 @@ class bayesian_model final : public model_base_crtp<bayesian_model> {
       Eigen::Matrix<double, -1, 1> s =
          Eigen::Matrix<double, -1, 1>::Constant(I,
            std::numeric_limits<double>::quiet_NaN());
-      Eigen::Matrix<double, -1, -1> inv_Q =
-         Eigen::Matrix<double, -1, -1>::Constant(I, I,
-           std::numeric_limits<double>::quiet_NaN());
-      current_statement__ = 19;
-      stan::model::assign(inv_Q,
-        stan::math::inverse_spd(
-          stan::math::add(stan::math::multiply(rho, W),
-            stan::math::multiply((1 - rho), eye_I))),
-        "assigning variable inv_Q");
       Eigen::Matrix<double, -1, -1> log_probs =
          Eigen::Matrix<double, -1, -1>::Constant(I, H,
            std::numeric_limits<double>::quiet_NaN());
-      current_statement__ = 24;
+      current_statement__ = 22;
       for (int i = 1; i <= I; ++i) {
-        current_statement__ = 22;
+        current_statement__ = 20;
         for (int h = 1; h <= H; ++h) {
-          current_statement__ = 21;
+          current_statement__ = 19;
           stan::model::assign(log_probs,
             (stan::math::log(
                stan::model::rvalue(omegas, "omegas",
@@ -1065,9 +1014,9 @@ class bayesian_model final : public model_base_crtp<bayesian_model> {
                                               stan::model::index_uni(h));
         }
       }
-      current_statement__ = 26;
+      current_statement__ = 24;
       for (int i = 1; i <= I; ++i) {
-        current_statement__ = 25;
+        current_statement__ = 23;
         stan::model::assign(s,
           stan::math::categorical_rng(
             stan::math::softmax(
@@ -1077,7 +1026,6 @@ class bayesian_model final : public model_base_crtp<bayesian_model> {
             base_rng__), "assigning variable s", stan::model::index_uni(i));
       }
       out__.write(s);
-      out__.write(inv_Q);
       out__.write(log_probs);
     } catch (const std::exception& e) {
       stan::lang::rethrow_located(e, locations_array__[current_statement__]);
@@ -1156,7 +1104,7 @@ class bayesian_model final : public model_base_crtp<bayesian_model> {
     
     names__ = std::vector<std::string>{"alpha", "sigma2", "tau2", "rho",
       "xis_constructors", "ws", "betas", "vs", "omegas", "cumprod_one_mv",
-      "xis", "s", "inv_Q", "log_probs"};
+      "xis", "s", "log_probs"};
     
     } // get_param_names() 
     
@@ -1173,7 +1121,6 @@ class bayesian_model final : public model_base_crtp<bayesian_model> {
       std::vector<size_t>{static_cast<size_t>(cumprod_one_mv_1dim__)},
       std::vector<size_t>{static_cast<size_t>(I)},
       std::vector<size_t>{static_cast<size_t>(I)},
-      std::vector<size_t>{static_cast<size_t>(I), static_cast<size_t>(I)},
       std::vector<size_t>{static_cast<size_t>(I), static_cast<size_t>(H)}};
     
     } // get_dims() 
@@ -1238,15 +1185,6 @@ class bayesian_model final : public model_base_crtp<bayesian_model> {
       for (int sym1__ = 1; sym1__ <= I; ++sym1__) {
         {
           param_names__.emplace_back(std::string() + "s" + '.' + std::to_string(sym1__));
-        } 
-      }
-      for (int sym1__ = 1; sym1__ <= I; ++sym1__) {
-        {
-          for (int sym2__ = 1; sym2__ <= I; ++sym2__) {
-            {
-              param_names__.emplace_back(std::string() + "inv_Q" + '.' + std::to_string(sym2__) + '.' + std::to_string(sym1__));
-            } 
-          }
         } 
       }
       for (int sym1__ = 1; sym1__ <= H; ++sym1__) {
@@ -1324,15 +1262,6 @@ class bayesian_model final : public model_base_crtp<bayesian_model> {
           param_names__.emplace_back(std::string() + "s" + '.' + std::to_string(sym1__));
         } 
       }
-      for (int sym1__ = 1; sym1__ <= I; ++sym1__) {
-        {
-          for (int sym2__ = 1; sym2__ <= I; ++sym2__) {
-            {
-              param_names__.emplace_back(std::string() + "inv_Q" + '.' + std::to_string(sym2__) + '.' + std::to_string(sym1__));
-            } 
-          }
-        } 
-      }
       for (int sym1__ = 1; sym1__ <= H; ++sym1__) {
         {
           for (int sym2__ = 1; sym2__ <= I; ++sym2__) {
@@ -1348,13 +1277,13 @@ class bayesian_model final : public model_base_crtp<bayesian_model> {
     
   inline std::string get_constrained_sizedtypes() const {
     
-    return std::string("[{\"name\":\"alpha\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"sigma2\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"tau2\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"rho\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"xis_constructors\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(I) + "},\"block\":\"parameters\"},{\"name\":\"ws\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(T) + ",\"cols\":" + std::to_string(I) + "},\"block\":\"parameters\"},{\"name\":\"betas\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(betas_1dim__) + ",\"cols\":" + std::to_string(H) + "},\"block\":\"parameters\"},{\"name\":\"vs\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(vs_1dim__) + "},\"block\":\"parameters\"},{\"name\":\"omegas\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(H) + "},\"block\":\"transformed_parameters\"},{\"name\":\"cumprod_one_mv\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(cumprod_one_mv_1dim__) + "},\"block\":\"transformed_parameters\"},{\"name\":\"xis\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(I) + "},\"block\":\"transformed_parameters\"},{\"name\":\"s\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(I) + "},\"block\":\"generated_quantities\"},{\"name\":\"inv_Q\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(I) + ",\"cols\":" + std::to_string(I) + "},\"block\":\"generated_quantities\"},{\"name\":\"log_probs\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(I) + ",\"cols\":" + std::to_string(H) + "},\"block\":\"generated_quantities\"}]");
+    return std::string("[{\"name\":\"alpha\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"sigma2\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"tau2\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"rho\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"xis_constructors\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(I) + "},\"block\":\"parameters\"},{\"name\":\"ws\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(T) + ",\"cols\":" + std::to_string(I) + "},\"block\":\"parameters\"},{\"name\":\"betas\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(betas_1dim__) + ",\"cols\":" + std::to_string(H) + "},\"block\":\"parameters\"},{\"name\":\"vs\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(vs_1dim__) + "},\"block\":\"parameters\"},{\"name\":\"omegas\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(H) + "},\"block\":\"transformed_parameters\"},{\"name\":\"cumprod_one_mv\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(cumprod_one_mv_1dim__) + "},\"block\":\"transformed_parameters\"},{\"name\":\"xis\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(I) + "},\"block\":\"transformed_parameters\"},{\"name\":\"s\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(I) + "},\"block\":\"generated_quantities\"},{\"name\":\"log_probs\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(I) + ",\"cols\":" + std::to_string(H) + "},\"block\":\"generated_quantities\"}]");
     
     } // get_constrained_sizedtypes() 
     
   inline std::string get_unconstrained_sizedtypes() const {
     
-    return std::string("[{\"name\":\"alpha\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"sigma2\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"tau2\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"rho\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"xis_constructors\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(I) + "},\"block\":\"parameters\"},{\"name\":\"ws\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(T) + ",\"cols\":" + std::to_string(I) + "},\"block\":\"parameters\"},{\"name\":\"betas\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(betas_1dim__) + ",\"cols\":" + std::to_string(H) + "},\"block\":\"parameters\"},{\"name\":\"vs\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(vs_1dim__) + "},\"block\":\"parameters\"},{\"name\":\"omegas\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string((H - 1)) + "},\"block\":\"transformed_parameters\"},{\"name\":\"cumprod_one_mv\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(cumprod_one_mv_1dim__) + "},\"block\":\"transformed_parameters\"},{\"name\":\"xis\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(I) + "},\"block\":\"transformed_parameters\"},{\"name\":\"s\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(I) + "},\"block\":\"generated_quantities\"},{\"name\":\"inv_Q\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(I) + ",\"cols\":" + std::to_string(I) + "},\"block\":\"generated_quantities\"},{\"name\":\"log_probs\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(I) + ",\"cols\":" + std::to_string(H) + "},\"block\":\"generated_quantities\"}]");
+    return std::string("[{\"name\":\"alpha\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"sigma2\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"tau2\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"rho\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"xis_constructors\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(I) + "},\"block\":\"parameters\"},{\"name\":\"ws\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(T) + ",\"cols\":" + std::to_string(I) + "},\"block\":\"parameters\"},{\"name\":\"betas\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(betas_1dim__) + ",\"cols\":" + std::to_string(H) + "},\"block\":\"parameters\"},{\"name\":\"vs\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(vs_1dim__) + "},\"block\":\"parameters\"},{\"name\":\"omegas\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string((H - 1)) + "},\"block\":\"transformed_parameters\"},{\"name\":\"cumprod_one_mv\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(cumprod_one_mv_1dim__) + "},\"block\":\"transformed_parameters\"},{\"name\":\"xis\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(I) + "},\"block\":\"transformed_parameters\"},{\"name\":\"s\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(I) + "},\"block\":\"generated_quantities\"},{\"name\":\"log_probs\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(I) + ",\"cols\":" + std::to_string(H) + "},\"block\":\"generated_quantities\"}]");
     
     } // get_unconstrained_sizedtypes() 
     
@@ -1372,7 +1301,7 @@ class bayesian_model final : public model_base_crtp<bayesian_model> {
       const size_t num_transformed = emit_transformed_parameters * 
   ((H + cumprod_one_mv_1dim__) + I);
       const size_t num_gen_quantities = emit_generated_quantities * 
-  ((I + (I * I)) + (I * H));
+  (I + (I * H));
       const size_t num_to_write = num_params__ + num_transformed +
         num_gen_quantities;
       std::vector<int> params_i;
@@ -1394,7 +1323,7 @@ class bayesian_model final : public model_base_crtp<bayesian_model> {
       const size_t num_transformed = emit_transformed_parameters * 
   ((H + cumprod_one_mv_1dim__) + I);
       const size_t num_gen_quantities = emit_generated_quantities * 
-  ((I + (I * I)) + (I * H));
+  (I + (I * H));
       const size_t num_to_write = num_params__ + num_transformed +
         num_gen_quantities;
       vars = std::vector<double>(num_to_write,

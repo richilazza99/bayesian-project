@@ -124,21 +124,13 @@ model
             betas[1:P+1,h] ~ multi_normal(mu_0, Sigma_0);
     }
         
-    for (i in 1:I) {
-        vector[H] log_probs;
-        
-        for (h in 1:H) 
-            log_probs[h] = log(omegas[h]) + multi_normal_lpdf(
-                y[T*(i-1)+1:i*T] | X[T*(i-1)+1:i*T, 1:P+1]*betas[1:P+1,h] + ws[1:T,i], sigma2*eye_T);
-        
-        target += log_sum_exp(log_probs);
-    }
+    
     matrix[I,H] log_probs;
     for (i in 1:I) 
     {
         for (h in 1:H) 
             log_probs[i,h] = log(omegas[h]) + multi_normal_lpdf(y[T*(i-1)+1:i*T] | X[T*(i-1)+1:i*T, 1:P+1]*betas[1:P+1,h]  + ws[1:T,i]  , sigma2*eye_T);
-    
+            target += log_sum_exp(log_probs[i]);
     }
 }
 
@@ -147,8 +139,8 @@ generated quantities
     // vector of cluster allocations
     vector[I] s;
     
-    matrix[I,I] inv_Q;
-    inv_Q = inverse_spd(rho*W + (1-rho)*eye_I);
+    //matrix[I,I] inv_Q;
+    //inv_Q = inverse_spd(rho*W + (1-rho)*eye_I);
     
     matrix[I,H] log_probs;
     for (i in 1:I) 
