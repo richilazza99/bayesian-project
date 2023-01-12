@@ -9,6 +9,8 @@ library(tidyverse)
 
 raw=read.csv('DCIS_FECONDITA1_09122022103658644.csv',header=T)
 
+load("QualitativeStudy.RData")
+
 # get italy region map
 italy_map <- map_data("italy")
 # probabilmente non ci sono tutte le province che abbiamo nel dataset :(
@@ -180,10 +182,128 @@ time.padre
 
 ######## spatial autocorrelation indices ############
 
+library(spdep)
+
+long.mean=italy_map %>% group_by(region) %>% summarise(long.media=mean(long))
+
+
+
+coordinates=rep(0,ncol=3,nrow=95)
+coordinates=data.frame(lat=lat.mean$lat.media,long=long.mean$long.media,region=lat.mean$region)
+
+
+coordinate.province=italy_map.padre %>% group_by(region) %>% summarise(padre.media=mean(Value))
+
+
+itadata=raster::getData(name = "countries", country = "ITA", level = 2)
+boundaries <- raster::getData(name = "GADM", country = "ITA", level = 2)
+boundaries2 <- raster::getData(name = "alt", country = "ITA", level = 2)
+
+
+list.provinces=boundaries$NAME_2
+our.provinces=coordinates$region
+intersect(our.provinces,list.provinces)
+to.delete=setdiff(list.provinces,our.provinces)
+
+indeces=rep(0,15)
+
+provinces=boundaries$NAME_2
+provinces=provinces[!provinces %in% to.delete]
+
+for (i in 1:15){
+  name=to.delete[i]
+  indeces[i]=which(boundaries$NAME_2==name)
+  
+}
+pippo=nb_q
+pippo[[6]]=NULL
+length(pippo)
+pippo[[14]]=NULL
+pippo[[15]]=NULL
+pippo[[28]]=NULL
+pippo[[83]]=NULL
+
+
+
+for (j in 1:95){
+  vector=pippo[[j]]
+  vector=vector[!vector %in% indeces]
+  pippo[[j]]=vector
+    
+}
+
+province.to.index=matrix()
+
+nb.matrix=pippo
+anna.matrix=matrix(0,nrow=95,ncol=110)
+for (i in 1:95){
+  vector=pippo[[i]]
+  for (j in 1:110){
+    
+    check=j %in% vector
+    if (check==TRUE){
+      anna.matrix[i,j]=1
+    }
+  }
+}
+diag(anna.matrix)=1
+
+nic=anna.matrix[,-indeces]
+dim(nic)
+rownames(nic)=colnames(nic)
+
+setdiff(list.provinces,our.provinces)
+our.provinces[14]="Bolzano"
+our.provinces[30]="Florence"
+our.provinces[32]="Forli' - Cesena"
+our.provinces[46]="Mantua"
+our.provinces[47]="Massa Carrara"
+our.provinces[56]="Padua"
+our.provinces[61]="Pesaro E Urbino"
+our.provinces[70]="Reggio Di Calabria"
+our.provinces[71]="Reggio Nell'Emilia"
+our.provinces[79]="Syracuse"
+
+intersect(our.provinces,list.provinces)
+
+
+
+library(tmap)
+library(raster)
+library(spdep)
+# Show data
+tm_shape(boundaries) +
+  tm_polygons()
+nb_q <- poly2nb(boundaries)
+nb_q.2 <- poly2nb(boundaries2)
+
+
+# Plot original results
+  coords <- coordinates(boundaries)
+
+  
+print(nb_q)
+  
+  
+  
+  
+# Show the results
+plot(boundaries)
+plot(nb_q, coordinates, col="grey", add = TRUE)
+# Sparse matrix
+  nb_B <- nb2listw(nb_q, style="B", zero.policy=TRUE)
+B <- as(nb_B, "symmetricMatrix")
+
+# Calculate shortest distance
+g1 <- graph.adjacency(B, mode="undirected")
+sp_mat <- shortest.paths(g1)
+
+nb <- poly2nb(s1, queen=TRUE)
 
 
 
 
+Moran.I(, ozone.dists.inv)
 
 
 
