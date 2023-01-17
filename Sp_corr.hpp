@@ -8,64 +8,59 @@ using namespace stan::math;
 
 
 stan::math::profile_map profiles__;
-static constexpr std::array<const char*, 117> locations_array__ = 
+static constexpr std::array<const char*, 100> locations_array__ = 
 {" (found before start of program)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 65, column 4 to column 24)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 66, column 4 to column 25)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 67, column 4 to column 23)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 68, column 4 to column 30)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 72, column 4 to column 51)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 75, column 4 to column 34)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 78, column 4 to column 37)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 81, column 4 to column 36)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 86, column 4 to column 22)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 89, column 4 to column 31)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 90, column 4 to column 52)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 92, column 4 to column 22)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 93, column 4 to column 61)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 94, column 4 to column 36)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 142, column 4 to column 16)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 144, column 4 to column 26)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 148, column 12 to column 152)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 147, column 8 to line 148, column 152)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 146, column 4 to line 150, column 5)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 145, column 4 to line 150, column 5)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 152, column 8 to column 59)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 151, column 4 to line 152, column 59)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 100, column 4 to column 36)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 101, column 4 to column 42)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 102, column 4 to column 38)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 103, column 4 to column 38)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 104, column 4 to column 27)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 105, column 11 to column 12)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 105, column 4 to column 18)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 107, column 8 to column 46)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 108, column 8 to column 39)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 106, column 18 to line 109, column 6)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 106, column 4 to line 109, column 6)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 111, column 11 to column 12)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 111, column 13 to column 14)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 111, column 4 to column 22)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 112, column 4 to column 47)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 114, column 4 to column 49)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 117, column 8 to column 75)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 116, column 4 to line 117, column 75)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 120, column 8 to column 53)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 119, column 4 to line 120, column 53)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 123, column 15 to column 16)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 123, column 8 to column 28)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 126, column 12 to column 147)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 125, column 8 to line 126, column 147)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 128, column 8 to column 41)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 122, column 19 to line 129, column 5)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 122, column 4 to line 129, column 5)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 130, column 11 to column 12)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 130, column 13 to column 14)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 130, column 4 to column 26)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 134, column 12 to column 152)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 133, column 8 to line 134, column 152)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 132, column 4 to line 136, column 5)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 131, column 4 to line 136, column 5)",
+ " (in '/home/daan/bayesian-project/Sp_corr.stan', line 57, column 4 to column 24)",
+ " (in '/home/daan/bayesian-project/Sp_corr.stan', line 58, column 4 to column 25)",
+ " (in '/home/daan/bayesian-project/Sp_corr.stan', line 59, column 4 to column 23)",
+ " (in '/home/daan/bayesian-project/Sp_corr.stan', line 62, column 4 to column 41)",
+ " (in '/home/daan/bayesian-project/Sp_corr.stan', line 65, column 4 to column 34)",
+ " (in '/home/daan/bayesian-project/Sp_corr.stan', line 68, column 4 to column 37)",
+ " (in '/home/daan/bayesian-project/Sp_corr.stan', line 71, column 4 to column 36)",
+ " (in '/home/daan/bayesian-project/Sp_corr.stan', line 76, column 4 to column 22)",
+ " (in '/home/daan/bayesian-project/Sp_corr.stan', line 79, column 4 to column 31)",
+ " (in '/home/daan/bayesian-project/Sp_corr.stan', line 80, column 4 to column 52)",
+ " (in '/home/daan/bayesian-project/Sp_corr.stan', line 82, column 4 to column 22)",
+ " (in '/home/daan/bayesian-project/Sp_corr.stan', line 83, column 4 to column 61)",
+ " (in '/home/daan/bayesian-project/Sp_corr.stan', line 84, column 4 to column 36)",
+ " (in '/home/daan/bayesian-project/Sp_corr.stan', line 131, column 4 to column 16)",
+ " (in '/home/daan/bayesian-project/Sp_corr.stan', line 133, column 4 to column 26)",
+ " (in '/home/daan/bayesian-project/Sp_corr.stan', line 137, column 12 to line 138, column 103)",
+ " (in '/home/daan/bayesian-project/Sp_corr.stan', line 136, column 8 to line 138, column 103)",
+ " (in '/home/daan/bayesian-project/Sp_corr.stan', line 135, column 4 to line 140, column 5)",
+ " (in '/home/daan/bayesian-project/Sp_corr.stan', line 134, column 4 to line 140, column 5)",
+ " (in '/home/daan/bayesian-project/Sp_corr.stan', line 142, column 8 to column 59)",
+ " (in '/home/daan/bayesian-project/Sp_corr.stan', line 141, column 4 to line 142, column 59)",
+ " (in '/home/daan/bayesian-project/Sp_corr.stan', line 90, column 4 to column 36)",
+ " (in '/home/daan/bayesian-project/Sp_corr.stan', line 91, column 4 to column 42)",
+ " (in '/home/daan/bayesian-project/Sp_corr.stan', line 92, column 4 to column 38)",
+ " (in '/home/daan/bayesian-project/Sp_corr.stan', line 93, column 4 to column 27)",
+ " (in '/home/daan/bayesian-project/Sp_corr.stan', line 94, column 4 to column 12)",
+ " (in '/home/daan/bayesian-project/Sp_corr.stan', line 95, column 4 to column 37)",
+ " (in '/home/daan/bayesian-project/Sp_corr.stan', line 96, column 4 to column 26)",
+ " (in '/home/daan/bayesian-project/Sp_corr.stan', line 98, column 11 to column 12)",
+ " (in '/home/daan/bayesian-project/Sp_corr.stan', line 98, column 13 to column 14)",
+ " (in '/home/daan/bayesian-project/Sp_corr.stan', line 98, column 4 to column 22)",
+ " (in '/home/daan/bayesian-project/Sp_corr.stan', line 99, column 4 to column 47)",
+ " (in '/home/daan/bayesian-project/Sp_corr.stan', line 101, column 4 to column 49)",
+ " (in '/home/daan/bayesian-project/Sp_corr.stan', line 104, column 8 to column 61)",
+ " (in '/home/daan/bayesian-project/Sp_corr.stan', line 103, column 4 to line 104, column 61)",
+ " (in '/home/daan/bayesian-project/Sp_corr.stan', line 107, column 8 to column 47)",
+ " (in '/home/daan/bayesian-project/Sp_corr.stan', line 106, column 4 to line 107, column 47)",
+ " (in '/home/daan/bayesian-project/Sp_corr.stan', line 110, column 15 to column 16)",
+ " (in '/home/daan/bayesian-project/Sp_corr.stan', line 110, column 8 to column 28)",
+ " (in '/home/daan/bayesian-project/Sp_corr.stan', line 113, column 12 to line 114, column 103)",
+ " (in '/home/daan/bayesian-project/Sp_corr.stan', line 112, column 8 to line 114, column 103)",
+ " (in '/home/daan/bayesian-project/Sp_corr.stan', line 116, column 8 to column 41)",
+ " (in '/home/daan/bayesian-project/Sp_corr.stan', line 109, column 19 to line 117, column 5)",
+ " (in '/home/daan/bayesian-project/Sp_corr.stan', line 109, column 4 to line 117, column 5)",
+ " (in '/home/daan/bayesian-project/Sp_corr.stan', line 118, column 11 to column 12)",
+ " (in '/home/daan/bayesian-project/Sp_corr.stan', line 118, column 13 to column 14)",
+ " (in '/home/daan/bayesian-project/Sp_corr.stan', line 118, column 4 to column 26)",
+ " (in '/home/daan/bayesian-project/Sp_corr.stan', line 122, column 12 to line 123, column 103)",
+ " (in '/home/daan/bayesian-project/Sp_corr.stan', line 121, column 8 to line 123, column 103)",
+ " (in '/home/daan/bayesian-project/Sp_corr.stan', line 120, column 4 to line 125, column 5)",
+ " (in '/home/daan/bayesian-project/Sp_corr.stan', line 119, column 4 to line 125, column 5)",
  " (in '/home/daan/bayesian-project/Sp_corr.stan', line 4, column 4 to column 10)",
  " (in '/home/daan/bayesian-project/Sp_corr.stan', line 5, column 4 to column 10)",
  " (in '/home/daan/bayesian-project/Sp_corr.stan', line 6, column 4 to column 10)",
@@ -79,10 +74,8 @@ static constexpr std::array<const char*, 117> locations_array__ =
  " (in '/home/daan/bayesian-project/Sp_corr.stan', line 13, column 13 to column 14)",
  " (in '/home/daan/bayesian-project/Sp_corr.stan', line 13, column 4 to column 22)",
  " (in '/home/daan/bayesian-project/Sp_corr.stan', line 16, column 11 to column 14)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 16, column 4 to column 25)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 17, column 11 to column 14)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 17, column 15 to column 18)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 17, column 4 to column 28)",
+ " (in '/home/daan/bayesian-project/Sp_corr.stan', line 16, column 4 to column 21)",
+ " (in '/home/daan/bayesian-project/Sp_corr.stan', line 17, column 4 to column 24)",
  " (in '/home/daan/bayesian-project/Sp_corr.stan', line 20, column 11 to column 12)",
  " (in '/home/daan/bayesian-project/Sp_corr.stan', line 20, column 4 to column 21)",
  " (in '/home/daan/bayesian-project/Sp_corr.stan', line 23, column 4 to column 17)",
@@ -91,41 +84,31 @@ static constexpr std::array<const char*, 117> locations_array__ =
  " (in '/home/daan/bayesian-project/Sp_corr.stan', line 28, column 4 to column 16)",
  " (in '/home/daan/bayesian-project/Sp_corr.stan', line 31, column 4 to column 18)",
  " (in '/home/daan/bayesian-project/Sp_corr.stan', line 32, column 4 to column 18)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 35, column 4 to column 19)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 36, column 4 to column 18)",
+ " (in '/home/daan/bayesian-project/Sp_corr.stan', line 35, column 4 to column 13)",
+ " (in '/home/daan/bayesian-project/Sp_corr.stan', line 38, column 4 to column 14)",
  " (in '/home/daan/bayesian-project/Sp_corr.stan', line 39, column 4 to column 14)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 40, column 4 to column 14)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 45, column 11 to column 12)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 45, column 4 to column 21)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 47, column 8 to column 22)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 46, column 4 to line 47, column 22)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 49, column 11 to column 12)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 49, column 13 to column 14)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 49, column 4 to column 22)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 50, column 4 to column 32)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 52, column 11 to column 12)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 52, column 4 to column 21)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 54, column 8 to column 22)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 53, column 4 to line 54, column 22)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 56, column 11 to column 12)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 56, column 13 to column 14)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 56, column 4 to column 22)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 57, column 4 to column 32)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 59, column 11 to column 12)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 59, column 13 to column 14)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 59, column 4 to column 18)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 60, column 4 to column 42)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 72, column 28 to column 29)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 75, column 11 to column 12)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 75, column 13 to column 14)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 78, column 11 to column 14)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 78, column 15 to column 16)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 81, column 28 to column 31)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 86, column 12 to column 13)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 89, column 11 to column 14)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 142, column 11 to column 12)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 144, column 11 to column 12)",
- " (in '/home/daan/bayesian-project/Sp_corr.stan', line 144, column 13 to column 14)"};
+ " (in '/home/daan/bayesian-project/Sp_corr.stan', line 44, column 11 to column 12)",
+ " (in '/home/daan/bayesian-project/Sp_corr.stan', line 44, column 4 to column 21)",
+ " (in '/home/daan/bayesian-project/Sp_corr.stan', line 46, column 8 to column 22)",
+ " (in '/home/daan/bayesian-project/Sp_corr.stan', line 45, column 4 to line 46, column 22)",
+ " (in '/home/daan/bayesian-project/Sp_corr.stan', line 48, column 11 to column 12)",
+ " (in '/home/daan/bayesian-project/Sp_corr.stan', line 48, column 13 to column 14)",
+ " (in '/home/daan/bayesian-project/Sp_corr.stan', line 48, column 4 to column 22)",
+ " (in '/home/daan/bayesian-project/Sp_corr.stan', line 49, column 4 to column 32)",
+ " (in '/home/daan/bayesian-project/Sp_corr.stan', line 51, column 11 to column 12)",
+ " (in '/home/daan/bayesian-project/Sp_corr.stan', line 51, column 13 to column 14)",
+ " (in '/home/daan/bayesian-project/Sp_corr.stan', line 51, column 4 to column 18)",
+ " (in '/home/daan/bayesian-project/Sp_corr.stan', line 52, column 4 to column 42)",
+ " (in '/home/daan/bayesian-project/Sp_corr.stan', line 65, column 11 to column 12)",
+ " (in '/home/daan/bayesian-project/Sp_corr.stan', line 65, column 13 to column 14)",
+ " (in '/home/daan/bayesian-project/Sp_corr.stan', line 68, column 11 to column 14)",
+ " (in '/home/daan/bayesian-project/Sp_corr.stan', line 68, column 15 to column 16)",
+ " (in '/home/daan/bayesian-project/Sp_corr.stan', line 71, column 28 to column 31)",
+ " (in '/home/daan/bayesian-project/Sp_corr.stan', line 76, column 12 to column 13)",
+ " (in '/home/daan/bayesian-project/Sp_corr.stan', line 79, column 11 to column 14)",
+ " (in '/home/daan/bayesian-project/Sp_corr.stan', line 131, column 11 to column 12)",
+ " (in '/home/daan/bayesian-project/Sp_corr.stan', line 133, column 11 to column 12)",
+ " (in '/home/daan/bayesian-project/Sp_corr.stan', line 133, column 13 to column 14)"};
 
 
 
@@ -141,7 +124,7 @@ class Sp_corr_model final : public model_base_crtp<Sp_corr_model> {
   Eigen::Matrix<double, -1, -1> X__;
   Eigen::Matrix<double, -1, -1> W_raw__;
   Eigen::Matrix<double, -1, 1> mu_0__;
-  Eigen::Matrix<double, -1, -1> Sigma_0__;
+  double sigma_0;
   Eigen::Matrix<double, -1, 1> mu_w_1__;
   double a_alpha;
   double b_alpha;
@@ -149,12 +132,9 @@ class Sp_corr_model final : public model_base_crtp<Sp_corr_model> {
   double b_tau2;
   double a_sigma2;
   double b_sigma2;
-  double alpha_rho;
-  double beta_rho;
+  double rho;
   double a_xi;
   double b_xi;
-  Eigen::Matrix<double, -1, 1> ones_T__;
-  Eigen::Matrix<double, -1, -1> eye_T__;
   Eigen::Matrix<double, -1, 1> ones_I__;
   Eigen::Matrix<double, -1, -1> eye_I__;
   Eigen::Matrix<double, -1, -1> W__;
@@ -165,10 +145,7 @@ class Sp_corr_model final : public model_base_crtp<Sp_corr_model> {
   Eigen::Map<Eigen::Matrix<double, -1, -1>> X{nullptr, 0, 0};
   Eigen::Map<Eigen::Matrix<double, -1, -1>> W_raw{nullptr, 0, 0};
   Eigen::Map<Eigen::Matrix<double, -1, 1>> mu_0{nullptr, 0};
-  Eigen::Map<Eigen::Matrix<double, -1, -1>> Sigma_0{nullptr, 0, 0};
   Eigen::Map<Eigen::Matrix<double, -1, 1>> mu_w_1{nullptr, 0};
-  Eigen::Map<Eigen::Matrix<double, -1, 1>> ones_T{nullptr, 0};
-  Eigen::Map<Eigen::Matrix<double, -1, -1>> eye_T{nullptr, 0, 0};
   Eigen::Map<Eigen::Matrix<double, -1, 1>> ones_I{nullptr, 0};
   Eigen::Map<Eigen::Matrix<double, -1, -1>> eye_I{nullptr, 0, 0};
   Eigen::Map<Eigen::Matrix<double, -1, -1>> W{nullptr, 0, 0};
@@ -198,41 +175,41 @@ class Sp_corr_model final : public model_base_crtp<Sp_corr_model> {
     try {
       int pos__ = std::numeric_limits<int>::min();
       pos__ = 1;
-      current_statement__ = 57;
+      current_statement__ = 52;
       context__.validate_dims("data initialization","I","int",
            std::vector<size_t>{});
       I = std::numeric_limits<int>::min();
       
       
-      current_statement__ = 57;
+      current_statement__ = 52;
       I = context__.vals_i("I")[(1 - 1)];
-      current_statement__ = 58;
+      current_statement__ = 53;
       context__.validate_dims("data initialization","T","int",
            std::vector<size_t>{});
       T = std::numeric_limits<int>::min();
       
       
-      current_statement__ = 58;
+      current_statement__ = 53;
       T = context__.vals_i("T")[(1 - 1)];
-      current_statement__ = 59;
+      current_statement__ = 54;
       context__.validate_dims("data initialization","P","int",
            std::vector<size_t>{});
       P = std::numeric_limits<int>::min();
       
       
-      current_statement__ = 59;
+      current_statement__ = 54;
       P = context__.vals_i("P")[(1 - 1)];
-      current_statement__ = 60;
+      current_statement__ = 55;
       context__.validate_dims("data initialization","H","int",
            std::vector<size_t>{});
       H = std::numeric_limits<int>::min();
       
       
-      current_statement__ = 60;
+      current_statement__ = 55;
       H = context__.vals_i("H")[(1 - 1)];
-      current_statement__ = 61;
+      current_statement__ = 56;
       stan::math::validate_non_negative_index("y", "I * T", (I * T));
-      current_statement__ = 62;
+      current_statement__ = 57;
       context__.validate_dims("data initialization","y","double",
            std::vector<size_t>{static_cast<size_t>((I * T))});
       y__ = 
@@ -242,24 +219,24 @@ class Sp_corr_model final : public model_base_crtp<Sp_corr_model> {
       
       {
         std::vector<local_scalar_t__> y_flat__;
-        current_statement__ = 62;
+        current_statement__ = 57;
         y_flat__ = context__.vals_r("y");
-        current_statement__ = 62;
+        current_statement__ = 57;
         pos__ = 1;
-        current_statement__ = 62;
+        current_statement__ = 57;
         for (int sym1__ = 1; sym1__ <= (I * T); ++sym1__) {
-          current_statement__ = 62;
+          current_statement__ = 57;
           stan::model::assign(y, y_flat__[(pos__ - 1)],
             "assigning variable y", stan::model::index_uni(sym1__));
-          current_statement__ = 62;
+          current_statement__ = 57;
           pos__ = (pos__ + 1);
         }
       }
-      current_statement__ = 63;
+      current_statement__ = 58;
       stan::math::validate_non_negative_index("X", "I * T", (I * T));
-      current_statement__ = 64;
+      current_statement__ = 59;
       stan::math::validate_non_negative_index("X", "P + 1", (P + 1));
-      current_statement__ = 65;
+      current_statement__ = 60;
       context__.validate_dims("data initialization","X","double",
            std::vector<size_t>{static_cast<size_t>((I * T)),
             static_cast<size_t>((P + 1))});
@@ -271,28 +248,28 @@ class Sp_corr_model final : public model_base_crtp<Sp_corr_model> {
       
       {
         std::vector<local_scalar_t__> X_flat__;
-        current_statement__ = 65;
+        current_statement__ = 60;
         X_flat__ = context__.vals_r("X");
-        current_statement__ = 65;
+        current_statement__ = 60;
         pos__ = 1;
-        current_statement__ = 65;
+        current_statement__ = 60;
         for (int sym1__ = 1; sym1__ <= (P + 1); ++sym1__) {
-          current_statement__ = 65;
+          current_statement__ = 60;
           for (int sym2__ = 1; sym2__ <= (I * T); ++sym2__) {
-            current_statement__ = 65;
+            current_statement__ = 60;
             stan::model::assign(X, X_flat__[(pos__ - 1)],
               "assigning variable X", stan::model::index_uni(sym2__),
                                         stan::model::index_uni(sym1__));
-            current_statement__ = 65;
+            current_statement__ = 60;
             pos__ = (pos__ + 1);
           }
         }
       }
-      current_statement__ = 66;
+      current_statement__ = 61;
       stan::math::validate_non_negative_index("W_raw", "I", I);
-      current_statement__ = 67;
+      current_statement__ = 62;
       stan::math::validate_non_negative_index("W_raw", "I", I);
-      current_statement__ = 68;
+      current_statement__ = 63;
       context__.validate_dims("data initialization","W_raw","double",
            std::vector<size_t>{static_cast<size_t>(I),
             static_cast<size_t>(I)});
@@ -304,26 +281,26 @@ class Sp_corr_model final : public model_base_crtp<Sp_corr_model> {
       
       {
         std::vector<local_scalar_t__> W_raw_flat__;
-        current_statement__ = 68;
+        current_statement__ = 63;
         W_raw_flat__ = context__.vals_r("W_raw");
-        current_statement__ = 68;
+        current_statement__ = 63;
         pos__ = 1;
-        current_statement__ = 68;
+        current_statement__ = 63;
         for (int sym1__ = 1; sym1__ <= I; ++sym1__) {
-          current_statement__ = 68;
+          current_statement__ = 63;
           for (int sym2__ = 1; sym2__ <= I; ++sym2__) {
-            current_statement__ = 68;
+            current_statement__ = 63;
             stan::model::assign(W_raw, W_raw_flat__[(pos__ - 1)],
               "assigning variable W_raw", stan::model::index_uni(sym2__),
                                             stan::model::index_uni(sym1__));
-            current_statement__ = 68;
+            current_statement__ = 63;
             pos__ = (pos__ + 1);
           }
         }
       }
-      current_statement__ = 69;
+      current_statement__ = 64;
       stan::math::validate_non_negative_index("mu_0", "P + 1", (P + 1));
-      current_statement__ = 70;
+      current_statement__ = 65;
       context__.validate_dims("data initialization","mu_0","double",
            std::vector<size_t>{static_cast<size_t>((P + 1))});
       mu_0__ = 
@@ -334,55 +311,30 @@ class Sp_corr_model final : public model_base_crtp<Sp_corr_model> {
       
       {
         std::vector<local_scalar_t__> mu_0_flat__;
-        current_statement__ = 70;
+        current_statement__ = 65;
         mu_0_flat__ = context__.vals_r("mu_0");
-        current_statement__ = 70;
+        current_statement__ = 65;
         pos__ = 1;
-        current_statement__ = 70;
+        current_statement__ = 65;
         for (int sym1__ = 1; sym1__ <= (P + 1); ++sym1__) {
-          current_statement__ = 70;
+          current_statement__ = 65;
           stan::model::assign(mu_0, mu_0_flat__[(pos__ - 1)],
             "assigning variable mu_0", stan::model::index_uni(sym1__));
-          current_statement__ = 70;
+          current_statement__ = 65;
           pos__ = (pos__ + 1);
         }
       }
-      current_statement__ = 71;
-      stan::math::validate_non_negative_index("Sigma_0", "P + 1", (P + 1));
-      current_statement__ = 72;
-      stan::math::validate_non_negative_index("Sigma_0", "P + 1", (P + 1));
-      current_statement__ = 73;
-      context__.validate_dims("data initialization","Sigma_0","double",
-           std::vector<size_t>{static_cast<size_t>((P + 1)),
-            static_cast<size_t>((P + 1))});
-      Sigma_0__ = 
-        Eigen::Matrix<double, -1, -1>::Constant((P + 1), (P + 1),
-          std::numeric_limits<double>::quiet_NaN());
-      new (&Sigma_0) Eigen::Map<Eigen::Matrix<double, -1, -1>>(Sigma_0__.data(), 
-        (P + 1), (P + 1));
+      current_statement__ = 66;
+      context__.validate_dims("data initialization","sigma_0","double",
+           std::vector<size_t>{});
+      sigma_0 = std::numeric_limits<double>::quiet_NaN();
       
-      {
-        std::vector<local_scalar_t__> Sigma_0_flat__;
-        current_statement__ = 73;
-        Sigma_0_flat__ = context__.vals_r("Sigma_0");
-        current_statement__ = 73;
-        pos__ = 1;
-        current_statement__ = 73;
-        for (int sym1__ = 1; sym1__ <= (P + 1); ++sym1__) {
-          current_statement__ = 73;
-          for (int sym2__ = 1; sym2__ <= (P + 1); ++sym2__) {
-            current_statement__ = 73;
-            stan::model::assign(Sigma_0, Sigma_0_flat__[(pos__ - 1)],
-              "assigning variable Sigma_0", stan::model::index_uni(sym2__),
-                                              stan::model::index_uni(sym1__));
-            current_statement__ = 73;
-            pos__ = (pos__ + 1);
-          }
-        }
-      }
-      current_statement__ = 74;
+      
+      current_statement__ = 66;
+      sigma_0 = context__.vals_r("sigma_0")[(1 - 1)];
+      current_statement__ = 67;
       stan::math::validate_non_negative_index("mu_w_1", "I", I);
-      current_statement__ = 75;
+      current_statement__ = 68;
       context__.validate_dims("data initialization","mu_w_1","double",
            std::vector<size_t>{static_cast<size_t>(I)});
       mu_w_1__ = 
@@ -393,218 +345,179 @@ class Sp_corr_model final : public model_base_crtp<Sp_corr_model> {
       
       {
         std::vector<local_scalar_t__> mu_w_1_flat__;
-        current_statement__ = 75;
+        current_statement__ = 68;
         mu_w_1_flat__ = context__.vals_r("mu_w_1");
-        current_statement__ = 75;
+        current_statement__ = 68;
         pos__ = 1;
-        current_statement__ = 75;
+        current_statement__ = 68;
         for (int sym1__ = 1; sym1__ <= I; ++sym1__) {
-          current_statement__ = 75;
+          current_statement__ = 68;
           stan::model::assign(mu_w_1, mu_w_1_flat__[(pos__ - 1)],
             "assigning variable mu_w_1", stan::model::index_uni(sym1__));
-          current_statement__ = 75;
+          current_statement__ = 68;
           pos__ = (pos__ + 1);
         }
       }
-      current_statement__ = 76;
+      current_statement__ = 69;
       context__.validate_dims("data initialization","a_alpha","double",
            std::vector<size_t>{});
       a_alpha = std::numeric_limits<double>::quiet_NaN();
       
       
-      current_statement__ = 76;
+      current_statement__ = 69;
       a_alpha = context__.vals_r("a_alpha")[(1 - 1)];
-      current_statement__ = 77;
+      current_statement__ = 70;
       context__.validate_dims("data initialization","b_alpha","double",
            std::vector<size_t>{});
       b_alpha = std::numeric_limits<double>::quiet_NaN();
       
       
-      current_statement__ = 77;
+      current_statement__ = 70;
       b_alpha = context__.vals_r("b_alpha")[(1 - 1)];
-      current_statement__ = 78;
+      current_statement__ = 71;
       context__.validate_dims("data initialization","a_tau2","double",
            std::vector<size_t>{});
       a_tau2 = std::numeric_limits<double>::quiet_NaN();
       
       
-      current_statement__ = 78;
+      current_statement__ = 71;
       a_tau2 = context__.vals_r("a_tau2")[(1 - 1)];
-      current_statement__ = 79;
+      current_statement__ = 72;
       context__.validate_dims("data initialization","b_tau2","double",
            std::vector<size_t>{});
       b_tau2 = std::numeric_limits<double>::quiet_NaN();
       
       
-      current_statement__ = 79;
+      current_statement__ = 72;
       b_tau2 = context__.vals_r("b_tau2")[(1 - 1)];
-      current_statement__ = 80;
+      current_statement__ = 73;
       context__.validate_dims("data initialization","a_sigma2","double",
            std::vector<size_t>{});
       a_sigma2 = std::numeric_limits<double>::quiet_NaN();
       
       
-      current_statement__ = 80;
+      current_statement__ = 73;
       a_sigma2 = context__.vals_r("a_sigma2")[(1 - 1)];
-      current_statement__ = 81;
+      current_statement__ = 74;
       context__.validate_dims("data initialization","b_sigma2","double",
            std::vector<size_t>{});
       b_sigma2 = std::numeric_limits<double>::quiet_NaN();
       
       
-      current_statement__ = 81;
+      current_statement__ = 74;
       b_sigma2 = context__.vals_r("b_sigma2")[(1 - 1)];
-      current_statement__ = 82;
-      context__.validate_dims("data initialization","alpha_rho","double",
+      current_statement__ = 75;
+      context__.validate_dims("data initialization","rho","double",
            std::vector<size_t>{});
-      alpha_rho = std::numeric_limits<double>::quiet_NaN();
+      rho = std::numeric_limits<double>::quiet_NaN();
       
       
-      current_statement__ = 82;
-      alpha_rho = context__.vals_r("alpha_rho")[(1 - 1)];
-      current_statement__ = 83;
-      context__.validate_dims("data initialization","beta_rho","double",
-           std::vector<size_t>{});
-      beta_rho = std::numeric_limits<double>::quiet_NaN();
-      
-      
-      current_statement__ = 83;
-      beta_rho = context__.vals_r("beta_rho")[(1 - 1)];
-      current_statement__ = 84;
+      current_statement__ = 75;
+      rho = context__.vals_r("rho")[(1 - 1)];
+      current_statement__ = 76;
       context__.validate_dims("data initialization","a_xi","double",
            std::vector<size_t>{});
       a_xi = std::numeric_limits<double>::quiet_NaN();
       
       
-      current_statement__ = 84;
+      current_statement__ = 76;
       a_xi = context__.vals_r("a_xi")[(1 - 1)];
-      current_statement__ = 85;
+      current_statement__ = 77;
       context__.validate_dims("data initialization","b_xi","double",
            std::vector<size_t>{});
       b_xi = std::numeric_limits<double>::quiet_NaN();
       
       
-      current_statement__ = 85;
+      current_statement__ = 77;
       b_xi = context__.vals_r("b_xi")[(1 - 1)];
-      current_statement__ = 86;
-      stan::math::validate_non_negative_index("ones_T", "T", T);
-      current_statement__ = 87;
-      ones_T__ = 
-        Eigen::Matrix<double, -1, 1>::Constant(T,
-          std::numeric_limits<double>::quiet_NaN());
-      new (&ones_T) Eigen::Map<Eigen::Matrix<double, -1, 1>>(ones_T__.data(), T);
-        
-      
-      current_statement__ = 89;
-      for (int t = 1; t <= T; ++t) {
-        current_statement__ = 88;
-        stan::model::assign(ones_T, 1,
-          "assigning variable ones_T", stan::model::index_uni(t));
-      }
-      current_statement__ = 90;
-      stan::math::validate_non_negative_index("eye_T", "T", T);
-      current_statement__ = 91;
-      stan::math::validate_non_negative_index("eye_T", "T", T);
-      current_statement__ = 92;
-      eye_T__ = 
-        Eigen::Matrix<double, -1, -1>::Constant(T, T,
-          std::numeric_limits<double>::quiet_NaN());
-      new (&eye_T) Eigen::Map<Eigen::Matrix<double, -1, -1>>(eye_T__.data(), T, T);
-        
-      
-      current_statement__ = 93;
-      stan::model::assign(eye_T, stan::math::diag_matrix(ones_T),
-        "assigning variable eye_T");
-      current_statement__ = 94;
+      current_statement__ = 78;
       stan::math::validate_non_negative_index("ones_I", "I", I);
-      current_statement__ = 95;
+      current_statement__ = 79;
       ones_I__ = 
         Eigen::Matrix<double, -1, 1>::Constant(I,
           std::numeric_limits<double>::quiet_NaN());
       new (&ones_I) Eigen::Map<Eigen::Matrix<double, -1, 1>>(ones_I__.data(), I);
         
       
-      current_statement__ = 97;
+      current_statement__ = 81;
       for (int i = 1; i <= I; ++i) {
-        current_statement__ = 96;
+        current_statement__ = 80;
         stan::model::assign(ones_I, 1,
           "assigning variable ones_I", stan::model::index_uni(i));
       }
-      current_statement__ = 98;
+      current_statement__ = 82;
       stan::math::validate_non_negative_index("eye_I", "I", I);
-      current_statement__ = 99;
+      current_statement__ = 83;
       stan::math::validate_non_negative_index("eye_I", "I", I);
-      current_statement__ = 100;
+      current_statement__ = 84;
       eye_I__ = 
         Eigen::Matrix<double, -1, -1>::Constant(I, I,
           std::numeric_limits<double>::quiet_NaN());
       new (&eye_I) Eigen::Map<Eigen::Matrix<double, -1, -1>>(eye_I__.data(), I, I);
         
       
-      current_statement__ = 101;
+      current_statement__ = 85;
       stan::model::assign(eye_I, stan::math::diag_matrix(ones_I),
         "assigning variable eye_I");
-      current_statement__ = 102;
+      current_statement__ = 86;
       stan::math::validate_non_negative_index("W", "I", I);
-      current_statement__ = 103;
+      current_statement__ = 87;
       stan::math::validate_non_negative_index("W", "I", I);
-      current_statement__ = 104;
+      current_statement__ = 88;
       W__ = 
         Eigen::Matrix<double, -1, -1>::Constant(I, I,
           std::numeric_limits<double>::quiet_NaN());
       new (&W) Eigen::Map<Eigen::Matrix<double, -1, -1>>(W__.data(), I, I);
       
-      current_statement__ = 105;
+      current_statement__ = 89;
       stan::model::assign(W,
         stan::math::subtract(
           stan::math::diag_matrix(stan::math::multiply(W_raw, ones_I)),
           W_raw), "assigning variable W");
-      current_statement__ = 106;
-      stan::math::validate_non_negative_index("xis_constructors", "I", I);
-      current_statement__ = 107;
+      current_statement__ = 90;
       stan::math::validate_non_negative_index("ws", "T", T);
-      current_statement__ = 108;
+      current_statement__ = 91;
       stan::math::validate_non_negative_index("ws", "I", I);
-      current_statement__ = 109;
+      current_statement__ = 92;
       betas_1dim__ = std::numeric_limits<int>::min();
       
       
-      current_statement__ = 109;
+      current_statement__ = 92;
       betas_1dim__ = (P + 1);
-      current_statement__ = 109;
+      current_statement__ = 92;
       stan::math::validate_non_negative_index("betas", "P + 1", betas_1dim__);
-      current_statement__ = 110;
+      current_statement__ = 93;
       stan::math::validate_non_negative_index("betas", "H", H);
-      current_statement__ = 111;
+      current_statement__ = 94;
       vs_1dim__ = std::numeric_limits<int>::min();
       
       
-      current_statement__ = 111;
+      current_statement__ = 94;
       vs_1dim__ = (H - 1);
-      current_statement__ = 111;
+      current_statement__ = 94;
       stan::math::validate_non_negative_index("vs", "H - 1", vs_1dim__);
-      current_statement__ = 112;
+      current_statement__ = 95;
       stan::math::validate_non_negative_index("omegas", "H", H);
-      current_statement__ = 113;
+      current_statement__ = 96;
       cumprod_one_mv_1dim__ = std::numeric_limits<int>::min();
       
       
-      current_statement__ = 113;
+      current_statement__ = 96;
       cumprod_one_mv_1dim__ = (H - 1);
-      current_statement__ = 113;
+      current_statement__ = 96;
       stan::math::validate_non_negative_index("cumprod_one_mv", "H - 1",
                                               cumprod_one_mv_1dim__);
-      current_statement__ = 114;
+      current_statement__ = 97;
       stan::math::validate_non_negative_index("s", "I", I);
-      current_statement__ = 115;
+      current_statement__ = 98;
       stan::math::validate_non_negative_index("log_probs", "I", I);
-      current_statement__ = 116;
+      current_statement__ = 99;
       stan::math::validate_non_negative_index("log_probs", "H", H);
     } catch (const std::exception& e) {
       stan::lang::rethrow_located(e, locations_array__[current_statement__]);
     }
-    num_params_r__ = 1 + 1 + 1 + 1 + I + (T * I) + (betas_1dim__ * H)
-       + vs_1dim__;
+    num_params_r__ = 1 + 1 + 1 + 1 + (T * I) + (betas_1dim__ * H) + vs_1dim__
+      ;
     
   }
   
@@ -638,30 +551,24 @@ class Sp_corr_model final : public model_base_crtp<Sp_corr_model> {
       current_statement__ = 3;
       tau2 = in__.template read_constrain_lb<local_scalar_t__, jacobian__>(0,
                lp__);
-      local_scalar_t__ rho = DUMMY_VAR__;
+      local_scalar_t__ xi_constructor = DUMMY_VAR__;
       current_statement__ = 4;
-      rho = in__.template read_constrain_lub<local_scalar_t__, jacobian__>(0,
-              1, lp__);
-      Eigen::Matrix<local_scalar_t__, -1, 1> xis_constructors =
-         Eigen::Matrix<local_scalar_t__, -1, 1>::Constant(I, DUMMY_VAR__);
-      current_statement__ = 5;
-      xis_constructors = in__.template read_constrain_lub<
-                           Eigen::Matrix<local_scalar_t__, -1, 1>, 
-                           jacobian__>(0, 1, lp__, I);
+      xi_constructor = in__.template read_constrain_lub<local_scalar_t__, 
+                         jacobian__>(0, 1, lp__);
       Eigen::Matrix<local_scalar_t__, -1, -1> ws =
          Eigen::Matrix<local_scalar_t__, -1, -1>::Constant(T, I, DUMMY_VAR__);
-      current_statement__ = 6;
+      current_statement__ = 5;
       ws = in__.template read<Eigen::Matrix<local_scalar_t__, -1, -1>>(T, I);
       Eigen::Matrix<local_scalar_t__, -1, -1> betas =
          Eigen::Matrix<local_scalar_t__, -1, -1>::Constant(betas_1dim__, H,
            DUMMY_VAR__);
-      current_statement__ = 7;
+      current_statement__ = 6;
       betas = in__.template read<Eigen::Matrix<local_scalar_t__, -1, -1>>(
                 betas_1dim__, H);
       Eigen::Matrix<local_scalar_t__, -1, 1> vs =
          Eigen::Matrix<local_scalar_t__, -1, 1>::Constant(vs_1dim__,
            DUMMY_VAR__);
-      current_statement__ = 8;
+      current_statement__ = 7;
       vs = in__.template read_constrain_lub<
              Eigen::Matrix<local_scalar_t__, -1, 1>, jacobian__>(0, 1, lp__,
              vs_1dim__);
@@ -670,15 +577,15 @@ class Sp_corr_model final : public model_base_crtp<Sp_corr_model> {
       Eigen::Matrix<local_scalar_t__, -1, 1> cumprod_one_mv =
          Eigen::Matrix<local_scalar_t__, -1, 1>::Constant(
            cumprod_one_mv_1dim__, DUMMY_VAR__);
-      current_statement__ = 11;
+      current_statement__ = 10;
       stan::model::assign(cumprod_one_mv,
         stan::math::exp(stan::math::cumulative_sum(stan::math::log1m(vs))),
         "assigning variable cumprod_one_mv");
-      current_statement__ = 12;
+      current_statement__ = 11;
       stan::model::assign(omegas,
         stan::model::rvalue(vs, "vs", stan::model::index_uni(1)),
         "assigning variable omegas", stan::model::index_uni(1));
-      current_statement__ = 13;
+      current_statement__ = 12;
       stan::model::assign(omegas,
         stan::math::elt_multiply(
           stan::model::rvalue(vs, "vs",
@@ -686,68 +593,53 @@ class Sp_corr_model final : public model_base_crtp<Sp_corr_model> {
           stan::model::rvalue(cumprod_one_mv, "cumprod_one_mv",
             stan::model::index_min_max(1, (H - 2)))),
         "assigning variable omegas", stan::model::index_min_max(2, (H - 1)));
-      current_statement__ = 14;
+      current_statement__ = 13;
       stan::model::assign(omegas,
         stan::model::rvalue(cumprod_one_mv, "cumprod_one_mv",
           stan::model::index_uni((H - 1))),
         "assigning variable omegas", stan::model::index_uni(H));
-      current_statement__ = 9;
+      current_statement__ = 8;
       stan::math::check_simplex(function__, "omegas", omegas);
       {
-        current_statement__ = 23;
+        current_statement__ = 22;
         lp_accum__.add(
           stan::math::gamma_lpdf<propto__>(alpha, a_alpha, b_alpha));
-        current_statement__ = 24;
+        current_statement__ = 23;
         lp_accum__.add(
           stan::math::inv_gamma_lpdf<propto__>(sigma2, a_sigma2, b_sigma2));
-        current_statement__ = 25;
+        current_statement__ = 24;
         lp_accum__.add(
           stan::math::inv_gamma_lpdf<propto__>(tau2, a_tau2, b_tau2));
-        current_statement__ = 26;
-        lp_accum__.add(
-          stan::math::beta_lpdf<propto__>(rho, alpha_rho, beta_rho));
-        current_statement__ = 27;
+        current_statement__ = 25;
         lp_accum__.add(stan::math::beta_lpdf<propto__>(vs, 1, alpha));
+        local_scalar_t__ xi = DUMMY_VAR__;
+        current_statement__ = 27;
+        lp_accum__.add(
+          stan::math::beta_lpdf<propto__>(xi_constructor, a_xi, b_xi));
         current_statement__ = 28;
-        stan::math::validate_non_negative_index("xis", "I", I);
-        Eigen::Matrix<local_scalar_t__, -1, 1> xis =
-           Eigen::Matrix<local_scalar_t__, -1, 1>::Constant(I, DUMMY_VAR__);
-        current_statement__ = 33;
-        for (int i = 1; i <= I; ++i) {
-          current_statement__ = 30;
-          lp_accum__.add(
-            stan::math::beta_lpdf<propto__>(
-              stan::model::rvalue(xis_constructors, "xis_constructors",
-                stan::model::index_uni(i)), a_xi, b_xi));
-          current_statement__ = 31;
-          stan::model::assign(xis,
-            ((2 *
-               stan::model::rvalue(xis_constructors, "xis_constructors",
-                 stan::model::index_uni(i))) - 1),
-            "assigning variable xis", stan::model::index_uni(i));
-        }
-        current_statement__ = 34;
+        xi = ((2 * xi_constructor) - 1);
+        current_statement__ = 29;
         stan::math::validate_non_negative_index("inv_Q", "I", I);
-        current_statement__ = 35;
+        current_statement__ = 30;
         stan::math::validate_non_negative_index("inv_Q", "I", I);
         Eigen::Matrix<local_scalar_t__, -1, -1> inv_Q =
            Eigen::Matrix<local_scalar_t__, -1, -1>::Constant(I, I,
              DUMMY_VAR__);
-        current_statement__ = 37;
+        current_statement__ = 32;
         stan::model::assign(inv_Q,
           stan::math::inverse_spd(
             stan::math::add(stan::math::multiply(rho, W),
               stan::math::multiply((1 - rho), eye_I))),
           "assigning variable inv_Q");
-        current_statement__ = 38;
+        current_statement__ = 33;
         lp_accum__.add(
           stan::math::multi_normal_lpdf<propto__>(
             stan::model::rvalue(ws, "ws",
               stan::model::index_uni(1), stan::model::index_min_max(1, I)),
             mu_w_1, stan::math::multiply(tau2, inv_Q)));
-        current_statement__ = 40;
+        current_statement__ = 35;
         for (int t = 2; t <= T; ++t) {
-          current_statement__ = 39;
+          current_statement__ = 34;
           lp_accum__.add(
             stan::math::multi_normal_lpdf<propto__>(
               stan::model::rvalue(ws, "ws",
@@ -755,33 +647,32 @@ class Sp_corr_model final : public model_base_crtp<Sp_corr_model> {
               stan::math::multiply(
                 stan::model::rvalue(ws, "ws",
                   stan::model::index_uni((t - 1)),
-                    stan::model::index_min_max(1, I)),
-                stan::math::diag_matrix(xis)),
+                    stan::model::index_min_max(1, I)), xi),
               stan::math::multiply(tau2, inv_Q)));
         }
-        current_statement__ = 42;
+        current_statement__ = 37;
         for (int h = 1; h <= H; ++h) {
-          current_statement__ = 41;
+          current_statement__ = 36;
           lp_accum__.add(
-            stan::math::multi_normal_lpdf<propto__>(
+            stan::math::normal_lpdf<propto__>(
               stan::model::rvalue(betas, "betas",
                 stan::model::index_min_max(1, (P + 1)),
-                  stan::model::index_uni(h)), mu_0, Sigma_0));
+                  stan::model::index_uni(h)), mu_0, sigma_0));
         }
-        current_statement__ = 49;
+        current_statement__ = 44;
         for (int i = 1; i <= I; ++i) {
-          current_statement__ = 43;
+          current_statement__ = 38;
           stan::math::validate_non_negative_index("log_probs", "H", H);
           Eigen::Matrix<local_scalar_t__, -1, 1> log_probs =
              Eigen::Matrix<local_scalar_t__, -1, 1>::Constant(H, DUMMY_VAR__);
-          current_statement__ = 46;
+          current_statement__ = 41;
           for (int h = 1; h <= H; ++h) {
-            current_statement__ = 45;
+            current_statement__ = 40;
             stan::model::assign(log_probs,
               (stan::math::log(
                  stan::model::rvalue(omegas, "omegas",
                    stan::model::index_uni(h))) +
-                stan::math::multi_normal_lpdf<false>(
+                stan::math::normal_lpdf<false>(
                   stan::model::rvalue(y, "y",
                     stan::model::index_min_max(((T * (i - 1)) + 1), (i * T))),
                   stan::math::add(
@@ -794,30 +685,29 @@ class Sp_corr_model final : public model_base_crtp<Sp_corr_model> {
                           stan::model::index_uni(h))),
                     stan::model::rvalue(ws, "ws",
                       stan::model::index_min_max(1, T),
-                        stan::model::index_uni(i))),
-                  stan::math::multiply(sigma2, eye_T))),
+                        stan::model::index_uni(i))), sigma2)),
               "assigning variable log_probs", stan::model::index_uni(h));
           }
-          current_statement__ = 47;
+          current_statement__ = 42;
           lp_accum__.add(stan::math::log_sum_exp(log_probs));
         }
-        current_statement__ = 50;
+        current_statement__ = 45;
         stan::math::validate_non_negative_index("log_probs", "I", I);
-        current_statement__ = 51;
+        current_statement__ = 46;
         stan::math::validate_non_negative_index("log_probs", "H", H);
         Eigen::Matrix<local_scalar_t__, -1, -1> log_probs =
            Eigen::Matrix<local_scalar_t__, -1, -1>::Constant(I, H,
              DUMMY_VAR__);
-        current_statement__ = 56;
+        current_statement__ = 51;
         for (int i = 1; i <= I; ++i) {
-          current_statement__ = 54;
+          current_statement__ = 49;
           for (int h = 1; h <= H; ++h) {
-            current_statement__ = 53;
+            current_statement__ = 48;
             stan::model::assign(log_probs,
               (stan::math::log(
                  stan::model::rvalue(omegas, "omegas",
                    stan::model::index_uni(h))) +
-                stan::math::multi_normal_lpdf<false>(
+                stan::math::normal_lpdf<false>(
                   stan::model::rvalue(y, "y",
                     stan::model::index_min_max(((T * (i - 1)) + 1), (i * T))),
                   stan::math::add(
@@ -830,8 +720,7 @@ class Sp_corr_model final : public model_base_crtp<Sp_corr_model> {
                           stan::model::index_uni(h))),
                     stan::model::rvalue(ws, "ws",
                       stan::model::index_min_max(1, T),
-                        stan::model::index_uni(i))),
-                  stan::math::multiply(sigma2, eye_T))),
+                        stan::model::index_uni(i))), sigma2)),
               "assigning variable log_probs", stan::model::index_uni(i),
                                                 stan::model::index_uni(h));
           }
@@ -881,32 +770,25 @@ class Sp_corr_model final : public model_base_crtp<Sp_corr_model> {
       current_statement__ = 3;
       tau2 = in__.template read_constrain_lb<local_scalar_t__, jacobian__>(0,
                lp__);
-      double rho = std::numeric_limits<double>::quiet_NaN();
+      double xi_constructor = std::numeric_limits<double>::quiet_NaN();
       current_statement__ = 4;
-      rho = in__.template read_constrain_lub<local_scalar_t__, jacobian__>(0,
-              1, lp__);
-      Eigen::Matrix<double, -1, 1> xis_constructors =
-         Eigen::Matrix<double, -1, 1>::Constant(I,
-           std::numeric_limits<double>::quiet_NaN());
-      current_statement__ = 5;
-      xis_constructors = in__.template read_constrain_lub<
-                           Eigen::Matrix<local_scalar_t__, -1, 1>, 
-                           jacobian__>(0, 1, lp__, I);
+      xi_constructor = in__.template read_constrain_lub<local_scalar_t__, 
+                         jacobian__>(0, 1, lp__);
       Eigen::Matrix<double, -1, -1> ws =
          Eigen::Matrix<double, -1, -1>::Constant(T, I,
            std::numeric_limits<double>::quiet_NaN());
-      current_statement__ = 6;
+      current_statement__ = 5;
       ws = in__.template read<Eigen::Matrix<local_scalar_t__, -1, -1>>(T, I);
       Eigen::Matrix<double, -1, -1> betas =
          Eigen::Matrix<double, -1, -1>::Constant(betas_1dim__, H,
            std::numeric_limits<double>::quiet_NaN());
-      current_statement__ = 7;
+      current_statement__ = 6;
       betas = in__.template read<Eigen::Matrix<local_scalar_t__, -1, -1>>(
                 betas_1dim__, H);
       Eigen::Matrix<double, -1, 1> vs =
          Eigen::Matrix<double, -1, 1>::Constant(vs_1dim__,
            std::numeric_limits<double>::quiet_NaN());
-      current_statement__ = 8;
+      current_statement__ = 7;
       vs = in__.template read_constrain_lub<
              Eigen::Matrix<local_scalar_t__, -1, 1>, jacobian__>(0, 1, lp__,
              vs_1dim__);
@@ -919,8 +801,7 @@ class Sp_corr_model final : public model_base_crtp<Sp_corr_model> {
       out__.write(alpha);
       out__.write(sigma2);
       out__.write(tau2);
-      out__.write(rho);
-      out__.write(xis_constructors);
+      out__.write(xi_constructor);
       out__.write(ws);
       out__.write(betas);
       out__.write(vs);
@@ -929,15 +810,15 @@ class Sp_corr_model final : public model_base_crtp<Sp_corr_model> {
             emit_generated_quantities__)))) {
         return ;
       } 
-      current_statement__ = 11;
+      current_statement__ = 10;
       stan::model::assign(cumprod_one_mv,
         stan::math::exp(stan::math::cumulative_sum(stan::math::log1m(vs))),
         "assigning variable cumprod_one_mv");
-      current_statement__ = 12;
+      current_statement__ = 11;
       stan::model::assign(omegas,
         stan::model::rvalue(vs, "vs", stan::model::index_uni(1)),
         "assigning variable omegas", stan::model::index_uni(1));
-      current_statement__ = 13;
+      current_statement__ = 12;
       stan::model::assign(omegas,
         stan::math::elt_multiply(
           stan::model::rvalue(vs, "vs",
@@ -945,12 +826,12 @@ class Sp_corr_model final : public model_base_crtp<Sp_corr_model> {
           stan::model::rvalue(cumprod_one_mv, "cumprod_one_mv",
             stan::model::index_min_max(1, (H - 2)))),
         "assigning variable omegas", stan::model::index_min_max(2, (H - 1)));
-      current_statement__ = 14;
+      current_statement__ = 13;
       stan::model::assign(omegas,
         stan::model::rvalue(cumprod_one_mv, "cumprod_one_mv",
           stan::model::index_uni((H - 1))),
         "assigning variable omegas", stan::model::index_uni(H));
-      current_statement__ = 9;
+      current_statement__ = 8;
       stan::math::check_simplex(function__, "omegas", omegas);
       if (emit_transformed_parameters__) {
         out__.write(omegas);
@@ -965,16 +846,16 @@ class Sp_corr_model final : public model_base_crtp<Sp_corr_model> {
       Eigen::Matrix<double, -1, -1> log_probs =
          Eigen::Matrix<double, -1, -1>::Constant(I, H,
            std::numeric_limits<double>::quiet_NaN());
-      current_statement__ = 20;
+      current_statement__ = 19;
       for (int i = 1; i <= I; ++i) {
-        current_statement__ = 18;
+        current_statement__ = 17;
         for (int h = 1; h <= H; ++h) {
-          current_statement__ = 17;
+          current_statement__ = 16;
           stan::model::assign(log_probs,
             (stan::math::log(
                stan::model::rvalue(omegas, "omegas",
                  stan::model::index_uni(h))) +
-              stan::math::multi_normal_lpdf<false>(
+              stan::math::normal_lpdf<false>(
                 stan::model::rvalue(y, "y",
                   stan::model::index_min_max(((T * (i - 1)) + 1), (i * T))),
                 stan::math::add(
@@ -987,15 +868,14 @@ class Sp_corr_model final : public model_base_crtp<Sp_corr_model> {
                         stan::model::index_uni(h))),
                   stan::model::rvalue(ws, "ws",
                     stan::model::index_min_max(1, T),
-                      stan::model::index_uni(i))),
-                stan::math::multiply(sigma2, eye_T))),
+                      stan::model::index_uni(i))), sigma2)),
             "assigning variable log_probs", stan::model::index_uni(i),
                                               stan::model::index_uni(h));
         }
       }
-      current_statement__ = 22;
+      current_statement__ = 21;
       for (int i = 1; i <= I; ++i) {
-        current_statement__ = 21;
+        current_statement__ = 20;
         stan::model::assign(s,
           stan::math::categorical_rng(
             stan::math::softmax(
@@ -1035,16 +915,9 @@ class Sp_corr_model final : public model_base_crtp<Sp_corr_model> {
       local_scalar_t__ tau2 = DUMMY_VAR__;
       tau2 = in__.read<local_scalar_t__>();
       out__.write_free_lb(0, tau2);
-      local_scalar_t__ rho = DUMMY_VAR__;
-      rho = in__.read<local_scalar_t__>();
-      out__.write_free_lub(0, 1, rho);
-      Eigen::Matrix<local_scalar_t__, -1, 1> xis_constructors =
-         Eigen::Matrix<local_scalar_t__, -1, 1>::Constant(I, DUMMY_VAR__);
-      for (int sym1__ = 1; sym1__ <= I; ++sym1__) {
-        stan::model::assign(xis_constructors, in__.read<local_scalar_t__>(),
-          "assigning variable xis_constructors", stan::model::index_uni(sym1__));
-      }
-      out__.write_free_lub(0, 1, xis_constructors);
+      local_scalar_t__ xi_constructor = DUMMY_VAR__;
+      xi_constructor = in__.read<local_scalar_t__>();
+      out__.write_free_lub(0, 1, xi_constructor);
       Eigen::Matrix<local_scalar_t__, -1, -1> ws =
          Eigen::Matrix<local_scalar_t__, -1, -1>::Constant(T, I, DUMMY_VAR__);
       for (int sym1__ = 1; sym1__ <= I; ++sym1__) {
@@ -1081,9 +954,9 @@ class Sp_corr_model final : public model_base_crtp<Sp_corr_model> {
     
   inline void get_param_names(std::vector<std::string>& names__) const {
     
-    names__ = std::vector<std::string>{"alpha", "sigma2", "tau2", "rho",
-      "xis_constructors", "ws", "betas", "vs", "omegas", "cumprod_one_mv",
-      "s", "log_probs"};
+    names__ = std::vector<std::string>{"alpha", "sigma2", "tau2",
+      "xi_constructor", "ws", "betas", "vs", "omegas", "cumprod_one_mv", "s",
+      "log_probs"};
     
     } // get_param_names() 
     
@@ -1091,8 +964,7 @@ class Sp_corr_model final : public model_base_crtp<Sp_corr_model> {
     
     dimss__ = std::vector<std::vector<size_t>>{std::vector<size_t>{},
       std::vector<size_t>{}, std::vector<size_t>{}, std::vector<size_t>{
-      }, std::vector<size_t>{static_cast<size_t>(I)},
-      std::vector<size_t>{static_cast<size_t>(T), static_cast<size_t>(I)},
+      }, std::vector<size_t>{static_cast<size_t>(T), static_cast<size_t>(I)},
       std::vector<size_t>{static_cast<size_t>(betas_1dim__),
                           static_cast<size_t>(H)},
       std::vector<size_t>{static_cast<size_t>(vs_1dim__)},
@@ -1112,12 +984,7 @@ class Sp_corr_model final : public model_base_crtp<Sp_corr_model> {
     param_names__.emplace_back(std::string() + "alpha");
     param_names__.emplace_back(std::string() + "sigma2");
     param_names__.emplace_back(std::string() + "tau2");
-    param_names__.emplace_back(std::string() + "rho");
-    for (int sym1__ = 1; sym1__ <= I; ++sym1__) {
-      {
-        param_names__.emplace_back(std::string() + "xis_constructors" + '.' + std::to_string(sym1__));
-      } 
-    }
+    param_names__.emplace_back(std::string() + "xi_constructor");
     for (int sym1__ = 1; sym1__ <= I; ++sym1__) {
       {
         for (int sym2__ = 1; sym2__ <= T; ++sym2__) {
@@ -1182,12 +1049,7 @@ class Sp_corr_model final : public model_base_crtp<Sp_corr_model> {
     param_names__.emplace_back(std::string() + "alpha");
     param_names__.emplace_back(std::string() + "sigma2");
     param_names__.emplace_back(std::string() + "tau2");
-    param_names__.emplace_back(std::string() + "rho");
-    for (int sym1__ = 1; sym1__ <= I; ++sym1__) {
-      {
-        param_names__.emplace_back(std::string() + "xis_constructors" + '.' + std::to_string(sym1__));
-      } 
-    }
+    param_names__.emplace_back(std::string() + "xi_constructor");
     for (int sym1__ = 1; sym1__ <= I; ++sym1__) {
       {
         for (int sym2__ = 1; sym2__ <= T; ++sym2__) {
@@ -1245,13 +1107,13 @@ class Sp_corr_model final : public model_base_crtp<Sp_corr_model> {
     
   inline std::string get_constrained_sizedtypes() const {
     
-    return std::string("[{\"name\":\"alpha\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"sigma2\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"tau2\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"rho\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"xis_constructors\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(I) + "},\"block\":\"parameters\"},{\"name\":\"ws\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(T) + ",\"cols\":" + std::to_string(I) + "},\"block\":\"parameters\"},{\"name\":\"betas\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(betas_1dim__) + ",\"cols\":" + std::to_string(H) + "},\"block\":\"parameters\"},{\"name\":\"vs\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(vs_1dim__) + "},\"block\":\"parameters\"},{\"name\":\"omegas\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(H) + "},\"block\":\"transformed_parameters\"},{\"name\":\"cumprod_one_mv\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(cumprod_one_mv_1dim__) + "},\"block\":\"transformed_parameters\"},{\"name\":\"s\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(I) + "},\"block\":\"generated_quantities\"},{\"name\":\"log_probs\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(I) + ",\"cols\":" + std::to_string(H) + "},\"block\":\"generated_quantities\"}]");
+    return std::string("[{\"name\":\"alpha\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"sigma2\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"tau2\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"xi_constructor\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"ws\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(T) + ",\"cols\":" + std::to_string(I) + "},\"block\":\"parameters\"},{\"name\":\"betas\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(betas_1dim__) + ",\"cols\":" + std::to_string(H) + "},\"block\":\"parameters\"},{\"name\":\"vs\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(vs_1dim__) + "},\"block\":\"parameters\"},{\"name\":\"omegas\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(H) + "},\"block\":\"transformed_parameters\"},{\"name\":\"cumprod_one_mv\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(cumprod_one_mv_1dim__) + "},\"block\":\"transformed_parameters\"},{\"name\":\"s\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(I) + "},\"block\":\"generated_quantities\"},{\"name\":\"log_probs\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(I) + ",\"cols\":" + std::to_string(H) + "},\"block\":\"generated_quantities\"}]");
     
     } // get_constrained_sizedtypes() 
     
   inline std::string get_unconstrained_sizedtypes() const {
     
-    return std::string("[{\"name\":\"alpha\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"sigma2\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"tau2\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"rho\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"xis_constructors\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(I) + "},\"block\":\"parameters\"},{\"name\":\"ws\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(T) + ",\"cols\":" + std::to_string(I) + "},\"block\":\"parameters\"},{\"name\":\"betas\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(betas_1dim__) + ",\"cols\":" + std::to_string(H) + "},\"block\":\"parameters\"},{\"name\":\"vs\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(vs_1dim__) + "},\"block\":\"parameters\"},{\"name\":\"omegas\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string((H - 1)) + "},\"block\":\"transformed_parameters\"},{\"name\":\"cumprod_one_mv\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(cumprod_one_mv_1dim__) + "},\"block\":\"transformed_parameters\"},{\"name\":\"s\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(I) + "},\"block\":\"generated_quantities\"},{\"name\":\"log_probs\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(I) + ",\"cols\":" + std::to_string(H) + "},\"block\":\"generated_quantities\"}]");
+    return std::string("[{\"name\":\"alpha\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"sigma2\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"tau2\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"xi_constructor\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"ws\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(T) + ",\"cols\":" + std::to_string(I) + "},\"block\":\"parameters\"},{\"name\":\"betas\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(betas_1dim__) + ",\"cols\":" + std::to_string(H) + "},\"block\":\"parameters\"},{\"name\":\"vs\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(vs_1dim__) + "},\"block\":\"parameters\"},{\"name\":\"omegas\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string((H - 1)) + "},\"block\":\"transformed_parameters\"},{\"name\":\"cumprod_one_mv\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(cumprod_one_mv_1dim__) + "},\"block\":\"transformed_parameters\"},{\"name\":\"s\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(I) + "},\"block\":\"generated_quantities\"},{\"name\":\"log_probs\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(I) + ",\"cols\":" + std::to_string(H) + "},\"block\":\"generated_quantities\"}]");
     
     } // get_unconstrained_sizedtypes() 
     
@@ -1265,7 +1127,7 @@ class Sp_corr_model final : public model_base_crtp<Sp_corr_model> {
                             const bool emit_generated_quantities = true,
                             std::ostream* pstream = nullptr) const {
       const size_t num_params__ = 
-  (((((((1 + 1) + 1) + 1) + I) + (T * I)) + (betas_1dim__ * H)) + vs_1dim__);
+  ((((((1 + 1) + 1) + 1) + (T * I)) + (betas_1dim__ * H)) + vs_1dim__);
       const size_t num_transformed = 
   (H + cumprod_one_mv_1dim__);
       const size_t num_gen_quantities = 
@@ -1288,7 +1150,7 @@ class Sp_corr_model final : public model_base_crtp<Sp_corr_model> {
                             bool emit_generated_quantities = true,
                             std::ostream* pstream = nullptr) const {
       const size_t num_params__ = 
-  (((((((1 + 1) + 1) + 1) + I) + (T * I)) + (betas_1dim__ * H)) + vs_1dim__);
+  ((((((1 + 1) + 1) + 1) + (T * I)) + (betas_1dim__ * H)) + vs_1dim__);
       const size_t num_transformed = 
   (H + cumprod_one_mv_1dim__);
       const size_t num_gen_quantities = 
@@ -1328,10 +1190,10 @@ class Sp_corr_model final : public model_base_crtp<Sp_corr_model> {
                               std::vector<int>& params_i,
                               std::vector<double>& vars,
                               std::ostream* pstream__ = nullptr) const {
-     constexpr std::array<const char*, 8> names__{"alpha", "sigma2", "tau2",
-      "rho", "xis_constructors", "ws", "betas", "vs"};
-      const std::array<Eigen::Index, 8> constrain_param_sizes__{1, 1, 
-       1, 1, I, (T * I), (betas_1dim__ * H), vs_1dim__};
+     constexpr std::array<const char*, 7> names__{"alpha", "sigma2", "tau2",
+      "xi_constructor", "ws", "betas", "vs"};
+      const std::array<Eigen::Index, 7> constrain_param_sizes__{1, 1, 
+       1, 1, (T * I), (betas_1dim__ * H), vs_1dim__};
       const auto num_constrained_params__ = std::accumulate(
         constrain_param_sizes__.begin(), constrain_param_sizes__.end(), 0);
     

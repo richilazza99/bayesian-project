@@ -13,8 +13,8 @@ data
     matrix[I,I] W_raw; // proximity matrix
       
     // hyperpar vector of regressors
-    vector[P+1]     mu_0; 
-    matrix[P+1,P+1] Sigma_0;
+    vector[P+1] mu_0; 
+    real        sigma_0;
     
     // w_1
     vector[I] mu_w_1;
@@ -32,8 +32,7 @@ data
     real b_sigma2;
     
     // rho
-    real alpha_rho;
-    real beta_rho;
+    real rho;
     
     //xis
     real a_xi;
@@ -42,13 +41,6 @@ data
 
 transformed data
 {
-    vector[T] ones_T;
-    for (t in 1:T)
-        ones_T[t] = 1;
-    
-    matrix[T,T] eye_T;
-    eye_T = diag_matrix(ones_T);
- 
     vector[I] ones_I;
     for (i in 1:I)
         ones_I[i] = 1;
@@ -64,12 +56,10 @@ parameters
 {
     real<lower=0> alpha;
     real<lower=0> sigma2;
-    real<lower=0> tau2;
-    real<lower=0,upper=1> rho;
-    
+    real<lower=0> tau2;    
     
     // autoregressive coefficients still to reparametrize
-    vector<lower=0,upper=1>[I]    xis_constructors;
+    real<lower=0,upper=1> xi_constructor;
     
     // random effects
     matrix[T,I]                ws;
@@ -100,13 +90,10 @@ model
     alpha  ~ gamma(a_alpha,b_alpha);
     sigma2 ~ inv_gamma(a_sigma2,b_sigma2);
     tau2   ~ inv_gamma(a_tau2,b_tau2);
-    rho    ~ beta(alpha_rho,beta_rho);
     vs     ~ beta(1,alpha);
-    vector[I] xis;
-    for (i in 1:I){
-        xis_constructors[i] ~ beta(a_xi,b_xi);
-        xis[i]=2*xis_constructors[i]-1;
-     }   
+    real xi;
+    xi_constructor ~ beta(a_xi,b_xi);
+    xi=2*xi_constructor-1;
      
     matrix[I,I] inv_Q;
     inv_Q = inverse_spd(rho*W + (1-rho)*eye_I);
@@ -114,16 +101,17 @@ model
     ws[1,1:I] ~ multi_normal(mu_w_1, tau2*inv_Q);
     
     for (t in 2:T)
-        ws[t,1:I] ~ multi_normal(ws[t-1,1:I]*diag_matrix(xis), tau2*inv_Q);
+        ws[t,1:I] ~ multi_normal(ws[t-1,1:I]*xi, tau2*inv_Q);
     
     for (h in 1:H)
-        betas[1:P+1,h] ~ multi_normal(mu_0, Sigma_0);
+        betas[1:P+1,h] ~ normal(mu_0, sigma_0);
         
     for (i in 1:I) {
         vector[H] log_probs;
         
         for (h in 1:H) 
-            log_probs[h] = log(omegas[h]) + multi_normal_lpdf(y[T*(i-1)+1:i*T] | X[T*(i-1)+1:i*T, 1:P+1]*betas[1:P+1,h] + ws[1:T,i], sigma2*eye_T);
+            log_probs[h] = log(omegas[h]) + 
+            normal_lpdf(y[T*(i-1)+1:i*T] | X[T*(i-1)+1:i*T, 1:P+1]*betas[1:P+1,h] + ws[1:T,i], sigma2);
         
         target += log_sum_exp(log_probs);
     }
@@ -131,7 +119,8 @@ model
     for (i in 1:I) 
     {
         for (h in 1:H) 
-            log_probs[i,h] = log(omegas[h]) + multi_normal_lpdf(y[T*(i-1)+1:i*T] | X[T*(i-1)+1:i*T, 1:P+1]*betas[1:P+1,h]  + ws[1:T,i]  , sigma2*eye_T);
+            log_probs[i,h] = log(omegas[h]) + 
+            normal_lpdf(y[T*(i-1)+1:i*T] | X[T*(i-1)+1:i*T, 1:P+1]*betas[1:P+1,h] + ws[1:T,i], sigma2);
     
     }
 }
@@ -145,7 +134,8 @@ generated quantities
     for (i in 1:I) 
     {
         for (h in 1:H) 
-            log_probs[i,h] = log(omegas[h]) + multi_normal_lpdf(y[T*(i-1)+1:i*T] | X[T*(i-1)+1:i*T, 1:P+1]*betas[1:P+1,h]  + ws[1:T,i]  , sigma2*eye_T);
+            log_probs[i,h] = log(omegas[h]) + 
+            normal_lpdf(y[T*(i-1)+1:i*T] | X[T*(i-1)+1:i*T, 1:P+1]*betas[1:P+1,h] + ws[1:T,i], sigma2);
     
     }
     for (i in 1:I)
