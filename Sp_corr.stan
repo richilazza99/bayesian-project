@@ -9,8 +9,6 @@ data
     vector[I*T]     y; // output values
     matrix[I*T,P+1] X; // covariate matrix
     // syntax: y(i,t) = y[T*(i-1) + t]
-    
-    matrix[I,I] W_raw; // proximity matrix
       
     // hyperpar vector of regressors
     vector[P+1] mu_0; 
@@ -37,19 +35,9 @@ data
     //xis
     real a_xi;
     real b_xi;
-}
 
-transformed data
-{
-    vector[I] ones_I;
-    for (i in 1:I)
-        ones_I[i] = 1;
-    
-    matrix[I,I] eye_I;
-    eye_I = diag_matrix(ones_I);
-        
-    matrix[I,I] W;
-    W = diag_matrix(W_raw*ones_I) - W_raw;
+    // Qinv
+    matrix[I,I] inv_Q;
 }
 
 parameters
@@ -58,7 +46,7 @@ parameters
     real<lower=0> sigma2;
     real<lower=0> tau2;    
     
-    // autoregressive coefficients still to reparametrize
+    // autoregressive coefficients 
     real<lower=0,upper=1> xi_constructor;
     
     // random effects
@@ -82,7 +70,7 @@ transformed parameters
     omegas[1] = vs[1];
     omegas[2:(H-1)] = vs[2:(H-1)] .* cumprod_one_mv[1:(H-2)];
     omegas[H] = cumprod_one_mv[H-1];
-
+    
 }
 
 model
@@ -94,34 +82,23 @@ model
     real xi;
     xi_constructor ~ beta(a_xi,b_xi);
     xi=2*xi_constructor-1;
-     
-    matrix[I,I] inv_Q;
-    inv_Q = inverse_spd(rho*W + (1-rho)*eye_I);
-    
+
     ws[1,1:I] ~ multi_normal(mu_w_1, tau2*inv_Q);
     
     for (t in 2:T)
         ws[t,1:I] ~ multi_normal(ws[t-1,1:I]*xi, tau2*inv_Q);
     
     for (h in 1:H)
-        betas[1:P+1,h] ~ normal(mu_0, sigma_0);
+        betas[1:(P+1),h] ~ normal(mu_0, sigma_0);
         
     for (i in 1:I) {
         vector[H] log_probs;
         
         for (h in 1:H) 
             log_probs[h] = log(omegas[h]) + 
-            normal_lpdf(y[T*(i-1)+1:i*T] | X[T*(i-1)+1:i*T, 1:P+1]*betas[1:P+1,h] + ws[1:T,i], sigma2);
+            normal_lpdf(y[(T*(i-1)+1):(i*T)] | X[(T*(i-1)+1):(i*T), 1:(P+1)]*betas[1:(P+1),h] + ws[1:T,i], sigma2);
         
         target += log_sum_exp(log_probs);
-    }
-    matrix[I,H] log_probs;
-    for (i in 1:I) 
-    {
-        for (h in 1:H) 
-            log_probs[i,h] = log(omegas[h]) + 
-            normal_lpdf(y[T*(i-1)+1:i*T] | X[T*(i-1)+1:i*T, 1:P+1]*betas[1:P+1,h] + ws[1:T,i], sigma2);
-    
     }
 }
 
@@ -135,11 +112,18 @@ generated quantities
     {
         for (h in 1:H) 
             log_probs[i,h] = log(omegas[h]) + 
-            normal_lpdf(y[T*(i-1)+1:i*T] | X[T*(i-1)+1:i*T, 1:P+1]*betas[1:P+1,h] + ws[1:T,i], sigma2);
+            normal_lpdf(y[(T*(i-1)+1):(i*T)] | X[(T*(i-1)+1):(i*T), 1:(P+1)]*betas[1:(P+1),h] + ws[1:T,i], sigma2);
     
     }
     for (i in 1:I)
         s[i] = categorical_rng(softmax(log_probs[i,1:H]'));
+        
+        
+    // log_likelihood for each time series, to be cheked by Anna. Usefull for waic, lpml 
+    vector[I] log_lik;
+    for (i in 1:I)
+      log_lik[i] = log_sum_exp(log_probs[i,1:H]);
+    
 
     
 }

@@ -1,10 +1,4 @@
 
-//   MODEL:
-//   y ~ multinormal(xi*beta,sigma2)
-//   sigma2 ~ invgamm(a_sigma2,b_sigma2)
-//   beta ~ DP(p0,alpha)
-//   p0=multinormal p+1(mu0,sigma0)
-//   alpha ~ gamma(a_alpha,b_alpha)
 data
 {
     int I; // number of areal locations
@@ -28,15 +22,9 @@ data
     real<lower=0> a_alpha;
     real<lower=0> b_alpha;
     
-}
-transformed data
-{
-    vector[T] ones_T;
-    for (t in 1:T)
-        ones_T[t] = 1;
+    int<lower=1> ngrid;
+    vector[ngrid] xgrid;
     
-    matrix[T,T] eye_T;
-    eye_T = diag_matrix(ones_T);
 }
 parameters{
     real<lower=0> alpha;
@@ -62,15 +50,38 @@ model
     vs ~ beta(1,alpha);
     
     for (h in 1:H)
-        betas[1:P+1,h] ~ multi_normal(mu_0, Sigma_0);
+        betas[1:(P+1),h] ~ multi_normal(mu_0, Sigma_0);
         
     for (i in 1:I) {
     
         vector[H] log_probs;
         
         for (h in 1:H) 
-            log_probs[h] = log(omegas[h]) + multi_normal_lpdf(y[T*(i-1)+1:i*T] | X[T*(i-1)+1:i*T, 1:P+1]*betas[1:P+1,h] , sigma2*eye_T);
+            log_probs[h] = log(omegas[h]) + normal_lpdf(y[(T*(i-1)+1):i*T] | X[(T*(i-1)+1):(i*T), 1:(P+1)]*betas[1:(P+1),h] , sigma2);
         
         target += log_sum_exp(log_probs);
     }
+}
+generated quantities 
+{   
+    // vector of cluster allocations
+    vector[I] s;
+    
+    matrix[I,H] log_probs;
+    for (i in 1:I) 
+    {
+        for (h in 1:H) 
+            log_probs[i,h] = log(omegas[h]) + 
+            normal_lpdf(y[(T*(i-1)+1):(i*T)] | X[(T*(i-1)+1):(i*T), 1:(P+1)]*betas[1:(P+1),h], sigma2);
+    
+    }
+    for (i in 1:I)
+        s[i] = categorical_rng(softmax(log_probs[i,1:H]'));
+
+    // log_lik for goodness of fit 
+    vector[I] log_lik;
+    for (i in 1:I)
+      log_lik[i] = log_sum_exp(log_probs[i,1:H]);
+    
+            
 }
