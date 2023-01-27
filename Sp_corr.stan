@@ -6,9 +6,8 @@ data
     int P; // number of covariates
     int H; // truncation of stick breaking construction dp
     
-    vector[I*T]     y; // output values
-    matrix[I*T,P+1] X; // covariate matrix
-    // syntax: y(i,t) = y[T*(i-1) + t]
+    vector[T] y[I]; // per each prov the asnwer at all the time
+    matrix[T,P+1] X[I]; // for each province its covariance matrix
       
     // hyperpar vector of regressors
     vector[P+1] mu_0; 
@@ -40,27 +39,34 @@ data
     matrix[I,I] inv_Q;
 }
 
+transformed data {
+    matrix[I, I] L;
+    L = cholesky_decompose(inv_Q);
+}
+
 parameters
 {
     real<lower=0> alpha;
-    real<lower=0> sigma2;
-    real<lower=0> tau2;    
+    real<lower=0> sigma2; 
+    real<lower=0> tau2;  
     
     // autoregressive coefficients 
     real<lower=0,upper=1> xi_constructor;
     
-    // random effects
-    matrix[T,I]                ws;
-    
     // betas for the mixture of the dirichlet process
-    matrix[P+1,H]              betas; 
+    matrix[P+1,H]  betas;
+
     
     // for the construction of the dirichlet process
     vector<lower=0,upper=1>[H-1] vs;
+    
+    // for the random effect construction 
+    vector[I] alpha_w;
 }
 
 transformed parameters
-{   // weights stick breaking construction
+{   
+    // weights stick breaking construction
     simplex[H] omegas; 
     
     // sbc stuff
@@ -71,6 +77,29 @@ transformed parameters
     omegas[2:(H-1)] = vs[2:(H-1)] .* cumprod_one_mv[1:(H-2)];
     omegas[H] = cumprod_one_mv[H-1];
     
+    real xi = 2*xi_constructor-1;
+    
+    // random effects
+    matrix[I,T]                ws_tmp;
+    
+    ws_tmp[1:I,1] =  mu_w_1 + L*alpha_w;
+    
+    for (t in 2:T)
+        ws_tmp[1:I,t] = ws_tmp[1:I,t-1]*xi + L*alpha_w; 
+    
+    matrix[T,I]   ws = (ws_tmp)'; //otherwise I have to transpose in the for loop at each iteration
+    
+    real sigma = sqrt(sigma2);
+    
+    real tau = sqrt(tau2);
+    
+    vector[H]  means[T];
+
+    for (i in 1:I) {
+        for (h in 1:H) 
+            means[h] = X[i]*betas[1:(P+1),h] + ws[1:T,i];
+    }
+
 }
 
 model
@@ -79,24 +108,18 @@ model
     sigma2 ~ inv_gamma(a_sigma2,b_sigma2);
     tau2   ~ inv_gamma(a_tau2,b_tau2);
     vs     ~ beta(1,alpha);
-    real xi;
+    alpha_w ~ normal(0, tau);
     xi_constructor ~ beta(a_xi,b_xi);
-    xi=2*xi_constructor-1;
-
-    ws[1,1:I] ~ multi_normal(mu_w_1, tau2*inv_Q);
-    
-    for (t in 2:T)
-        ws[t,1:I] ~ multi_normal(ws[t-1,1:I]*xi, tau2*inv_Q);
     
     for (h in 1:H)
         betas[1:(P+1),h] ~ normal(mu_0, sigma_0);
-        
+    
+    vector[H] log_probs;
     for (i in 1:I) {
-        vector[H] log_probs;
         
         for (h in 1:H) 
             log_probs[h] = log(omegas[h]) + 
-            normal_lpdf(y[(T*(i-1)+1):(i*T)] | X[(T*(i-1)+1):(i*T), 1:(P+1)]*betas[1:(P+1),h] + ws[1:T,i], sigma2);
+            normal_lpdf(y[i] | means[h], sigma);
         
         target += log_sum_exp(log_probs);
     }
@@ -107,22 +130,22 @@ generated quantities
     // vector of cluster allocations
     vector[I] s;
     
-    matrix[I,H] log_probs;
+    matrix[H,I] log_probs; 
     for (i in 1:I) 
     {
         for (h in 1:H) 
-            log_probs[i,h] = log(omegas[h]) + 
-            normal_lpdf(y[(T*(i-1)+1):(i*T)] | X[(T*(i-1)+1):(i*T), 1:(P+1)]*betas[1:(P+1),h] + ws[1:T,i], sigma2);
+            log_probs[h,i] = log(omegas[h]) + 
+            normal_lpdf(y[i] | means[h], sigma);
     
     }
     for (i in 1:I)
-        s[i] = categorical_rng(softmax(log_probs[i,1:H]'));
+        s[i] = categorical_rng(softmax(log_probs[1:H,i]));
         
         
-    // log_likelihood for each time series, to be cheked by Anna. Usefull for waic, lpml 
+    // log likelihood
     vector[I] log_lik;
     for (i in 1:I)
-      log_lik[i] = log_sum_exp(log_probs[i,1:H]);
+      log_lik[i] = log_sum_exp(log_probs[1:H,i]);
     
 
     
