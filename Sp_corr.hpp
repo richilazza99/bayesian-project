@@ -8,7 +8,7 @@ using namespace stan::math;
 
 
 stan::math::profile_map profiles__;
-static constexpr std::array<const char*, 101> locations_array__ = 
+static constexpr std::array<const char*, 102> locations_array__ = 
 {" (found before start of program)",
  " (in '/home/riccardo/bayesian-project/Sp_corr.stan', line 49, column 4 to column 24)",
  " (in '/home/riccardo/bayesian-project/Sp_corr.stan', line 50, column 4 to column 25)",
@@ -24,7 +24,7 @@ static constexpr std::array<const char*, 101> locations_array__ =
  " (in '/home/riccardo/bayesian-project/Sp_corr.stan', line 90, column 4 to column 33)",
  " (in '/home/riccardo/bayesian-project/Sp_corr.stan', line 92, column 4 to column 30)",
  " (in '/home/riccardo/bayesian-project/Sp_corr.stan', line 94, column 4 to column 26)",
- " (in '/home/riccardo/bayesian-project/Sp_corr.stan', line 96, column 4 to column 24)",
+ " (in '/home/riccardo/bayesian-project/Sp_corr.stan', line 96, column 4 to column 26)",
  " (in '/home/riccardo/bayesian-project/Sp_corr.stan', line 74, column 4 to column 52)",
  " (in '/home/riccardo/bayesian-project/Sp_corr.stan', line 76, column 4 to column 22)",
  " (in '/home/riccardo/bayesian-project/Sp_corr.stan', line 77, column 4 to column 61)",
@@ -32,14 +32,14 @@ static constexpr std::array<const char*, 101> locations_array__ =
  " (in '/home/riccardo/bayesian-project/Sp_corr.stan', line 85, column 4 to column 40)",
  " (in '/home/riccardo/bayesian-project/Sp_corr.stan', line 88, column 8 to column 55)",
  " (in '/home/riccardo/bayesian-project/Sp_corr.stan', line 87, column 4 to line 88, column 55)",
- " (in '/home/riccardo/bayesian-project/Sp_corr.stan', line 100, column 12 to column 57)",
- " (in '/home/riccardo/bayesian-project/Sp_corr.stan', line 99, column 8 to line 100, column 57)",
+ " (in '/home/riccardo/bayesian-project/Sp_corr.stan', line 100, column 12 to column 63)",
+ " (in '/home/riccardo/bayesian-project/Sp_corr.stan', line 99, column 8 to line 100, column 63)",
  " (in '/home/riccardo/bayesian-project/Sp_corr.stan', line 98, column 19 to line 101, column 5)",
  " (in '/home/riccardo/bayesian-project/Sp_corr.stan', line 98, column 4 to line 101, column 5)",
  " (in '/home/riccardo/bayesian-project/Sp_corr.stan', line 131, column 4 to column 16)",
  " (in '/home/riccardo/bayesian-project/Sp_corr.stan', line 133, column 4 to column 26)",
- " (in '/home/riccardo/bayesian-project/Sp_corr.stan', line 137, column 12 to line 138, column 48)",
- " (in '/home/riccardo/bayesian-project/Sp_corr.stan', line 136, column 8 to line 138, column 48)",
+ " (in '/home/riccardo/bayesian-project/Sp_corr.stan', line 137, column 12 to line 138, column 54)",
+ " (in '/home/riccardo/bayesian-project/Sp_corr.stan', line 136, column 8 to line 138, column 54)",
  " (in '/home/riccardo/bayesian-project/Sp_corr.stan', line 135, column 4 to line 140, column 5)",
  " (in '/home/riccardo/bayesian-project/Sp_corr.stan', line 134, column 4 to line 140, column 5)",
  " (in '/home/riccardo/bayesian-project/Sp_corr.stan', line 142, column 8 to column 58)",
@@ -57,8 +57,8 @@ static constexpr std::array<const char*, 101> locations_array__ =
  " (in '/home/riccardo/bayesian-project/Sp_corr.stan', line 114, column 4 to line 115, column 49)",
  " (in '/home/riccardo/bayesian-project/Sp_corr.stan', line 117, column 11 to column 12)",
  " (in '/home/riccardo/bayesian-project/Sp_corr.stan', line 117, column 4 to column 24)",
- " (in '/home/riccardo/bayesian-project/Sp_corr.stan', line 121, column 12 to line 122, column 48)",
- " (in '/home/riccardo/bayesian-project/Sp_corr.stan', line 120, column 8 to line 122, column 48)",
+ " (in '/home/riccardo/bayesian-project/Sp_corr.stan', line 121, column 12 to line 122, column 54)",
+ " (in '/home/riccardo/bayesian-project/Sp_corr.stan', line 120, column 8 to line 122, column 54)",
  " (in '/home/riccardo/bayesian-project/Sp_corr.stan', line 124, column 8 to column 41)",
  " (in '/home/riccardo/bayesian-project/Sp_corr.stan', line 118, column 19 to line 125, column 5)",
  " (in '/home/riccardo/bayesian-project/Sp_corr.stan', line 118, column 4 to line 125, column 5)",
@@ -104,8 +104,9 @@ static constexpr std::array<const char*, 101> locations_array__ =
  " (in '/home/riccardo/bayesian-project/Sp_corr.stan', line 83, column 13 to column 14)",
  " (in '/home/riccardo/bayesian-project/Sp_corr.stan', line 90, column 11 to column 12)",
  " (in '/home/riccardo/bayesian-project/Sp_corr.stan', line 90, column 13 to column 14)",
- " (in '/home/riccardo/bayesian-project/Sp_corr.stan', line 96, column 21 to column 22)",
+ " (in '/home/riccardo/bayesian-project/Sp_corr.stan', line 96, column 23 to column 24)",
  " (in '/home/riccardo/bayesian-project/Sp_corr.stan', line 96, column 11 to column 12)",
+ " (in '/home/riccardo/bayesian-project/Sp_corr.stan', line 96, column 13 to column 14)",
  " (in '/home/riccardo/bayesian-project/Sp_corr.stan', line 131, column 11 to column 12)",
  " (in '/home/riccardo/bayesian-project/Sp_corr.stan', line 133, column 11 to column 12)",
  " (in '/home/riccardo/bayesian-project/Sp_corr.stan', line 133, column 13 to column 14)",
@@ -493,16 +494,18 @@ class Sp_corr_model final : public model_base_crtp<Sp_corr_model> {
       current_statement__ = 94;
       stan::math::validate_non_negative_index("ws", "I", I);
       current_statement__ = 95;
-      stan::math::validate_non_negative_index("means", "T", T);
-      current_statement__ = 96;
       stan::math::validate_non_negative_index("means", "H", H);
+      current_statement__ = 96;
+      stan::math::validate_non_negative_index("means", "T", T);
       current_statement__ = 97;
-      stan::math::validate_non_negative_index("s", "I", I);
+      stan::math::validate_non_negative_index("means", "I", I);
       current_statement__ = 98;
-      stan::math::validate_non_negative_index("log_probs", "H", H);
+      stan::math::validate_non_negative_index("s", "I", I);
       current_statement__ = 99;
-      stan::math::validate_non_negative_index("log_probs", "I", I);
+      stan::math::validate_non_negative_index("log_probs", "H", H);
       current_statement__ = 100;
+      stan::math::validate_non_negative_index("log_probs", "I", I);
+      current_statement__ = 101;
       stan::math::validate_non_negative_index("log_lik", "I", I);
     } catch (const std::exception& e) {
       stan::lang::rethrow_located(e, locations_array__[current_statement__]);
@@ -623,9 +626,10 @@ class Sp_corr_model final : public model_base_crtp<Sp_corr_model> {
       local_scalar_t__ tau = DUMMY_VAR__;
       current_statement__ = 14;
       tau = stan::math::sqrt(tau2);
-      std::vector<Eigen::Matrix<local_scalar_t__, -1, 1>> means =
-         std::vector<Eigen::Matrix<local_scalar_t__, -1, 1>>(T, 
-           Eigen::Matrix<local_scalar_t__, -1, 1>::Constant(H, DUMMY_VAR__));
+      std::vector<Eigen::Matrix<local_scalar_t__, -1, -1>> means =
+         std::vector<Eigen::Matrix<local_scalar_t__, -1, -1>>(H, 
+           Eigen::Matrix<local_scalar_t__, -1, -1>::Constant(T, I,
+             DUMMY_VAR__));
       current_statement__ = 26;
       for (int i = 1; i <= I; ++i) {
         current_statement__ = 24;
@@ -640,7 +644,9 @@ class Sp_corr_model final : public model_base_crtp<Sp_corr_model> {
                     stan::model::index_uni(h))),
               stan::model::rvalue(ws, "ws",
                 stan::model::index_min_max(1, T), stan::model::index_uni(i))),
-            "assigning variable means", stan::model::index_uni(h));
+            "assigning variable means", stan::model::index_uni(h),
+                                          stan::model::index_min_max(1, T),
+                                          stan::model::index_uni(i));
         }
       }
       current_statement__ = 8;
@@ -687,7 +693,9 @@ class Sp_corr_model final : public model_base_crtp<Sp_corr_model> {
                 stan::math::normal_lpdf<false>(
                   stan::model::rvalue(y, "y", stan::model::index_uni(i)),
                   stan::model::rvalue(means, "means",
-                    stan::model::index_uni(h)), sigma)),
+                    stan::model::index_uni(h),
+                      stan::model::index_min_max(1, T),
+                      stan::model::index_uni(i)), sigma)),
               "assigning variable log_probs", stan::model::index_uni(h));
           }
           current_statement__ = 50;
@@ -775,9 +783,9 @@ class Sp_corr_model final : public model_base_crtp<Sp_corr_model> {
            std::numeric_limits<double>::quiet_NaN());
       double sigma = std::numeric_limits<double>::quiet_NaN();
       double tau = std::numeric_limits<double>::quiet_NaN();
-      std::vector<Eigen::Matrix<double, -1, 1>> means =
-         std::vector<Eigen::Matrix<double, -1, 1>>(T, 
-           Eigen::Matrix<double, -1, 1>::Constant(H,
+      std::vector<Eigen::Matrix<double, -1, -1>> means =
+         std::vector<Eigen::Matrix<double, -1, -1>>(H, 
+           Eigen::Matrix<double, -1, -1>::Constant(T, I,
              std::numeric_limits<double>::quiet_NaN()));
       out__.write(alpha);
       out__.write(sigma2);
@@ -854,7 +862,9 @@ class Sp_corr_model final : public model_base_crtp<Sp_corr_model> {
                     stan::model::index_uni(h))),
               stan::model::rvalue(ws, "ws",
                 stan::model::index_min_max(1, T), stan::model::index_uni(i))),
-            "assigning variable means", stan::model::index_uni(h));
+            "assigning variable means", stan::model::index_uni(h),
+                                          stan::model::index_min_max(1, T),
+                                          stan::model::index_uni(i));
         }
       }
       current_statement__ = 8;
@@ -867,9 +877,15 @@ class Sp_corr_model final : public model_base_crtp<Sp_corr_model> {
         out__.write(ws);
         out__.write(sigma);
         out__.write(tau);
-        for (int sym1__ = 1; sym1__ <= H; ++sym1__) {
+        for (int sym1__ = 1; sym1__ <= I; ++sym1__) {
           for (int sym2__ = 1; sym2__ <= T; ++sym2__) {
-            out__.write(means[(sym2__ - 1)][(sym1__ - 1)]);
+            for (int sym3__ = 1; sym3__ <= H; ++sym3__) {
+              out__.write(
+                stan::model::rvalue(means, "means",
+                  stan::model::index_uni(sym3__),
+                    stan::model::index_uni(sym2__),
+                    stan::model::index_uni(sym1__)));
+            }
           }
         }
       } 
@@ -894,7 +910,9 @@ class Sp_corr_model final : public model_base_crtp<Sp_corr_model> {
               stan::math::normal_lpdf<false>(
                 stan::model::rvalue(y, "y", stan::model::index_uni(i)),
                 stan::model::rvalue(means, "means",
-                  stan::model::index_uni(h)), sigma)),
+                  stan::model::index_uni(h),
+                    stan::model::index_min_max(1, T),
+                    stan::model::index_uni(i)), sigma)),
             "assigning variable log_probs", stan::model::index_uni(h),
                                               stan::model::index_uni(i));
         }
@@ -1011,7 +1029,8 @@ class Sp_corr_model final : public model_base_crtp<Sp_corr_model> {
       std::vector<size_t>{static_cast<size_t>(I), static_cast<size_t>(T)},
       std::vector<size_t>{static_cast<size_t>(T), static_cast<size_t>(I)},
       std::vector<size_t>{}, std::vector<size_t>{},
-      std::vector<size_t>{static_cast<size_t>(T), static_cast<size_t>(H)},
+      std::vector<size_t>{static_cast<size_t>(H), static_cast<size_t>(T),
+                          static_cast<size_t>(I)},
       std::vector<size_t>{static_cast<size_t>(I)},
       std::vector<size_t>{static_cast<size_t>(H), static_cast<size_t>(I)},
       std::vector<size_t>{static_cast<size_t>(I)}};
@@ -1079,11 +1098,15 @@ class Sp_corr_model final : public model_base_crtp<Sp_corr_model> {
       }
       param_names__.emplace_back(std::string() + "sigma");
       param_names__.emplace_back(std::string() + "tau");
-      for (int sym1__ = 1; sym1__ <= H; ++sym1__) {
+      for (int sym1__ = 1; sym1__ <= I; ++sym1__) {
         {
           for (int sym2__ = 1; sym2__ <= T; ++sym2__) {
             {
-              param_names__.emplace_back(std::string() + "means" + '.' + std::to_string(sym2__) + '.' + std::to_string(sym1__));
+              for (int sym3__ = 1; sym3__ <= H; ++sym3__) {
+                {
+                  param_names__.emplace_back(std::string() + "means" + '.' + std::to_string(sym3__) + '.' + std::to_string(sym2__) + '.' + std::to_string(sym1__));
+                } 
+              }
             } 
           }
         } 
@@ -1175,11 +1198,15 @@ class Sp_corr_model final : public model_base_crtp<Sp_corr_model> {
       }
       param_names__.emplace_back(std::string() + "sigma");
       param_names__.emplace_back(std::string() + "tau");
-      for (int sym1__ = 1; sym1__ <= H; ++sym1__) {
+      for (int sym1__ = 1; sym1__ <= I; ++sym1__) {
         {
           for (int sym2__ = 1; sym2__ <= T; ++sym2__) {
             {
-              param_names__.emplace_back(std::string() + "means" + '.' + std::to_string(sym2__) + '.' + std::to_string(sym1__));
+              for (int sym3__ = 1; sym3__ <= H; ++sym3__) {
+                {
+                  param_names__.emplace_back(std::string() + "means" + '.' + std::to_string(sym3__) + '.' + std::to_string(sym2__) + '.' + std::to_string(sym1__));
+                } 
+              }
             } 
           }
         } 
@@ -1212,13 +1239,13 @@ class Sp_corr_model final : public model_base_crtp<Sp_corr_model> {
     
   inline std::string get_constrained_sizedtypes() const {
     
-    return std::string("[{\"name\":\"alpha\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"sigma2\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"tau2\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"xi_constructor\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"betas\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(betas_1dim__) + ",\"cols\":" + std::to_string(H) + "},\"block\":\"parameters\"},{\"name\":\"vs\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(vs_1dim__) + "},\"block\":\"parameters\"},{\"name\":\"alpha_w\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(I) + "},\"block\":\"parameters\"},{\"name\":\"omegas\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(H) + "},\"block\":\"transformed_parameters\"},{\"name\":\"cumprod_one_mv\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(cumprod_one_mv_1dim__) + "},\"block\":\"transformed_parameters\"},{\"name\":\"xi\",\"type\":{\"name\":\"real\"},\"block\":\"transformed_parameters\"},{\"name\":\"ws_tmp\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(I) + ",\"cols\":" + std::to_string(T) + "},\"block\":\"transformed_parameters\"},{\"name\":\"ws\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(T) + ",\"cols\":" + std::to_string(I) + "},\"block\":\"transformed_parameters\"},{\"name\":\"sigma\",\"type\":{\"name\":\"real\"},\"block\":\"transformed_parameters\"},{\"name\":\"tau\",\"type\":{\"name\":\"real\"},\"block\":\"transformed_parameters\"},{\"name\":\"means\",\"type\":{\"name\":\"array\",\"length\":" + std::to_string(T) + ",\"element_type\":{\"name\":\"vector\",\"length\":" + std::to_string(H) + "}},\"block\":\"transformed_parameters\"},{\"name\":\"s\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(I) + "},\"block\":\"generated_quantities\"},{\"name\":\"log_probs\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(H) + ",\"cols\":" + std::to_string(I) + "},\"block\":\"generated_quantities\"},{\"name\":\"log_lik\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(I) + "},\"block\":\"generated_quantities\"}]");
+    return std::string("[{\"name\":\"alpha\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"sigma2\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"tau2\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"xi_constructor\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"betas\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(betas_1dim__) + ",\"cols\":" + std::to_string(H) + "},\"block\":\"parameters\"},{\"name\":\"vs\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(vs_1dim__) + "},\"block\":\"parameters\"},{\"name\":\"alpha_w\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(I) + "},\"block\":\"parameters\"},{\"name\":\"omegas\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(H) + "},\"block\":\"transformed_parameters\"},{\"name\":\"cumprod_one_mv\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(cumprod_one_mv_1dim__) + "},\"block\":\"transformed_parameters\"},{\"name\":\"xi\",\"type\":{\"name\":\"real\"},\"block\":\"transformed_parameters\"},{\"name\":\"ws_tmp\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(I) + ",\"cols\":" + std::to_string(T) + "},\"block\":\"transformed_parameters\"},{\"name\":\"ws\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(T) + ",\"cols\":" + std::to_string(I) + "},\"block\":\"transformed_parameters\"},{\"name\":\"sigma\",\"type\":{\"name\":\"real\"},\"block\":\"transformed_parameters\"},{\"name\":\"tau\",\"type\":{\"name\":\"real\"},\"block\":\"transformed_parameters\"},{\"name\":\"means\",\"type\":{\"name\":\"array\",\"length\":" + std::to_string(H) + ",\"element_type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(T) + ",\"cols\":" + std::to_string(I) + "}},\"block\":\"transformed_parameters\"},{\"name\":\"s\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(I) + "},\"block\":\"generated_quantities\"},{\"name\":\"log_probs\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(H) + ",\"cols\":" + std::to_string(I) + "},\"block\":\"generated_quantities\"},{\"name\":\"log_lik\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(I) + "},\"block\":\"generated_quantities\"}]");
     
     } // get_constrained_sizedtypes() 
     
   inline std::string get_unconstrained_sizedtypes() const {
     
-    return std::string("[{\"name\":\"alpha\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"sigma2\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"tau2\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"xi_constructor\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"betas\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(betas_1dim__) + ",\"cols\":" + std::to_string(H) + "},\"block\":\"parameters\"},{\"name\":\"vs\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(vs_1dim__) + "},\"block\":\"parameters\"},{\"name\":\"alpha_w\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(I) + "},\"block\":\"parameters\"},{\"name\":\"omegas\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string((H - 1)) + "},\"block\":\"transformed_parameters\"},{\"name\":\"cumprod_one_mv\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(cumprod_one_mv_1dim__) + "},\"block\":\"transformed_parameters\"},{\"name\":\"xi\",\"type\":{\"name\":\"real\"},\"block\":\"transformed_parameters\"},{\"name\":\"ws_tmp\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(I) + ",\"cols\":" + std::to_string(T) + "},\"block\":\"transformed_parameters\"},{\"name\":\"ws\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(T) + ",\"cols\":" + std::to_string(I) + "},\"block\":\"transformed_parameters\"},{\"name\":\"sigma\",\"type\":{\"name\":\"real\"},\"block\":\"transformed_parameters\"},{\"name\":\"tau\",\"type\":{\"name\":\"real\"},\"block\":\"transformed_parameters\"},{\"name\":\"means\",\"type\":{\"name\":\"array\",\"length\":" + std::to_string(T) + ",\"element_type\":{\"name\":\"vector\",\"length\":" + std::to_string(H) + "}},\"block\":\"transformed_parameters\"},{\"name\":\"s\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(I) + "},\"block\":\"generated_quantities\"},{\"name\":\"log_probs\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(H) + ",\"cols\":" + std::to_string(I) + "},\"block\":\"generated_quantities\"},{\"name\":\"log_lik\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(I) + "},\"block\":\"generated_quantities\"}]");
+    return std::string("[{\"name\":\"alpha\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"sigma2\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"tau2\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"xi_constructor\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"betas\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(betas_1dim__) + ",\"cols\":" + std::to_string(H) + "},\"block\":\"parameters\"},{\"name\":\"vs\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(vs_1dim__) + "},\"block\":\"parameters\"},{\"name\":\"alpha_w\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(I) + "},\"block\":\"parameters\"},{\"name\":\"omegas\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string((H - 1)) + "},\"block\":\"transformed_parameters\"},{\"name\":\"cumprod_one_mv\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(cumprod_one_mv_1dim__) + "},\"block\":\"transformed_parameters\"},{\"name\":\"xi\",\"type\":{\"name\":\"real\"},\"block\":\"transformed_parameters\"},{\"name\":\"ws_tmp\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(I) + ",\"cols\":" + std::to_string(T) + "},\"block\":\"transformed_parameters\"},{\"name\":\"ws\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(T) + ",\"cols\":" + std::to_string(I) + "},\"block\":\"transformed_parameters\"},{\"name\":\"sigma\",\"type\":{\"name\":\"real\"},\"block\":\"transformed_parameters\"},{\"name\":\"tau\",\"type\":{\"name\":\"real\"},\"block\":\"transformed_parameters\"},{\"name\":\"means\",\"type\":{\"name\":\"array\",\"length\":" + std::to_string(H) + ",\"element_type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(T) + ",\"cols\":" + std::to_string(I) + "}},\"block\":\"transformed_parameters\"},{\"name\":\"s\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(I) + "},\"block\":\"generated_quantities\"},{\"name\":\"log_probs\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(H) + ",\"cols\":" + std::to_string(I) + "},\"block\":\"generated_quantities\"},{\"name\":\"log_lik\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(I) + "},\"block\":\"generated_quantities\"}]");
     
     } // get_unconstrained_sizedtypes() 
     
@@ -1235,7 +1262,7 @@ class Sp_corr_model final : public model_base_crtp<Sp_corr_model> {
   ((((((1 + 1) + 1) + 1) + (betas_1dim__ * H)) + vs_1dim__) + I);
       const size_t num_transformed = emit_transformed_parameters * 
   (((((((H + cumprod_one_mv_1dim__) + 1) + (I * T)) + (T * I)) + 1) + 1) +
-    (T * H));
+    ((H * T) * I));
       const size_t num_gen_quantities = emit_generated_quantities * 
   ((I + (H * I)) + I);
       const size_t num_to_write = num_params__ + num_transformed +
@@ -1258,7 +1285,7 @@ class Sp_corr_model final : public model_base_crtp<Sp_corr_model> {
   ((((((1 + 1) + 1) + 1) + (betas_1dim__ * H)) + vs_1dim__) + I);
       const size_t num_transformed = emit_transformed_parameters * 
   (((((((H + cumprod_one_mv_1dim__) + 1) + (I * T)) + (T * I)) + 1) + 1) +
-    (T * H));
+    ((H * T) * I));
       const size_t num_gen_quantities = emit_generated_quantities * 
   ((I + (H * I)) + I);
       const size_t num_to_write = num_params__ + num_transformed +

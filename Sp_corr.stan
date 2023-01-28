@@ -6,7 +6,7 @@ data
     int P; // number of covariates
     int H; // truncation of stick breaking construction dp
     
-    vector[T] y[I]; // per each prov the asnwer at all the time
+    vector[T] y[I]; // for each prov the asnwer at all the time
     matrix[T,P+1] X[I]; // for each province its covariance matrix
       
     // hyperpar vector of regressors
@@ -93,11 +93,11 @@ transformed parameters
     
     real tau = sqrt(tau2);
     
-    vector[H]  means[T];
+    matrix[T,I]  means[H];
 
     for (i in 1:I) {
         for (h in 1:H) 
-            means[h] = X[i]*betas[1:(P+1),h] + ws[1:T,i];
+            means[h,1:T,i] = X[i]*betas[1:(P+1),h] + ws[1:T,i];
     }
 
 }
@@ -119,7 +119,7 @@ model
         
         for (h in 1:H) 
             log_probs[h] = log(omegas[h]) + 
-            normal_lpdf(y[i] | means[h], sigma);
+            normal_lpdf(y[i] | means[h,1:T,i], sigma);
         
         target += log_sum_exp(log_probs);
     }
@@ -135,7 +135,7 @@ generated quantities
     {
         for (h in 1:H) 
             log_probs[h,i] = log(omegas[h]) + 
-            normal_lpdf(y[i] | means[h], sigma);
+            normal_lpdf(y[i] | means[h,1:T,i], sigma);
     
     }
     for (i in 1:I)
