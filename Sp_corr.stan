@@ -6,14 +6,14 @@ data
     int P; // number of covariates
     int H; // truncation of stick breaking construction dp
     
-    vector[T] y[I]; // for each prov the asnwer at all the time
-    matrix[T,P+1] X[I]; // for each province its covariance matrix
+    array[I] vector[T] y; // value of interest
+    array[I] matrix[T,P+1] X; // covariates matrices for each province
       
     // hyperpar vector of regressors
     vector[P+1] mu_0; 
     real        sigma_0;
     
-    // w_1
+    // mean of w_1 (random effect for every province at time 1)
     vector[I] mu_w_1;
     
     // alpha
@@ -28,7 +28,7 @@ data
     real a_sigma2;
     real b_sigma2;
     
-    // rho
+    // rho 
     real rho;
     
     //xis
@@ -54,14 +54,13 @@ parameters
     real<lower=0,upper=1> xi_constructor;
     
     // betas for the mixture of the dirichlet process
-    matrix[P+1,H]  betas;
+    array[H] vector[P+1] betas;
 
-    
     // for the construction of the dirichlet process
     vector<lower=0,upper=1>[H-1] vs;
     
     // for the random effect construction 
-    vector[I] alpha_w;
+    vector[I] w_raw;
 }
 
 transformed parameters
@@ -82,10 +81,10 @@ transformed parameters
     // random effects
     matrix[I,T]                ws_tmp;
     
-    ws_tmp[1:I,1] =  mu_w_1 + L*alpha_w;
+    ws_tmp[1:I,1] =  mu_w_1 + L*w_raw;
     
     for (t in 2:T)
-        ws_tmp[1:I,t] = ws_tmp[1:I,t-1]*xi + L*alpha_w; 
+        ws_tmp[1:I,t] = ws_tmp[1:I,t-1]*xi + L*w_raw; 
     
     matrix[T,I]   ws = (ws_tmp)'; //otherwise I have to transpose in the for loop at each iteration
     
@@ -93,11 +92,11 @@ transformed parameters
     
     real tau = sqrt(tau2);
     
-    matrix[T,I]  means[H];
+    array[H,I] vector[T] means;
 
     for (i in 1:I) {
         for (h in 1:H) 
-            means[h,1:T,i] = X[i]*betas[1:(P+1),h] + ws[1:T,i];
+            means[h,i] = X[i]*betas[h] + ws[1:T,i];
     }
 
 }
@@ -108,18 +107,18 @@ model
     sigma2 ~ inv_gamma(a_sigma2,b_sigma2);
     tau2   ~ inv_gamma(a_tau2,b_tau2);
     vs     ~ beta(1,alpha);
-    alpha_w ~ normal(0, tau);
+    w_raw ~ normal(0, tau);
     xi_constructor ~ beta(a_xi,b_xi);
     
     for (h in 1:H)
-        betas[1:(P+1),h] ~ normal(mu_0, sigma_0);
+        betas[h] ~ normal(mu_0, sigma_0);
     
     vector[H] log_probs;
     for (i in 1:I) {
         
         for (h in 1:H) 
             log_probs[h] = log(omegas[h]) + 
-            normal_lpdf(y[i] | means[h,1:T,i], sigma);
+            normal_lpdf(y[i] | means[h,i], sigma);
         
         target += log_sum_exp(log_probs);
     }
@@ -130,23 +129,19 @@ generated quantities
     // vector of cluster allocations
     vector[I] s;
     
-    matrix[H,I] log_probs; 
+    // log likelihood
+    vector[I] log_lik;
+    
+    array[I] vector[H] log_probs;
     for (i in 1:I) 
     {
         for (h in 1:H) 
-            log_probs[h,i] = log(omegas[h]) + 
-            normal_lpdf(y[i] | means[h,1:T,i], sigma);
-    
+            log_probs[i,h] = log(omegas[h]) + 
+            normal_lpdf(y[i] | means[h,i], sigma);
+        
+        s[i] = categorical_rng(softmax(log_probs[i]));
+        log_lik[i] = log_sum_exp(log_probs[i]);
     }
-    for (i in 1:I)
-        s[i] = categorical_rng(softmax(log_probs[1:H,i]));
-        
-        
-    // log likelihood
-    vector[I] log_lik;
-    for (i in 1:I)
-      log_lik[i] = log_sum_exp(log_probs[1:H,i]);
     
-
-    
+        
 }
