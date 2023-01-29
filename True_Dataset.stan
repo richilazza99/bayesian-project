@@ -50,17 +50,17 @@ parameters
     real<lower=0> sigma2; 
     real<lower=0> tau2;  
     
-    // autoregressive coefficient
+    // autoregressive coefficient construction
     real<lower=0,upper=1> xi_constructor;
     
     // betas for the mixture of the dirichlet process
-    array[H] vector[P+1] betas;
+    array[H] vector[P+1] betas; 
 
     // for the construction of the dirichlet process
     vector<lower=0,upper=1>[H-1] vs;
     
     // for the random effect construction 
-    vector[I] w_raw;
+    array[T] vector[I] w_raw;
 }
 
 transformed parameters
@@ -76,31 +76,22 @@ transformed parameters
     omegas[2:(H-1)] = vs[2:(H-1)] .* cumprod_one_mv[1:(H-2)];
     omegas[H] = cumprod_one_mv[H-1];
     
-    // xi of the random effects
+    // autoregressive coefficient of the random effects
     real xi = 2*xi_constructor-1;
     
     // random effects tmp
     matrix[I,T]                ws_tmp;
     
-    ws_tmp[1:I,1] =  mu_w_1 + L*w_raw;
+    ws_tmp[1:I,1] =  mu_w_1 + L*w_raw[1];
     
     for (t in 2:T)
-        ws_tmp[1:I,t] = ws_tmp[1:I,t-1]*xi + L*w_raw; 
+        ws_tmp[1:I,t] = ws_tmp[1:I,t-1]*xi + L*w_raw[t]; 
     
     matrix[T,I]   ws = (ws_tmp)'; //otherwise I have to transpose in the for loop at each iteration
     
     // Stan wants std
     real sigma = sqrt(sigma2);
     real tau = sqrt(tau2);
-    
-    // for each mixture and province the means for all the time
-    array[H,I] vector[T] means;
-
-    for (i in 1:I) {
-        for (h in 1:H) 
-            means[h,i] = X[i]*betas[h] + ws[1:T,i];
-    }
-
 }
 
 model
@@ -108,19 +99,24 @@ model
     alpha  ~ gamma(a_alpha,b_alpha);
     sigma2 ~ inv_gamma(a_sigma2,b_sigma2);
     tau2   ~ inv_gamma(a_tau2,b_tau2);
-    vs     ~ beta(1,alpha);
-    w_raw ~ normal(0, tau); // does vectorization work? it is a vector it should
+    vs     ~ beta(1,alpha); 
     xi_constructor ~ beta(a_xi,b_xi);
+    
+    w_raw[1] ~ normal(0, tau); 
+    
+    for (t in 2:T)
+        w_raw[t] ~ normal(0, tau);
     
     for (h in 1:H)
         betas[h] ~ normal(mu_0, sigma_0);
     
     vector[H] log_probs;
+    
     for (i in 1:I) {
-        // si rinizializza in questo modo log_probs??
+        
         for (h in 1:H) 
-            log_probs[h] = log(omegas[h]) + 
-            normal_lpdf(y[i] | means[h,i], sigma);
+    
+            log_probs[h] = log(omegas[h]) + normal_lpdf(y[i] | X[i]*betas[h] + ws[1:T,i], sigma);
         
         target += log_sum_exp(log_probs);
     }
@@ -135,11 +131,11 @@ generated quantities
     vector[I] log_lik;
     
     array[I] vector[H] log_probs;
+    
     for (i in 1:I) 
     {
         for (h in 1:H) 
-            log_probs[i,h] = log(omegas[h]) + 
-            normal_lpdf(y[i] | means[h,i], sigma);
+            log_probs[i,h] = log(omegas[h]) + normal_lpdf(y[i] | X[i]*betas[h] + ws[1:T,i], sigma);
         
         s[i] = categorical_rng(softmax(log_probs[i]));
         log_lik[i] = log_sum_exp(log_probs[i]);
