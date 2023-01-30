@@ -54,7 +54,7 @@ parameters
     real<lower=0,upper=1> xi_constructor;
     
     // betas for the mixture of the dirichlet process
-    array[H] vector[P+1] betas;
+    array[H] vector[P+1] betas; 
 
     // for the construction of the dirichlet process
     vector<lower=0,upper=1>[H-1] vs;
@@ -92,7 +92,6 @@ transformed parameters
     // Stan wants std
     real sigma = sqrt(sigma2);
     real tau = sqrt(tau2);
-
 }
 
 model
@@ -139,6 +138,7 @@ generated quantities
             log_probs[i,h] = log(omegas[h]) + normal_lpdf(y[i] | X[i]*betas[h] + ws[1:T,i], sigma);
         
         s[i] = categorical_rng(softmax(log_probs[i]));
+        
         log_lik[i] = log_sum_exp(log_probs[i]);
     }
     

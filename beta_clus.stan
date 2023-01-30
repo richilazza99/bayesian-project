@@ -1,63 +1,62 @@
 
 data
 {
-    int<lower=1> I; // number of areal locations
-    int<lower=1> T; // number of time steps
-    int<lower=1> P; // number of covariates
-    int<lower=1> H; // number of possible clusters
+    int I; // number of areal locations
+    int T; // number of time steps
+    int P; // number of covariates
+    int N; // number of clusters
     
     array[I] vector[T] y; // value of interest
     array[I] matrix[T,P+1] X; // covariates matrices for each province
-    
       
     // hyperpar vector of regressors
-    vector[P+1]     mu_0; 
+    vector[P+1] mu_0; 
     real        sigma_0;
     
-    // w_1
+    // mean of w_1 (random effect for every province at time 1)
     vector[I] mu_w_1;
     
     // alpha
-    real<lower=0> a_alpha;
-    real<lower=0> b_alpha;
+    real a_alpha;
+    real b_alpha;
     
     // tau^2
-    real<lower=0> a_tau2;
-    real<lower=0> b_tau2;
+    real a_tau2;
+    real b_tau2;
     
     // sigma^2
-    real<lower=0> a_sigma2;
-    real<lower=0> b_sigma2;
+    real a_sigma2;
+    real b_sigma2;
     
     // rho 
     real rho;
     
     //xis
-    real<lower=0> a_xi;
-    real<lower=0> b_xi;
-    
-    int s[I];
-    
+    real a_xi;
+    real b_xi;
+
     // Qinv
     matrix[I,I] inv_Q;
+    
+    // s
+    array[I] int s;
 }
 
-transformed data
-{
+transformed data {
     matrix[I, I] L;
     L = cholesky_decompose(inv_Q);
 }
 
 parameters
 {
-    real<lower=0> sigma2;
-    real<lower=0> tau2;
+    real<lower=0> sigma2; 
+    real<lower=0> tau2;  
     
-    // autoregressive coefficient construction
+    // autoregressive coefficient
     real<lower=0,upper=1> xi_constructor;
     
     // betas for the mixture of the dirichlet process
-    array[H] vector[P+1] betas_clus; 
+    array[N] vector[P+1] betas;
     
     // for the random effect construction 
     array[T] vector[I] w_raw;
@@ -65,7 +64,8 @@ parameters
 
 transformed parameters
 {   
-    // autoregressive coefficient of the random effects
+    
+    // xi of the random effects
     real xi = 2*xi_constructor-1;
     
     // random effects tmp
@@ -78,30 +78,27 @@ transformed parameters
     
     matrix[T,I]   ws = (ws_tmp)'; //otherwise I have to transpose in the for loop at each iteration
     
-    // Stan wants std
+    // stan wants std
     real sigma = sqrt(sigma2);
     real tau = sqrt(tau2);
+
 }
 
 model
 {
-    
     sigma2 ~ inv_gamma(a_sigma2,b_sigma2);
     tau2   ~ inv_gamma(a_tau2,b_tau2);
+    for (t in 1:T) 
+        w_raw[t] ~ normal(0, tau); 
+        
     xi_constructor ~ beta(a_xi,b_xi);
     
-    w_raw[1] ~ normal(0, tau); 
+    for (n in 1:N)
+        betas[n] ~ normal(mu_0, sigma_0);
     
-    for (t in 2:T)
-        w_raw[t] ~ normal(0, tau);
-    
-    for (h in 1:H)
-        betas_clus[h] ~ normal(mu_0, sigma_0);
-    
-    for (i in 1:I){
-        int clus_i = s[i]+1;
-        
-        y[i] ~ normal(X[i]*betas_clus[clus_i] + ws[1:T,i], sigma);
-    }    
+    for (i in 1:I) {
+        int clus_i=s[i];
+        y[i] ~ normal(X[i]*betas[clus_i] + ws[1:T,i], sigma);
+    }
 }
 
