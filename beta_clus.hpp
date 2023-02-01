@@ -8,13 +8,13 @@ using namespace stan::math;
 
 
 stan::math::profile_map profiles__;
-static constexpr std::array<const char*, 67> locations_array__ = 
+static constexpr std::array<const char*, 68> locations_array__ = 
 {" (found before start of program)",
- " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 52, column 4 to column 25)",
- " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 53, column 4 to column 23)",
- " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 56, column 4 to column 41)",
- " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 59, column 4 to column 31)",
- " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 62, column 4 to column 29)",
+ " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 53, column 4 to column 25)",
+ " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 54, column 4 to column 23)",
+ " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 57, column 4 to column 41)",
+ " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 60, column 4 to column 36)",
+ " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 63, column 4 to column 29)",
  " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 69, column 4 to column 33)",
  " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 72, column 4 to column 38)",
  " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 79, column 4 to column 33)",
@@ -25,19 +25,20 @@ static constexpr std::array<const char*, 67> locations_array__ =
  " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 76, column 4 to line 77, column 56)",
  " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 89, column 4 to column 42)",
  " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 90, column 4 to column 38)",
- " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 92, column 8 to column 34)",
- " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 91, column 4 to line 92, column 34)",
- " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 94, column 4 to column 37)",
- " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 97, column 8 to column 41)",
- " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 96, column 4 to line 97, column 41)",
- " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 100, column 8 to column 24)",
- " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 101, column 8 to column 61)",
- " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 99, column 19 to line 102, column 5)",
- " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 99, column 4 to line 102, column 5)",
- " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 4, column 4 to column 10)",
- " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 5, column 4 to column 10)",
- " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 6, column 4 to column 10)",
- " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 7, column 4 to column 10)",
+ " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 91, column 4 to column 37)",
+ " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 93, column 4 to column 30)",
+ " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 96, column 8 to column 34)",
+ " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 95, column 4 to line 96, column 34)",
+ " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 99, column 8 to column 46)",
+ " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 98, column 4 to line 99, column 46)",
+ " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 102, column 8 to column 28)",
+ " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 104, column 8 to column 66)",
+ " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 101, column 18 to line 105, column 5)",
+ " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 101, column 4 to line 105, column 5)",
+ " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 4, column 4 to column 19)",
+ " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 5, column 4 to column 19)",
+ " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 6, column 4 to column 19)",
+ " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 7, column 4 to column 19)",
  " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 9, column 10 to column 11)",
  " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 9, column 20 to column 21)",
  " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 9, column 4 to column 25)",
@@ -45,33 +46,33 @@ static constexpr std::array<const char*, 67> locations_array__ =
  " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 10, column 20 to column 21)",
  " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 10, column 22 to column 25)",
  " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 10, column 4 to column 29)",
- " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 13, column 11 to column 14)",
- " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 13, column 4 to column 21)",
- " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 14, column 4 to column 24)",
- " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 17, column 11 to column 12)",
- " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 17, column 4 to column 21)",
- " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 20, column 4 to column 17)",
- " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 21, column 4 to column 17)",
- " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 24, column 4 to column 16)",
- " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 25, column 4 to column 16)",
- " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 28, column 4 to column 18)",
- " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 29, column 4 to column 18)",
- " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 32, column 4 to column 13)",
- " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 35, column 4 to column 14)",
- " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 36, column 4 to column 14)",
- " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 39, column 11 to column 12)",
- " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 39, column 13 to column 14)",
- " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 39, column 4 to column 22)",
- " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 42, column 10 to column 11)",
- " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 42, column 4 to column 19)",
- " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 46, column 11 to column 12)",
- " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 46, column 14 to column 15)",
- " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 46, column 4 to column 19)",
- " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 47, column 4 to column 34)",
- " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 59, column 10 to column 11)",
- " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 59, column 20 to column 23)",
- " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 62, column 10 to column 11)",
- " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 62, column 20 to column 21)",
+ " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 14, column 11 to column 14)",
+ " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 14, column 4 to column 25)",
+ " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 15, column 4 to column 24)",
+ " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 18, column 11 to column 12)",
+ " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 18, column 4 to column 21)",
+ " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 21, column 4 to column 26)",
+ " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 22, column 4 to column 26)",
+ " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 25, column 4 to column 25)",
+ " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 26, column 4 to column 25)",
+ " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 29, column 4 to column 27)",
+ " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 30, column 4 to column 27)",
+ " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 33, column 4 to column 13)",
+ " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 36, column 4 to column 23)",
+ " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 37, column 4 to column 23)",
+ " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 39, column 10 to column 11)",
+ " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 39, column 4 to column 13)",
+ " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 42, column 11 to column 12)",
+ " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 42, column 13 to column 14)",
+ " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 42, column 4 to column 22)",
+ " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 47, column 11 to column 12)",
+ " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 47, column 14 to column 15)",
+ " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 47, column 4 to column 19)",
+ " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 48, column 4 to column 34)",
+ " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 60, column 10 to column 11)",
+ " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 60, column 20 to column 23)",
+ " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 63, column 10 to column 11)",
+ " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 63, column 20 to column 21)",
  " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 72, column 11 to column 12)",
  " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 72, column 13 to column 14)",
  " (in 'C:/Users/Anna/Documents/GitHub/bayesian-project/beta_clus.stan', line 79, column 11 to column 12)",
@@ -86,7 +87,7 @@ class beta_clus_model final : public model_base_crtp<beta_clus_model> {
   int I;
   int T;
   int P;
-  int N;
+  int H;
   std::vector<Eigen::Matrix<double, -1, 1>> y;
   std::vector<Eigen::Matrix<double, -1, -1>> X;
   Eigen::Matrix<double, -1, 1> mu_0_data__;
@@ -101,10 +102,10 @@ class beta_clus_model final : public model_base_crtp<beta_clus_model> {
   double rho;
   double a_xi;
   double b_xi;
-  Eigen::Matrix<double, -1, -1> inv_Q_data__;
   std::vector<int> s;
+  Eigen::Matrix<double, -1, -1> inv_Q_data__;
   Eigen::Matrix<double, -1, -1> L_data__;
-  int betas_2dim__; 
+  int betas_clus_2dim__; 
   Eigen::Map<Eigen::Matrix<double, -1, 1>> mu_0{nullptr, 0};
   Eigen::Map<Eigen::Matrix<double, -1, 1>> mu_w_1{nullptr, 0};
   Eigen::Map<Eigen::Matrix<double, -1, -1>> inv_Q{nullptr, 0, 0};
@@ -135,43 +136,51 @@ class beta_clus_model final : public model_base_crtp<beta_clus_model> {
     try {
       int pos__ = std::numeric_limits<int>::min();
       pos__ = 1;
-      current_statement__ = 25;
+      current_statement__ = 26;
       context__.validate_dims("data initialization","I","int",
            std::vector<size_t>{});
       I = std::numeric_limits<int>::min();
       
       
-      current_statement__ = 25;
+      current_statement__ = 26;
       I = context__.vals_i("I")[(1 - 1)];
       current_statement__ = 26;
+      stan::math::check_greater_or_equal(function__, "I", I, 1);
+      current_statement__ = 27;
       context__.validate_dims("data initialization","T","int",
            std::vector<size_t>{});
       T = std::numeric_limits<int>::min();
       
       
-      current_statement__ = 26;
+      current_statement__ = 27;
       T = context__.vals_i("T")[(1 - 1)];
       current_statement__ = 27;
+      stan::math::check_greater_or_equal(function__, "T", T, 1);
+      current_statement__ = 28;
       context__.validate_dims("data initialization","P","int",
            std::vector<size_t>{});
       P = std::numeric_limits<int>::min();
       
       
-      current_statement__ = 27;
+      current_statement__ = 28;
       P = context__.vals_i("P")[(1 - 1)];
       current_statement__ = 28;
-      context__.validate_dims("data initialization","N","int",
-           std::vector<size_t>{});
-      N = std::numeric_limits<int>::min();
-      
-      
-      current_statement__ = 28;
-      N = context__.vals_i("N")[(1 - 1)];
+      stan::math::check_greater_or_equal(function__, "P", P, 1);
       current_statement__ = 29;
-      stan::math::validate_non_negative_index("y", "I", I);
+      context__.validate_dims("data initialization","H","int",
+           std::vector<size_t>{});
+      H = std::numeric_limits<int>::min();
+      
+      
+      current_statement__ = 29;
+      H = context__.vals_i("H")[(1 - 1)];
+      current_statement__ = 29;
+      stan::math::check_greater_or_equal(function__, "H", H, 1);
       current_statement__ = 30;
-      stan::math::validate_non_negative_index("y", "T", T);
+      stan::math::validate_non_negative_index("y", "I", I);
       current_statement__ = 31;
+      stan::math::validate_non_negative_index("y", "T", T);
+      current_statement__ = 32;
       context__.validate_dims("data initialization","y","double",
            std::vector<size_t>{static_cast<size_t>(I),
             static_cast<size_t>(T)});
@@ -183,30 +192,30 @@ class beta_clus_model final : public model_base_crtp<beta_clus_model> {
       
       {
         std::vector<local_scalar_t__> y_flat__;
-        current_statement__ = 31;
+        current_statement__ = 32;
         y_flat__ = context__.vals_r("y");
-        current_statement__ = 31;
+        current_statement__ = 32;
         pos__ = 1;
-        current_statement__ = 31;
+        current_statement__ = 32;
         for (int sym1__ = 1; sym1__ <= T; ++sym1__) {
-          current_statement__ = 31;
+          current_statement__ = 32;
           for (int sym2__ = 1; sym2__ <= I; ++sym2__) {
-            current_statement__ = 31;
+            current_statement__ = 32;
             stan::model::assign(y, y_flat__[(pos__ - 1)],
               "assigning variable y", stan::model::index_uni(sym2__),
                                         stan::model::index_uni(sym1__));
-            current_statement__ = 31;
+            current_statement__ = 32;
             pos__ = (pos__ + 1);
           }
         }
       }
-      current_statement__ = 32;
-      stan::math::validate_non_negative_index("X", "I", I);
       current_statement__ = 33;
-      stan::math::validate_non_negative_index("X", "T", T);
+      stan::math::validate_non_negative_index("X", "I", I);
       current_statement__ = 34;
-      stan::math::validate_non_negative_index("X", "P + 1", (P + 1));
+      stan::math::validate_non_negative_index("X", "T", T);
       current_statement__ = 35;
+      stan::math::validate_non_negative_index("X", "P + 1", (P + 1));
+      current_statement__ = 36;
       context__.validate_dims("data initialization","X","double",
            std::vector<size_t>{static_cast<size_t>(I),
             static_cast<size_t>(T), static_cast<size_t>((P + 1))});
@@ -218,30 +227,30 @@ class beta_clus_model final : public model_base_crtp<beta_clus_model> {
       
       {
         std::vector<local_scalar_t__> X_flat__;
-        current_statement__ = 35;
+        current_statement__ = 36;
         X_flat__ = context__.vals_r("X");
-        current_statement__ = 35;
+        current_statement__ = 36;
         pos__ = 1;
-        current_statement__ = 35;
+        current_statement__ = 36;
         for (int sym1__ = 1; sym1__ <= (P + 1); ++sym1__) {
-          current_statement__ = 35;
+          current_statement__ = 36;
           for (int sym2__ = 1; sym2__ <= T; ++sym2__) {
-            current_statement__ = 35;
+            current_statement__ = 36;
             for (int sym3__ = 1; sym3__ <= I; ++sym3__) {
-              current_statement__ = 35;
+              current_statement__ = 36;
               stan::model::assign(X, X_flat__[(pos__ - 1)],
                 "assigning variable X", stan::model::index_uni(sym3__),
                                           stan::model::index_uni(sym2__),
                                           stan::model::index_uni(sym1__));
-              current_statement__ = 35;
+              current_statement__ = 36;
               pos__ = (pos__ + 1);
             }
           }
         }
       }
-      current_statement__ = 36;
-      stan::math::validate_non_negative_index("mu_0", "P + 1", (P + 1));
       current_statement__ = 37;
+      stan::math::validate_non_negative_index("mu_0", "P + 1", (P + 1));
+      current_statement__ = 38;
       context__.validate_dims("data initialization","mu_0","double",
            std::vector<size_t>{static_cast<size_t>((P + 1))});
       mu_0_data__ = 
@@ -252,30 +261,30 @@ class beta_clus_model final : public model_base_crtp<beta_clus_model> {
       
       {
         std::vector<local_scalar_t__> mu_0_flat__;
-        current_statement__ = 37;
+        current_statement__ = 38;
         mu_0_flat__ = context__.vals_r("mu_0");
-        current_statement__ = 37;
+        current_statement__ = 38;
         pos__ = 1;
-        current_statement__ = 37;
+        current_statement__ = 38;
         for (int sym1__ = 1; sym1__ <= (P + 1); ++sym1__) {
-          current_statement__ = 37;
+          current_statement__ = 38;
           stan::model::assign(mu_0, mu_0_flat__[(pos__ - 1)],
             "assigning variable mu_0", stan::model::index_uni(sym1__));
-          current_statement__ = 37;
+          current_statement__ = 38;
           pos__ = (pos__ + 1);
         }
       }
-      current_statement__ = 38;
+      current_statement__ = 39;
       context__.validate_dims("data initialization","sigma_0","double",
            std::vector<size_t>{});
       sigma_0 = std::numeric_limits<double>::quiet_NaN();
       
       
-      current_statement__ = 38;
-      sigma_0 = context__.vals_r("sigma_0")[(1 - 1)];
       current_statement__ = 39;
-      stan::math::validate_non_negative_index("mu_w_1", "I", I);
+      sigma_0 = context__.vals_r("sigma_0")[(1 - 1)];
       current_statement__ = 40;
+      stan::math::validate_non_negative_index("mu_w_1", "I", I);
+      current_statement__ = 41;
       context__.validate_dims("data initialization","mu_w_1","double",
            std::vector<size_t>{static_cast<size_t>(I)});
       mu_w_1_data__ = 
@@ -286,96 +295,122 @@ class beta_clus_model final : public model_base_crtp<beta_clus_model> {
       
       {
         std::vector<local_scalar_t__> mu_w_1_flat__;
-        current_statement__ = 40;
+        current_statement__ = 41;
         mu_w_1_flat__ = context__.vals_r("mu_w_1");
-        current_statement__ = 40;
+        current_statement__ = 41;
         pos__ = 1;
-        current_statement__ = 40;
+        current_statement__ = 41;
         for (int sym1__ = 1; sym1__ <= I; ++sym1__) {
-          current_statement__ = 40;
+          current_statement__ = 41;
           stan::model::assign(mu_w_1, mu_w_1_flat__[(pos__ - 1)],
             "assigning variable mu_w_1", stan::model::index_uni(sym1__));
-          current_statement__ = 40;
+          current_statement__ = 41;
           pos__ = (pos__ + 1);
         }
       }
-      current_statement__ = 41;
+      current_statement__ = 42;
       context__.validate_dims("data initialization","a_alpha","double",
            std::vector<size_t>{});
       a_alpha = std::numeric_limits<double>::quiet_NaN();
       
       
-      current_statement__ = 41;
+      current_statement__ = 42;
       a_alpha = context__.vals_r("a_alpha")[(1 - 1)];
       current_statement__ = 42;
+      stan::math::check_greater_or_equal(function__, "a_alpha", a_alpha, 0);
+      current_statement__ = 43;
       context__.validate_dims("data initialization","b_alpha","double",
            std::vector<size_t>{});
       b_alpha = std::numeric_limits<double>::quiet_NaN();
       
       
-      current_statement__ = 42;
+      current_statement__ = 43;
       b_alpha = context__.vals_r("b_alpha")[(1 - 1)];
       current_statement__ = 43;
+      stan::math::check_greater_or_equal(function__, "b_alpha", b_alpha, 0);
+      current_statement__ = 44;
       context__.validate_dims("data initialization","a_tau2","double",
            std::vector<size_t>{});
       a_tau2 = std::numeric_limits<double>::quiet_NaN();
       
       
-      current_statement__ = 43;
+      current_statement__ = 44;
       a_tau2 = context__.vals_r("a_tau2")[(1 - 1)];
       current_statement__ = 44;
+      stan::math::check_greater_or_equal(function__, "a_tau2", a_tau2, 0);
+      current_statement__ = 45;
       context__.validate_dims("data initialization","b_tau2","double",
            std::vector<size_t>{});
       b_tau2 = std::numeric_limits<double>::quiet_NaN();
       
       
-      current_statement__ = 44;
+      current_statement__ = 45;
       b_tau2 = context__.vals_r("b_tau2")[(1 - 1)];
       current_statement__ = 45;
+      stan::math::check_greater_or_equal(function__, "b_tau2", b_tau2, 0);
+      current_statement__ = 46;
       context__.validate_dims("data initialization","a_sigma2","double",
            std::vector<size_t>{});
       a_sigma2 = std::numeric_limits<double>::quiet_NaN();
       
       
-      current_statement__ = 45;
+      current_statement__ = 46;
       a_sigma2 = context__.vals_r("a_sigma2")[(1 - 1)];
       current_statement__ = 46;
+      stan::math::check_greater_or_equal(function__, "a_sigma2", a_sigma2, 0);
+      current_statement__ = 47;
       context__.validate_dims("data initialization","b_sigma2","double",
            std::vector<size_t>{});
       b_sigma2 = std::numeric_limits<double>::quiet_NaN();
       
       
-      current_statement__ = 46;
+      current_statement__ = 47;
       b_sigma2 = context__.vals_r("b_sigma2")[(1 - 1)];
       current_statement__ = 47;
+      stan::math::check_greater_or_equal(function__, "b_sigma2", b_sigma2, 0);
+      current_statement__ = 48;
       context__.validate_dims("data initialization","rho","double",
            std::vector<size_t>{});
       rho = std::numeric_limits<double>::quiet_NaN();
       
       
-      current_statement__ = 47;
-      rho = context__.vals_r("rho")[(1 - 1)];
       current_statement__ = 48;
+      rho = context__.vals_r("rho")[(1 - 1)];
+      current_statement__ = 49;
       context__.validate_dims("data initialization","a_xi","double",
            std::vector<size_t>{});
       a_xi = std::numeric_limits<double>::quiet_NaN();
       
       
-      current_statement__ = 48;
+      current_statement__ = 49;
       a_xi = context__.vals_r("a_xi")[(1 - 1)];
       current_statement__ = 49;
+      stan::math::check_greater_or_equal(function__, "a_xi", a_xi, 0);
+      current_statement__ = 50;
       context__.validate_dims("data initialization","b_xi","double",
            std::vector<size_t>{});
       b_xi = std::numeric_limits<double>::quiet_NaN();
       
       
-      current_statement__ = 49;
+      current_statement__ = 50;
       b_xi = context__.vals_r("b_xi")[(1 - 1)];
       current_statement__ = 50;
-      stan::math::validate_non_negative_index("inv_Q", "I", I);
+      stan::math::check_greater_or_equal(function__, "b_xi", b_xi, 0);
       current_statement__ = 51;
-      stan::math::validate_non_negative_index("inv_Q", "I", I);
+      stan::math::validate_non_negative_index("s", "I", I);
       current_statement__ = 52;
+      context__.validate_dims("data initialization","s","int",
+           std::vector<size_t>{static_cast<size_t>(I)});
+      s = std::vector<int>(I, std::numeric_limits<int>::min());
+      
+      
+      current_statement__ = 52;
+      s = context__.vals_i("s");
+      current_statement__ = 53;
+      stan::math::validate_non_negative_index("inv_Q", "I", I);
+      current_statement__ = 54;
+      stan::math::validate_non_negative_index("inv_Q", "I", I);
+      current_statement__ = 55;
       context__.validate_dims("data initialization","inv_Q","double",
            std::vector<size_t>{static_cast<size_t>(I),
             static_cast<size_t>(I)});
@@ -387,73 +422,64 @@ class beta_clus_model final : public model_base_crtp<beta_clus_model> {
       
       {
         std::vector<local_scalar_t__> inv_Q_flat__;
-        current_statement__ = 52;
+        current_statement__ = 55;
         inv_Q_flat__ = context__.vals_r("inv_Q");
-        current_statement__ = 52;
+        current_statement__ = 55;
         pos__ = 1;
-        current_statement__ = 52;
+        current_statement__ = 55;
         for (int sym1__ = 1; sym1__ <= I; ++sym1__) {
-          current_statement__ = 52;
+          current_statement__ = 55;
           for (int sym2__ = 1; sym2__ <= I; ++sym2__) {
-            current_statement__ = 52;
+            current_statement__ = 55;
             stan::model::assign(inv_Q, inv_Q_flat__[(pos__ - 1)],
               "assigning variable inv_Q", stan::model::index_uni(sym2__),
                                             stan::model::index_uni(sym1__));
-            current_statement__ = 52;
+            current_statement__ = 55;
             pos__ = (pos__ + 1);
           }
         }
       }
-      current_statement__ = 53;
-      stan::math::validate_non_negative_index("s", "I", I);
-      current_statement__ = 54;
-      context__.validate_dims("data initialization","s","int",
-           std::vector<size_t>{static_cast<size_t>(I)});
-      s = std::vector<int>(I, std::numeric_limits<int>::min());
-      
-      
-      current_statement__ = 54;
-      s = context__.vals_i("s");
-      current_statement__ = 55;
-      stan::math::validate_non_negative_index("L", "I", I);
       current_statement__ = 56;
       stan::math::validate_non_negative_index("L", "I", I);
       current_statement__ = 57;
+      stan::math::validate_non_negative_index("L", "I", I);
+      current_statement__ = 58;
       L_data__ = 
         Eigen::Matrix<double, -1, -1>::Constant(I, I,
           std::numeric_limits<double>::quiet_NaN());
       new (&L) Eigen::Map<Eigen::Matrix<double, -1, -1>>(L_data__.data(), I, I);
         
       
-      current_statement__ = 58;
+      current_statement__ = 59;
       stan::model::assign(L, stan::math::cholesky_decompose(inv_Q),
         "assigning variable L");
-      current_statement__ = 59;
-      stan::math::validate_non_negative_index("betas", "N", N);
       current_statement__ = 60;
-      betas_2dim__ = std::numeric_limits<int>::min();
-      
-      
-      current_statement__ = 60;
-      betas_2dim__ = (P + 1);
-      current_statement__ = 60;
-      stan::math::validate_non_negative_index("betas", "P + 1", betas_2dim__);
+      stan::math::validate_non_negative_index("betas_clus", "H", H);
       current_statement__ = 61;
-      stan::math::validate_non_negative_index("w_raw", "T", T);
+      betas_clus_2dim__ = std::numeric_limits<int>::min();
+      
+      
+      current_statement__ = 61;
+      betas_clus_2dim__ = (P + 1);
+      current_statement__ = 61;
+      stan::math::validate_non_negative_index("betas_clus", "P + 1",
+                                              betas_clus_2dim__);
       current_statement__ = 62;
-      stan::math::validate_non_negative_index("w_raw", "I", I);
+      stan::math::validate_non_negative_index("w_raw", "T", T);
       current_statement__ = 63;
-      stan::math::validate_non_negative_index("ws_tmp", "I", I);
+      stan::math::validate_non_negative_index("w_raw", "I", I);
       current_statement__ = 64;
-      stan::math::validate_non_negative_index("ws_tmp", "T", T);
+      stan::math::validate_non_negative_index("ws_tmp", "I", I);
       current_statement__ = 65;
-      stan::math::validate_non_negative_index("ws", "T", T);
+      stan::math::validate_non_negative_index("ws_tmp", "T", T);
       current_statement__ = 66;
+      stan::math::validate_non_negative_index("ws", "T", T);
+      current_statement__ = 67;
       stan::math::validate_non_negative_index("ws", "I", I);
     } catch (const std::exception& e) {
       stan::lang::rethrow_located(e, locations_array__[current_statement__]);
     }
-    num_params_r__ = 1 + 1 + 1 + (N * betas_2dim__) + (T * I);
+    num_params_r__ = 1 + 1 + 1 + (H * betas_clus_2dim__) + (T * I);
     
   }
   
@@ -487,14 +513,14 @@ class beta_clus_model final : public model_base_crtp<beta_clus_model> {
       current_statement__ = 3;
       xi_constructor = in__.template read_constrain_lub<local_scalar_t__, 
                          jacobian__>(0, 1, lp__);
-      std::vector<Eigen::Matrix<local_scalar_t__, -1, 1>> betas =
-         std::vector<Eigen::Matrix<local_scalar_t__, -1, 1>>(N, 
-           Eigen::Matrix<local_scalar_t__, -1, 1>::Constant(betas_2dim__,
-             DUMMY_VAR__));
+      std::vector<Eigen::Matrix<local_scalar_t__, -1, 1>> betas_clus =
+         std::vector<Eigen::Matrix<local_scalar_t__, -1, 1>>(H, 
+           Eigen::Matrix<local_scalar_t__, -1, 1>::Constant(
+             betas_clus_2dim__, DUMMY_VAR__));
       current_statement__ = 4;
-      betas = in__.template read<
-                std::vector<Eigen::Matrix<local_scalar_t__, -1, 1>>>(N,
-                betas_2dim__);
+      betas_clus = in__.template read<
+                     std::vector<Eigen::Matrix<local_scalar_t__, -1, 1>>>(H,
+                     betas_clus_2dim__);
       std::vector<Eigen::Matrix<local_scalar_t__, -1, 1>> w_raw =
          std::vector<Eigen::Matrix<local_scalar_t__, -1, 1>>(T, 
            Eigen::Matrix<local_scalar_t__, -1, 1>::Constant(I, DUMMY_VAR__));
@@ -546,38 +572,44 @@ class beta_clus_model final : public model_base_crtp<beta_clus_model> {
         current_statement__ = 15;
         lp_accum__.add(
           stan::math::inv_gamma_lpdf<propto__>(tau2, a_tau2, b_tau2));
+        current_statement__ = 16;
+        lp_accum__.add(
+          stan::math::beta_lpdf<propto__>(xi_constructor, a_xi, b_xi));
         current_statement__ = 17;
-        for (int t = 1; t <= T; ++t) {
-          current_statement__ = 16;
+        lp_accum__.add(
+          stan::math::normal_lpdf<propto__>(
+            stan::model::rvalue(w_raw, "w_raw", stan::model::index_uni(1)),
+            0, tau));
+        current_statement__ = 19;
+        for (int t = 2; t <= T; ++t) {
+          current_statement__ = 18;
           lp_accum__.add(
             stan::math::normal_lpdf<propto__>(
               stan::model::rvalue(w_raw, "w_raw", stan::model::index_uni(t)),
               0, tau));
         }
-        current_statement__ = 18;
-        lp_accum__.add(
-          stan::math::beta_lpdf<propto__>(xi_constructor, a_xi, b_xi));
-        current_statement__ = 20;
-        for (int n = 1; n <= N; ++n) {
-          current_statement__ = 19;
+        current_statement__ = 21;
+        for (int h = 1; h <= H; ++h) {
+          current_statement__ = 20;
           lp_accum__.add(
             stan::math::normal_lpdf<propto__>(
-              stan::model::rvalue(betas, "betas", stan::model::index_uni(n)),
-              mu_0, sigma_0));
+              stan::model::rvalue(betas_clus, "betas_clus",
+                stan::model::index_uni(h)), mu_0, sigma_0));
         }
-        current_statement__ = 24;
+        current_statement__ = 25;
         for (int i = 1; i <= I; ++i) {
           int clus_i = std::numeric_limits<int>::min();
-          current_statement__ = 21;
-          clus_i = stan::model::rvalue(s, "s", stan::model::index_uni(i));
           current_statement__ = 22;
+          clus_i = (stan::model::rvalue(s, "s", stan::model::index_uni(i)) +
+                     1);
+          current_statement__ = 23;
           lp_accum__.add(
             stan::math::normal_lpdf<propto__>(
               stan::model::rvalue(y, "y", stan::model::index_uni(i)),
               stan::math::add(
                 stan::math::multiply(
                   stan::model::rvalue(X, "X", stan::model::index_uni(i)),
-                  stan::model::rvalue(betas, "betas",
+                  stan::model::rvalue(betas_clus, "betas_clus",
                     stan::model::index_uni(clus_i))),
                 stan::model::rvalue(ws, "ws",
                   stan::model::index_min_max(1, T), stan::model::index_uni(i))),
@@ -628,14 +660,14 @@ class beta_clus_model final : public model_base_crtp<beta_clus_model> {
       current_statement__ = 3;
       xi_constructor = in__.template read_constrain_lub<local_scalar_t__, 
                          jacobian__>(0, 1, lp__);
-      std::vector<Eigen::Matrix<double, -1, 1>> betas =
-         std::vector<Eigen::Matrix<double, -1, 1>>(N, 
-           Eigen::Matrix<double, -1, 1>::Constant(betas_2dim__,
+      std::vector<Eigen::Matrix<double, -1, 1>> betas_clus =
+         std::vector<Eigen::Matrix<double, -1, 1>>(H, 
+           Eigen::Matrix<double, -1, 1>::Constant(betas_clus_2dim__,
              std::numeric_limits<double>::quiet_NaN()));
       current_statement__ = 4;
-      betas = in__.template read<
-                std::vector<Eigen::Matrix<local_scalar_t__, -1, 1>>>(N,
-                betas_2dim__);
+      betas_clus = in__.template read<
+                     std::vector<Eigen::Matrix<local_scalar_t__, -1, 1>>>(H,
+                     betas_clus_2dim__);
       std::vector<Eigen::Matrix<double, -1, 1>> w_raw =
          std::vector<Eigen::Matrix<double, -1, 1>>(T, 
            Eigen::Matrix<double, -1, 1>::Constant(I,
@@ -655,9 +687,9 @@ class beta_clus_model final : public model_base_crtp<beta_clus_model> {
       out__.write(sigma2);
       out__.write(tau2);
       out__.write(xi_constructor);
-      for (int sym1__ = 1; sym1__ <= betas_2dim__; ++sym1__) {
-        for (int sym2__ = 1; sym2__ <= N; ++sym2__) {
-          out__.write(betas[(sym2__ - 1)][(sym1__ - 1)]);
+      for (int sym1__ = 1; sym1__ <= betas_clus_2dim__; ++sym1__) {
+        for (int sym2__ = 1; sym2__ <= H; ++sym2__) {
+          out__.write(betas_clus[(sym2__ - 1)][(sym1__ - 1)]);
         }
       }
       for (int sym1__ = 1; sym1__ <= I; ++sym1__) {
@@ -740,18 +772,18 @@ class beta_clus_model final : public model_base_crtp<beta_clus_model> {
       local_scalar_t__ xi_constructor = DUMMY_VAR__;
       xi_constructor = in__.read<local_scalar_t__>();
       out__.write_free_lub(0, 1, xi_constructor);
-      std::vector<Eigen::Matrix<local_scalar_t__, -1, 1>> betas =
-         std::vector<Eigen::Matrix<local_scalar_t__, -1, 1>>(N, 
-           Eigen::Matrix<local_scalar_t__, -1, 1>::Constant(betas_2dim__,
-             DUMMY_VAR__));
-      for (int sym1__ = 1; sym1__ <= betas_2dim__; ++sym1__) {
-        for (int sym2__ = 1; sym2__ <= N; ++sym2__) {
-          stan::model::assign(betas, in__.read<local_scalar_t__>(),
-            "assigning variable betas", stan::model::index_uni(sym2__),
-                                          stan::model::index_uni(sym1__));
+      std::vector<Eigen::Matrix<local_scalar_t__, -1, 1>> betas_clus =
+         std::vector<Eigen::Matrix<local_scalar_t__, -1, 1>>(H, 
+           Eigen::Matrix<local_scalar_t__, -1, 1>::Constant(
+             betas_clus_2dim__, DUMMY_VAR__));
+      for (int sym1__ = 1; sym1__ <= betas_clus_2dim__; ++sym1__) {
+        for (int sym2__ = 1; sym2__ <= H; ++sym2__) {
+          stan::model::assign(betas_clus, in__.read<local_scalar_t__>(),
+            "assigning variable betas_clus", stan::model::index_uni(sym2__),
+                                               stan::model::index_uni(sym1__));
         }
       }
-      out__.write(betas);
+      out__.write(betas_clus);
       std::vector<Eigen::Matrix<local_scalar_t__, -1, 1>> w_raw =
          std::vector<Eigen::Matrix<local_scalar_t__, -1, 1>>(T, 
            Eigen::Matrix<local_scalar_t__, -1, 1>::Constant(I, DUMMY_VAR__));
@@ -771,7 +803,7 @@ class beta_clus_model final : public model_base_crtp<beta_clus_model> {
   inline void get_param_names(std::vector<std::string>& names__) const {
     
     names__ = std::vector<std::string>{"sigma2", "tau2", "xi_constructor",
-      "betas", "w_raw", "xi", "ws_tmp", "ws", "sigma", "tau"};
+      "betas_clus", "w_raw", "xi", "ws_tmp", "ws", "sigma", "tau"};
     
     } // get_param_names() 
     
@@ -779,8 +811,8 @@ class beta_clus_model final : public model_base_crtp<beta_clus_model> {
     
     dimss__ = std::vector<std::vector<size_t>>{std::vector<size_t>{},
       std::vector<size_t>{}, std::vector<size_t>{},
-      std::vector<size_t>{static_cast<size_t>(N),
-                          static_cast<size_t>(betas_2dim__)},
+      std::vector<size_t>{static_cast<size_t>(H),
+                          static_cast<size_t>(betas_clus_2dim__)},
       std::vector<size_t>{static_cast<size_t>(T), static_cast<size_t>(I)},
       std::vector<size_t>{},
       std::vector<size_t>{static_cast<size_t>(I), static_cast<size_t>(T)},
@@ -798,11 +830,11 @@ class beta_clus_model final : public model_base_crtp<beta_clus_model> {
     param_names__.emplace_back(std::string() + "sigma2");
     param_names__.emplace_back(std::string() + "tau2");
     param_names__.emplace_back(std::string() + "xi_constructor");
-    for (int sym1__ = 1; sym1__ <= betas_2dim__; ++sym1__) {
+    for (int sym1__ = 1; sym1__ <= betas_clus_2dim__; ++sym1__) {
       {
-        for (int sym2__ = 1; sym2__ <= N; ++sym2__) {
+        for (int sym2__ = 1; sym2__ <= H; ++sym2__) {
           {
-            param_names__.emplace_back(std::string() + "betas" + '.' + std::to_string(sym2__) + '.' + std::to_string(sym1__));
+            param_names__.emplace_back(std::string() + "betas_clus" + '.' + std::to_string(sym2__) + '.' + std::to_string(sym1__));
           } 
         }
       } 
@@ -855,11 +887,11 @@ class beta_clus_model final : public model_base_crtp<beta_clus_model> {
     param_names__.emplace_back(std::string() + "sigma2");
     param_names__.emplace_back(std::string() + "tau2");
     param_names__.emplace_back(std::string() + "xi_constructor");
-    for (int sym1__ = 1; sym1__ <= betas_2dim__; ++sym1__) {
+    for (int sym1__ = 1; sym1__ <= betas_clus_2dim__; ++sym1__) {
       {
-        for (int sym2__ = 1; sym2__ <= N; ++sym2__) {
+        for (int sym2__ = 1; sym2__ <= H; ++sym2__) {
           {
-            param_names__.emplace_back(std::string() + "betas" + '.' + std::to_string(sym2__) + '.' + std::to_string(sym1__));
+            param_names__.emplace_back(std::string() + "betas_clus" + '.' + std::to_string(sym2__) + '.' + std::to_string(sym1__));
           } 
         }
       } 
@@ -905,13 +937,13 @@ class beta_clus_model final : public model_base_crtp<beta_clus_model> {
     
   inline std::string get_constrained_sizedtypes() const {
     
-    return std::string("[{\"name\":\"sigma2\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"tau2\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"xi_constructor\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"betas\",\"type\":{\"name\":\"array\",\"length\":" + std::to_string(N) + ",\"element_type\":{\"name\":\"vector\",\"length\":" + std::to_string(betas_2dim__) + "}},\"block\":\"parameters\"},{\"name\":\"w_raw\",\"type\":{\"name\":\"array\",\"length\":" + std::to_string(T) + ",\"element_type\":{\"name\":\"vector\",\"length\":" + std::to_string(I) + "}},\"block\":\"parameters\"},{\"name\":\"xi\",\"type\":{\"name\":\"real\"},\"block\":\"transformed_parameters\"},{\"name\":\"ws_tmp\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(I) + ",\"cols\":" + std::to_string(T) + "},\"block\":\"transformed_parameters\"},{\"name\":\"ws\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(T) + ",\"cols\":" + std::to_string(I) + "},\"block\":\"transformed_parameters\"},{\"name\":\"sigma\",\"type\":{\"name\":\"real\"},\"block\":\"transformed_parameters\"},{\"name\":\"tau\",\"type\":{\"name\":\"real\"},\"block\":\"transformed_parameters\"}]");
+    return std::string("[{\"name\":\"sigma2\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"tau2\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"xi_constructor\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"betas_clus\",\"type\":{\"name\":\"array\",\"length\":" + std::to_string(H) + ",\"element_type\":{\"name\":\"vector\",\"length\":" + std::to_string(betas_clus_2dim__) + "}},\"block\":\"parameters\"},{\"name\":\"w_raw\",\"type\":{\"name\":\"array\",\"length\":" + std::to_string(T) + ",\"element_type\":{\"name\":\"vector\",\"length\":" + std::to_string(I) + "}},\"block\":\"parameters\"},{\"name\":\"xi\",\"type\":{\"name\":\"real\"},\"block\":\"transformed_parameters\"},{\"name\":\"ws_tmp\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(I) + ",\"cols\":" + std::to_string(T) + "},\"block\":\"transformed_parameters\"},{\"name\":\"ws\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(T) + ",\"cols\":" + std::to_string(I) + "},\"block\":\"transformed_parameters\"},{\"name\":\"sigma\",\"type\":{\"name\":\"real\"},\"block\":\"transformed_parameters\"},{\"name\":\"tau\",\"type\":{\"name\":\"real\"},\"block\":\"transformed_parameters\"}]");
     
     } // get_constrained_sizedtypes() 
     
   inline std::string get_unconstrained_sizedtypes() const {
     
-    return std::string("[{\"name\":\"sigma2\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"tau2\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"xi_constructor\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"betas\",\"type\":{\"name\":\"array\",\"length\":" + std::to_string(N) + ",\"element_type\":{\"name\":\"vector\",\"length\":" + std::to_string(betas_2dim__) + "}},\"block\":\"parameters\"},{\"name\":\"w_raw\",\"type\":{\"name\":\"array\",\"length\":" + std::to_string(T) + ",\"element_type\":{\"name\":\"vector\",\"length\":" + std::to_string(I) + "}},\"block\":\"parameters\"},{\"name\":\"xi\",\"type\":{\"name\":\"real\"},\"block\":\"transformed_parameters\"},{\"name\":\"ws_tmp\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(I) + ",\"cols\":" + std::to_string(T) + "},\"block\":\"transformed_parameters\"},{\"name\":\"ws\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(T) + ",\"cols\":" + std::to_string(I) + "},\"block\":\"transformed_parameters\"},{\"name\":\"sigma\",\"type\":{\"name\":\"real\"},\"block\":\"transformed_parameters\"},{\"name\":\"tau\",\"type\":{\"name\":\"real\"},\"block\":\"transformed_parameters\"}]");
+    return std::string("[{\"name\":\"sigma2\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"tau2\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"xi_constructor\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"betas_clus\",\"type\":{\"name\":\"array\",\"length\":" + std::to_string(H) + ",\"element_type\":{\"name\":\"vector\",\"length\":" + std::to_string(betas_clus_2dim__) + "}},\"block\":\"parameters\"},{\"name\":\"w_raw\",\"type\":{\"name\":\"array\",\"length\":" + std::to_string(T) + ",\"element_type\":{\"name\":\"vector\",\"length\":" + std::to_string(I) + "}},\"block\":\"parameters\"},{\"name\":\"xi\",\"type\":{\"name\":\"real\"},\"block\":\"transformed_parameters\"},{\"name\":\"ws_tmp\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(I) + ",\"cols\":" + std::to_string(T) + "},\"block\":\"transformed_parameters\"},{\"name\":\"ws\",\"type\":{\"name\":\"matrix\",\"rows\":" + std::to_string(T) + ",\"cols\":" + std::to_string(I) + "},\"block\":\"transformed_parameters\"},{\"name\":\"sigma\",\"type\":{\"name\":\"real\"},\"block\":\"transformed_parameters\"},{\"name\":\"tau\",\"type\":{\"name\":\"real\"},\"block\":\"transformed_parameters\"}]");
     
     } // get_unconstrained_sizedtypes() 
     
@@ -925,7 +957,7 @@ class beta_clus_model final : public model_base_crtp<beta_clus_model> {
                             const bool emit_generated_quantities = true,
                             std::ostream* pstream = nullptr) const {
       const size_t num_params__ = 
-  ((((1 + 1) + 1) + (N * betas_2dim__)) + (T * I));
+  ((((1 + 1) + 1) + (H * betas_clus_2dim__)) + (T * I));
       const size_t num_transformed = emit_transformed_parameters * 
   ((((1 + (I * T)) + (T * I)) + 1) + 1);
       const size_t num_gen_quantities = emit_generated_quantities * 0;
@@ -946,7 +978,7 @@ class beta_clus_model final : public model_base_crtp<beta_clus_model> {
                             bool emit_generated_quantities = true,
                             std::ostream* pstream = nullptr) const {
       const size_t num_params__ = 
-  ((((1 + 1) + 1) + (N * betas_2dim__)) + (T * I));
+  ((((1 + 1) + 1) + (H * betas_clus_2dim__)) + (T * I));
       const size_t num_transformed = emit_transformed_parameters * 
   ((((1 + (I * T)) + (T * I)) + 1) + 1);
       const size_t num_gen_quantities = emit_generated_quantities * 0;
@@ -988,9 +1020,9 @@ class beta_clus_model final : public model_base_crtp<beta_clus_model> {
                               std::vector<double>& vars,
                               std::ostream* pstream__ = nullptr) const {
      constexpr std::array<const char*, 5> names__{"sigma2", "tau2",
-      "xi_constructor", "betas", "w_raw"};
+      "xi_constructor", "betas_clus", "w_raw"};
       const std::array<Eigen::Index, 5> constrain_param_sizes__{1, 1, 
-       1, (N * betas_2dim__), (T * I)};
+       1, (H * betas_clus_2dim__), (T * I)};
       const auto num_constrained_params__ = std::accumulate(
         constrain_param_sizes__.begin(), constrain_param_sizes__.end(), 0);
     
