@@ -2,6 +2,8 @@ library(maptools)
 library(ggplot2)
 library(tidyverse)
 
+#In this script we plot the map of Italy with the computed clusters using different colors
+
 #cluster.beta=read.csv("#######")  mettere matrice cluster allocation dei beta
 #dataset=read.csv("Fecondita.csv")   carica il dataset completo
 
