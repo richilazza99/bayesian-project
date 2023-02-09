@@ -1,3 +1,5 @@
+#In this script we plot the cluster structure of the simulated data.
+
 library(tidyverse)
 library(raster)
 library(rasterVis)
@@ -11,7 +13,7 @@ lat.ext[91:100]=10
 true_clusters_ggplot$long=long.ext - 0.5
 true_clusters_ggplot$lat=lat.ext - 0.5
 
-#plot true clusters
+#plot true clusters of simulated data
 ggplot(true_clusters_ggplot, aes(x = long, y = lat, fill = clusters)) + 
   geom_tile(data=true_clusters_ggplot,aes(alpha=0.9) ) +
   scale_x_continuous(breaks=c(0,1,2,3,4,5,6,7,8,9,10)) +
@@ -24,7 +26,7 @@ s_vi_data=data.frame(clusters=s_vi$V1,long=true_clusters_ggplot$long,lat=true_cl
 s_vi_data$clusters=factor(s_vi_data$clusters)
 
 
-#plot S_VI
+#plot S_VI clusters
 ggplot(s_vi_data_2, aes(x = long, y = lat, fill = clusters)) + 
   geom_tile(data=s_vi_data_2,aes(alpha=0.9) ) +
   scale_x_continuous(breaks=c(0,1,2,3,4,5,6,7,8,9,10)) +
@@ -39,9 +41,11 @@ s_vi_data_2$lat=s_vi_data_2$lat - 0.5
 s_binder_data=data.frame(clusters=s_binder$V1,long=s_vi_data$long - 0.5,lat=s_vi_data$lat - 0.5)
 s_binder_data$clusters=factor(s_binder_data$clusters)
 
-#plot binder loss
+#plot binder loss clusters
 ggplot(s_binder_data, aes(x = long, y = lat, fill = clusters)) + 
   geom_tile(data=s_binder_data,aes(alpha=0.9) ) +
   scale_x_continuous(breaks=c(0,1,2,3,4,5,6,7,8,9,10)) +
   scale_y_continuous(breaks=c(0,1,2,3,4,5,6,7,8,9,10)) +
   xlab("x") + ylab("y")
+
+#There is no difference between clusters with S VI and Binder loss function.
