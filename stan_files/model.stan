@@ -33,7 +33,7 @@ data
     // rho 
     real rho;
     
-    //xis
+    //xi
     real mu_xi;
     real sigma2_xi;
 
@@ -88,14 +88,14 @@ transformed parameters
     omegas[H] = cumprod_one_mv[H-1];
     
     // random effects tmp
-    matrix[I,T]                ws_tmp;
+    matrix[I,T] ws_tmp;
     
     ws_tmp[1:I,1] =  mu_w_1 + L*w_raw[1];
     
     for (t in 2:T)
         ws_tmp[1:I,t] = ws_tmp[1:I,t-1]*xi + L*w_raw[t]; 
     
-    matrix[T,I]   ws = (ws_tmp)'; //otherwise I have to transpose in the for loop at each iteration
+    matrix[T,I] ws = (ws_tmp)'; //otherwise we have to transpose in the for loop at each iteration
     
     // Stan wants std
     real sigma   = sqrt(sigma2);
