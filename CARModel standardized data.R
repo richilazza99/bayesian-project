@@ -66,16 +66,13 @@ plot(nu2.samples) # convergence
 
 
 mc.chain1$modelfit
-# WAIC -51.301762
-# LPML -179.961873
+# WAIC - 51.301762
 
 mc.chain2$modelfit
-# WAIC -29.32123
-# LPML -188.85159
+# WAIC - 29.32123
 
 mc.chain3$modelfit
-# WAIC -39.66667
-# LPML -191.11190
+# WAIC - 39.66667
 
 mc.chain1$summary.results
 
