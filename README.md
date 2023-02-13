@@ -12,6 +12,7 @@ This is a group project for the Bayesian Statistics course held in the year 2022
 --> see CARModel standardized data.R for running the model CarBayes (model comparison chapter of the report)
 
 All outputs in outputs folder
+
 All data (dataset and proximity matrix) in data folder
 
 
