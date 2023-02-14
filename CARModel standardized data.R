@@ -66,13 +66,13 @@ plot(nu2.samples) # convergence
 
 
 mc.chain1$modelfit
-# WAIC - 51.301762
+# WAIC -51.301762
 
 mc.chain2$modelfit
-# WAIC - 29.32123
+# WAIC -29.32123
 
 mc.chain3$modelfit
-# WAIC - 39.66667
+# WAIC -39.66667
 
 mc.chain1$summary.results
 
